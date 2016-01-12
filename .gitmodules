@@ -1,0 +1,3 @@
+[submodule "extern/scioncc"]
+	path = extern/scioncc
+	url = git@github.com:scion-network/scioncc.git
