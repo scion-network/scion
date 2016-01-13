@@ -1,0 +1,85 @@
+# Enumerates the possible types of security tokens
+TokenTypeEnum: !enum (values=(ACTOR_SECRET, ACTOR_AUTH, ACTOR_RESET_PASSWD, OAUTH_GRANT, OAUTH_ACCESS, OAUTH_REFRESH), default=ACTOR_SECRET)
+---
+
+# Holds information for a user specific authorization token
+SecurityToken:
+  # The token secret
+  token_string: ""
+  # The type of token - one of enum
+  token_type: !TokenTypeEnum
+  # Timestamp (UNIX epoch) for when the token expires in UTC
+  expires : ""
+  # One of OPEN, VERIFIED, EXPIRED, CANCELLED
+  status: ""
+  # ID of an actor identity.
+  actor_id:
+  # Email address of merge account
+  merge_email: ""
+  # Additional token attributes
+  attributes: {}
+---
+
+# One set of user credentials from an external identity provider
+Credentials:
+  # Service that authenticates an actor
+  authentication_service: ""
+  # Service that identities the specific actor.
+  identity_provider: ""
+  # Actual credentials
+  username: ""
+  password_salt: ""
+  password_hash: ""
+
+# Enumerates the possible types of security tokens
+AuthStatusEnum: !enum (values=(ENABLED, LOCKED, DISABLED), default=ENABLED)
+---
+
+# A registered system identity
+ActorIdentity: !Extends_SystemResource
+  # The type of actor. One of user, agent, system, org
+  actor_type: ""
+  # Additional details object depending on actor type
+  details: !IdentityDetails
+
+  # Login credentials
+  #@ContentType=Credentials
+  credentials: []
+  # Current authentication status
+  auth_status: !AuthStatusEnum
+  # Number of successful authentications
+  auth_count: 0
+  # Number of failed logins since last successful login
+  auth_fail_count: 0
+  # Last successful login
+  auth_ts_last: ""
+  # Last successful login
+  auth_ts_last_fail: ""
+  # Password reset token
+  passwd_reset_token: !SecurityToken
+  # Session information (cleared on
+  session: {}
+  # Session expiry
+  session_expiry: ""
+
+
+# Details for an individual registered with the system, with contact and profile information.
+UserIdentityDetails: !Extends_IdentityDetails
+  # Describes user attributes as ContactInformation object
+  contact: !ContactInformation
+  # List of user specific TokenInformation for authorization purposes
+  tokens: []
+  # Key-value properties for the user; e.g. for configuration or UI preferences
+  profile: {}
+  # Registered location, e.g. derived from contact address
+  location: !GeospatialLocation
+
+OAuthClientIdentityDetails: !Extends_IdentityDetails
+  # Is this a confidential client?
+  is_confidential: False
+  # Client secret
+  client_secret: ""
+  # Space separated list of https URLs for secure redirect
+  redirect_uris: ""
+  # Space separated list of scopes
+  default_scopes: ""

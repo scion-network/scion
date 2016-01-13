@@ -1,0 +1,184 @@
+name: resource_management
+
+docstring: |
+  Service that manages resources and their lifecycle.
+  Also provides a resource discovery and query capability.
+
+dependencies: [resource_registry]
+
+methods:
+  # -----------------
+  # Query operations
+
+  query:
+    docstring: |
+      Issue a query provided in structured dict format or internal datastore query format.
+      Returns a list of resource or event objects or their IDs only.
+      Search_args may contain parameterized values.
+      See the query format definition: https://confluence.oceanobservatories.org/display/CIDev/Discovery+Service+Query+Format
+    in:
+      query: {}
+      id_only: True
+      search_args: {}
+    out:
+      results: []
+
+  query_view:
+    docstring: |
+      Execute an existing query as defined within a View resource, providing additional arguments for
+      parameterized values.
+      If ext_query is provided, it will be combined with the query defined by the View.
+      Search_args may contain parameterized values.
+      Returns a list of resource or event objects or their IDs only.
+    in:
+      view_id: ""
+      view_name: ""
+      ext_query: {}
+      id_only: True
+      search_args: {}
+    out:
+      results: []
+
+  # -----------------
+  # View management. Views are persisted parameterizable queries
+
+  create_view:
+    docstring: |
+      Creates a view resource.
+    in:
+      view: !View
+    out:
+      view_id: ""
+    throws:
+      BadRequest: if object passed has _id or _rev attribute
+
+  update_view:
+    docstring: Update a View resource
+    in:
+      view: !View
+    out:
+    throws:
+      BadRequest: if object does not have _id or _rev attribute
+      NotFound: object with specified id does not exist
+      Conflict: object not based on latest persisted object version
+
+  read_view:
+    docstring: Read a View resource
+    in:
+      view_id:     ""
+    out:
+      view: !View
+    throws:
+      NotFound: object with specified id does not exist
+
+  delete_view:
+    docstring: Delete a View resource
+    in:
+      view_id: ""
+    out:
+    throws:
+      NotFound: object with specified id does not exist
+
+  # -----------------
+  # Generic resource CRUD interface for any resource
+
+  create_resource:
+    docstring: |
+      Creates an arbitrary resource object via its defined create function, so that it
+      can successively can be accessed via the agent interface.
+    in:
+      resource: !Resource
+    out:
+      resource_id: ""
+    throws:
+      BadRequest: if object passed has _id or _rev attribute
+
+  update_resource:
+    docstring: Updates an existing resource via the configured service operation.
+    in:
+      resource: !Resource
+    out:
+    throws:
+      BadRequest: if object does not have _id or _rev attribute
+      NotFound: object with specified id does not exist
+      Conflict: object not based on latest persisted object version
+
+  read_resource:
+    docstring: Returns an existing resource via the configured service operation.
+    in:
+      resource_id: ""
+    out:
+      resource: !Resource
+    throws:
+      NotFound: object with specified id does not exist
+
+  delete_resource:
+    docstring: Deletes an existing resource via the configured service operation.
+    in:
+      resource_id: ""
+    out:
+    throws:
+      NotFound: object with specified id does not exist
+
+  # -----------------
+  # UI support for resources
+
+  get_org_resource_attributes:
+    docstring: |
+      For a given org, return a list of dicts with core resource attributes (_id, type_, name, description,
+      ts_created, ts_modified, lcstate, availability, visibility and alt_resource_type).
+      The returned list is ordered by name unless otherwise specified.
+      Supports pagination and white-list filtering if provided.
+    in:
+      org_id: ""
+      order_by: ""
+      type_filter: []
+      limit: 0
+      skip: 0
+    out:
+      resource_list: []
+    throws:
+      BadRequest: illegal arguments
+
+  get_distinct_values:
+    docstring: |
+      Returns a list of distinct values for given resource type and list of attribute names.
+      Only supports simple types for the attribute values.
+      Returns a sorted list of list of values in the order given by attr_list.
+    in:
+      restype: ""
+      attr_list: []
+      res_filter: {}
+    out:
+      value_list: []
+    throws:
+      BadRequest: illegal arguments
+
+  # -----------------
+  # Other common resource operations for any resource
+
+  execute_lifecycle_transition:
+    docstring: |
+      Alter object lifecycle according to given transition event. Throws exception
+      if resource object does not exist or given transition_event is unknown/illegal.
+      The new life cycle state after applying the transition is returned.
+    in:
+      resource_id: ""
+      transition_event: ""
+    out:
+      lcstate: ""
+    throws:
+      NotFound: resource object does not exist
+      BadRequest: transition event unknown or illegal in current state; resource type has no lifecycle
+      Conflict: race condition while trying to update
+
+  get_lifecycle_events:
+    docstring: |
+      For a given resource, return a list of possible lifecycle transition events.
+    in:
+      resource_id: ""
+    out:
+      transition_events: []
+    throws:
+      NotFound: resource object does not exist
+      BadRequest: transition event unknown or illegal in current state; resource type has no lifecycle

@@ -1,0 +1,143 @@
+# Holds a phone number and indicates its type.
+Phone:
+  # The phone number.  phone number is assumed US if no '+' prefix exists to specify a country code
+  phone_number: ""
+  # The type of phone number
+  phone_type: ""
+---
+
+# Data structure for representing contact information uniformly across resources.
+ContactInformation:
+  # The name of the organization.  Can be used in place of an individually-named contact when appropriate.
+  organization_name: ""
+  # The given, i.e. first and optionally middle, name(s)
+  individual_names_given: ""
+  # The family, aka last, name
+  individual_name_family: ""
+  # The street address portion of the mailing address
+  street_address: ""
+  # The city part of the address
+  city: ""
+  # The postal code, i.e. zip code
+  postal_code: ""
+  # The country part of the address.
+  country: ""
+  # A list of phone contacts as a lists of Phone object
+  #@ContentType=Phone
+  phones: []  # list of phone objects
+  # Primary email for the contact
+  email: ""
+  # Any placenames that are less specific than country and more specific than city, e.g. state or province.
+  administrative_area: ""
+  # The position or role of the contact. For example, it may be preferable to name "OOI Data Curator" as a contact
+  # instead of giving an individual's name, since the individual may change through time
+  position_name: ""        # the position or role of the contact
+  # The list of roles this contact has, e.g. owner, custodian, PointOfcontact
+  #@ContentType=str
+  roles: []
+  # URL for the contact
+  url: ""
+  # A list holding the extra information about user so that specific variables do not need to be held,
+  # e.g. IM, alternate phone, second address, facebook, etc.
+  variables: {}
+
+
+# Data structure for representing institution information uniformly across resources
+Institution:
+  # Name of the institution
+  name: ""
+  # Primary phone for the institution
+  phone: ""
+  # Primary email for the institution
+  email: ""
+  # Website URL for the institution
+  website: ""
+
+
+# Data structure for representing geospatial and vertical coordinate reference systems uniformly across resources.
+GeospatialCoordinateReferenceSystem:
+  # The geospatial coordinate reference system, expressed as a URI (ideally a URL); incorporates both coordinate
+  # system and datum; may be geodetic horizonal, vertical, or both
+  geospatial_geodetic_crs: ""
+  # The vertical coordinate reference system, expressed as a URI (ideally a URL); incorporates both
+  # coordinate system and datum
+  geospatial_vertical_crs: ""
+  # Specifies the units of measure for latitude
+  geospatial_latitude_units: ""
+  # Specifies the units of measure for longitude
+  geospatial_longitude_units: ""
+  # The units of measure for the vertical location; overrides the geospatial_vertical_crs, if those units are different
+  geospatial_vertical_units: ""
+  # Specifies the direction meant by more positive vertical location values; up indicates more positive
+  # values are further from earth's center.
+  geospatial_vertical_positive: ""
+
+
+# Data structure for representing geospatial bounds uniformly across resources, including vertical bounds.
+GeospatialBounds:
+  # Specifies one or both limits, for any or all of an entity's latitude, longitude, and vertical position,
+  # with respect to a geospatial CRS
+  geospatial_latitude_limit_north: 0.0
+  # Specifies the southernmost latitude
+  geospatial_latitude_limit_south: 0.0
+  # Specifies the easternmost longitude (if the value is smaller than the minimum longitude, the bounds fall
+  # on either side of the 18th meridian, and the enclosed area includes that meridian)
+  geospatial_longitude_limit_east: 0.0
+  # Specifies the westernmost longitude (if the value is larger than the maximum longitude, the bounds fall
+  # on either side of the 180th meridian, and the enclosed area includes that meridian)
+  geospatial_longitude_limit_west: 0.0
+  # Specifies the (numerically) minimum vertical position; if the vertical/z axis positive (geospatial_vertical_positive)
+  # is down, the minimum value will be further away from earth center than the maximum value
+  geospatial_vertical_min: 0.0
+  # Specifies the (numerically) maximum vertical position; if the vertical/z axis positive (geospatial_vertical_positive)
+  # is down, the maximum value will be closer to earth center than the minimum value
+  geospatial_vertical_max: 0.0
+
+
+# Data structure for representing a geospatial point uniformly across resources.
+GeospatialPoint:
+  # Specifies a vertical position (relative to the datum, along the axis direction specified by geospatial_vertical_positive)
+  geospatial_vertical_location: 0.0
+  # The accuracy of the vertical value, expressed in the same units
+  geospatial_vertical_accuracy: 0.0
+  # Specifies the latitude, longitude, and/or vertical location of an entity, with respect to a geospatial CRS
+  geospatial_latitude: 0.0
+  # Specifies the longitude
+  geospatial_longitude: 0.0
+  # The accuracy of the lat/lon info, expressed in the same units as the lat/lon fields
+  geospatial_horizontal_accuracy: 0.0
+
+
+# Simplified data structure for representing a geospatial point uniformly across resources.
+GeospatialLocation:
+  # Specifies the latitude in WGS84 CRS
+  latitude: 0.0
+  # Specifies the longitude in WGS84 CRS
+  longitude: 0.0
+  # Specifies a vertical position
+  elevation: 0.0
+
+
+# Object representing the geospatial location in a searchable index (deprecated)
+GeospatialIndex:
+  lat: 0.0
+  lon: 0.0
+
+
+# Data structure for representing temporal bounds uniformly across resources.
+TemporalBounds:
+  # Allows the kind of datetime to be specified, in cases where more than one TemporalBounds is used.
+  # For example to differentiate the planned vs actual deployment datetimes.
+  name: ""
+  # The start of the timespan (string with number of seconds since epoch)
+  start_datetime: ""
+  # The end of the timespan (string with number of seconds since epoch)
+  end_datetime: ""
+
+
+# Object holding additional details for an Org to be extended
+OrgDetails:
+
+
+# Object holding additional details for ActorIdentity to be extended
+IdentityDetails:

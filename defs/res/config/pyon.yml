@@ -1,0 +1,373 @@
+# Central base configuration file for SciON container, system and services.
+# Configuration is available at runtime:
+#   from pyon.public import CFG
+#   CFG.get_safe("server.amqp.host", 1234)
+# Do not modify this file! Set overrides in pyon.local.yml, in additional
+# YML files, in deploy files and through the command line
+
+
+# ----------------------------------------------------------------------------------
+# The "system" root entry defines settings for the distributed SciON system that this
+# container starts or joins. A system comprises all containers with the same sysname.
+system:
+  # Set to define sysname in tests. Otherwise set via pycc --sysname or use default
+  name:
+
+  # Name of the Org that bootstraps the system and acts as "Super-Org"
+  root_org: ION
+
+  # The name of the actor used for actions on behalf of the SciON system
+  system_actor: ionsystem
+
+  # Global flag indicating debug mode to all processes
+  debug: True
+
+  # Global config for use of a Real SMTP server or a fake logging class
+  # True is Real, False is fake
+  smtp: False
+
+  # Indicates whether policy should be loaded during system bootstrap (False is for development only)
+  load_policy: False
+
+  # The base Web UI URL to generate absolute links from. URL prefix from a public view.
+  web_ui_url: http://localhost:4000/
+
+
+# ----------------------------------------------------------------------------------
+# The "bootstrap" root entry defines settings for the system bootstrapping and
+# restart process.
+bootstrap:
+  # If True, the pycc program checks on startup for the presence of persisted system
+  # interfaces and otherwise create these.
+  # Warning: race conditions occur if more than once container starts concurrently.
+  # The alternative is to manually run "bin/store_interfaces" before
+  auto_store_interfaces: True
+
+  # If True, stores system config in directory under /Config/CFG
+  store_config: False
+
+  # Determines if the pycc program will detect a restart and set the bootmode automatically.
+  # Set to: auto (restart auto detect), secondary (no bootstrap), or empty (use args)
+  set_bootmode: auto
+
+  # Path to policy initialization rule set (YML file)
+  initial_policy_rules: res/config/policy/basic_policy_rules.yml
+
+
+# ----------------------------------------------------------------------------------
+# The "server" root entry defines named sets of connections/credentials TO external servers.
+# These named entries can be referenced in other settings.
+server:
+  amqp:
+    # The normal container broker connection
+    type: amqp_91
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    vhost: /
+    heartbeat: 30
+  amqp_priv:
+    # The privileged broker connection used for making changes to broker resources
+    type: amqp_91
+    host: localhost
+    port: 5672
+    username: ion
+    password: ion
+    vhost: /
+    heartbeat: 30
+  rabbit_manage:
+    # REST access to RabbitMQ management plugin
+    type: rabbit_mgmt
+    host: localhost
+    port: 15672
+    username: guest
+    password: guest
+    vhost: /
+
+  postgresql:
+    type: postgresql
+    host: localhost
+    port: 5432
+    username: ion
+    password:
+    admin_username:             # If empty, defaults to current login username
+    admin_password:
+    default_database: postgres  # Postgres' internal database
+    database: ion               # Database name for SciON (will be sysname prefixed)
+    connection_pool_max: 5      # Number of connections for entire container
+    db_init: res/datastore/postgresql/db_init.sql
+
+  smtp:
+    # Outgoing email server
+    type: smtp
+    host: mail.server.org
+    port: 25
+    sender: alerts@server.org
+    password: ""
+
+  localrouter:
+    # In-container async message router
+    type: local
+
+
+# ----------------------------------------------------------------------------------
+# The "container" root entry defines settings for the current ScionCC container
+container:
+  # Capability profile to use (assumes a file in res/profile/<name>.yml unless
+  # a path is specified). Determines what capabilities the container offers.
+  profile: development
+
+  datastore:
+    default_server: postgresql  # Which server connection (and type) to use as primary datastore
+    server_types:               # Definition of the known server types and how to start them
+      postgresql:
+        base: pyon.datastore.postgresql.base_store.PostgresDataStore
+        full: pyon.datastore.postgresql.datastore.PostgresPyonDataStore
+
+  messaging:
+    auto_register: True
+    names:
+      durable: False            # Declare exchanges and queues as durable to survive broker restart
+    server:
+      primary: amqp
+      privileged:
+    management:
+      server: rabbit_manage
+    endpoint:
+      prefetch_count: 1         # how many messages to prefetch from broker per consumer, by default
+    timeout:
+      start_listener: 30.0
+      receive: 30               # RPC receive timeout in seconds
+
+  execution_engine:             # Configure this container as a process execution engine
+    type: scioncc               # Basic type class. Set to scioncc for a container
+    name: default               # Name of this execution engine instance (can have more than 1 container)
+    capacity:                   # Configures the capacity model
+      model: slots                # Possible models: slots (allow discrete maximum number of processes)
+      max: 100                    # Upper bound (slots per container)
+    deployment:                 # Configures properties related to logical deployment
+      region: default             # Location level 1: Region - there is no communication between regions
+      availability_zone: default  # Location level 2: Logical availability zone
+      sub_zone: default           # Location level 3: E.g. rack, host, VM
+    heartbeat:                  # Configures this container's heartbeat broadcast
+      enabled: True               # Toggle switch
+      topic: bx_containers        # Topic name for published container heartbeats
+      publish_interval: 10        # Publish interval in seconds
+    child_configs:              # Config overrides for child process instances
+      Container-child-1:
+        name: ui
+      Container-child-2:
+        name: default
+      Container-child-3:
+        name: default
+      App:
+        name_pattern: "Container-child-[4567]"
+        name: app
+
+  process:
+    publish_events: True          # Should the container publish ProcessLifecycleEvents?
+    exit_once_empty: True         # Should the container exit once all spawned processes have been terminated?
+    log_exceptions: False         # Should all RPC call invocation exceptions be logged?
+    log_dbstats: False            # Should all RPC call DB stats be logged?
+    warn_dbstmt_threshold: 0      # Warning threshold DB statements per RPC calls (0=off)
+    max_replicas: 0               # Limit the number of process replicas to start per container (0 is unlimited)
+    use_process_dispatcher: False # Should deploy files be sent to PD, or processed in local container?
+    pd_command_queue: pd_command
+
+  objects:
+    validate:
+      setattr: False              # Checks on update if attribute is in schema, but not value/type
+      interceptor: True           # Checks objects when received in messages
+      interceptor_error: True     # Does the interceptor raise an error if validation fails?
+
+  timeout:
+    shutdown: 30.0                # How long for container shutdown before force terminate?
+    heartbeat: 30.0               # How long between internal per-process heartbeats
+    heartbeat_proc_time_threshold: 600.0     # How long can a process be "stuck" with the same stack trace
+    heartbeat_proc_count_threshold: 20       # How many heartbeats can a process be "stuck" with the same stack trace
+
+  org_boundary: False  # If True, then check against policies related to the Org below; else do not.
+
+  org_name: ION  # The default is the Scion root Org
+
+  filesystem:
+    force_clean: False
+    root: /tmp/scion
+
+  tracer:                         # Configures the tracer development tool (records messages and db access)
+    enabled: False                # Toggle switch
+    max_entries: 10000            # Length of trace buffer
+    log_trace: False
+    log_filter: DB
+    log_stack: False
+    log_color: True
+
+
+# TODO: Move into container and split into process and messaging
+interceptor:
+  interceptors:
+    sample:
+      class: pyon.core.interceptor.sample.SampleInterceptor
+    sampleprocessonly:
+      class: pyon.core.interceptor.sample.SampleProcessOnlyInterceptor
+    validate:
+      class: pyon.core.interceptor.validate.ValidateInterceptor
+      config:
+        enabled: True
+    encode:
+      class: pyon.core.interceptor.encode.EncodeInterceptor
+      config:
+        max_message_size: 20000000
+    governance:
+      class: pyon.core.governance.governance_interceptor.GovernanceInterceptor
+      config:
+        enabled: True
+        interceptor_order: [policy]
+        governance_interceptors:
+          policy:
+            class: pyon.core.governance.policy.policy_interceptor.PolicyInterceptor
+
+  stack:
+    message_outgoing: [validate, encode]
+    message_incoming: [encode, validate]
+    process_outgoing: [governance]
+    process_incoming: [governance]
+
+
+# ----------------------------------------------------------------------------------
+# The "exchange" root entry contains config of the system wide Exchange for bootstrap
+exchange:
+  exchange_spaces:
+    # define the names and structure of exchange spaces and exchange points
+    system:
+      description: The system root exchange space
+      exchange_points:
+        data:
+          type: ttree
+          description: System default exchange point for data streams
+        events:
+          type: ttree
+          description: System default exchange point for system events
+
+  exchange_brokers:
+    system_broker:
+      server: amqp
+      description: Primary exchange broker (RabbitMQ 3.x, AMQP 0.9.1)
+      join_xs: [system]
+      join_xp: []
+
+  # Well known exchange elements
+  core:
+    # System root exchange space
+    system_xs: system
+    # XP for system events
+    events: events
+    # XP for data streams
+    data_streams: data
+
+
+# ----------------------------------------------------------------------------------
+# The "process" root entry with config for specific process types
+process:
+  event_persister:
+    persist_interval: 1.0
+    persist_blacklist:
+    - event_type: TimerEvent
+    - event_type: SchedulerEvent
+
+  admin_ui:                  # Config for admin UI, started with --mx option
+    web_server:
+      hostname: ""
+      port: 8080
+    association_graph: False    # Show D3 graph of associations
+    read_only: False            # Run in read-only mode
+
+  ui_server:
+    server:
+      enabled: True
+      hostname: ""
+      port: 4000
+      socket_io: False
+      log_access: True
+      log_errors: True
+      develop_mode: True
+      set_cors: True
+    security:
+      secret: ""                     # Server secret for cookie encryption
+      session_timeout: 900           # Timeout in seconds
+      extend_session_timeout: False  # If True, reset session timeout on activity
+      max_session_validity: 0        # Maximum seconds since authentication
+      remember_user: True            # If True, maintain user_id/access_token in server session for resume
+    oauth:
+      enabled: True
+      default_scope: scioncc
+    service_gateway:
+      enabled: True
+      url_prefix: /service
+    extensions: []   # A list of fully qualified class names implementing the UIExtension interface
+
+
+# ----------------------------------------------------------------------------------
+# The "service" root entry
+service:
+  process_dispatcher:             # Configures an active global process dispatcher component (not ION service)
+    enabled: False                # Main toggle switch. Should container start PD service?
+    command_queue: pd_command     # Topic and queue name for singleton PD
+    aggregator:
+      container_topic: bx_containers     # Container heartbeat broadcast topic (for binding)
+    engine:                       # PD decision engine
+      type: default
+      await_preconditions:        # Preconditions for start of decision engine. Blocks until True.
+        await_timeout: 10         # Maximum wait in sec to wait for preconditions
+        min_engines: 1
+        engines_exist:
+        - default
+        - ui
+      default_engine: default
+      dispatch_rules:
+      - appname_pattern: "ui_server"
+        engine: ui
+      dispatch_spread: round_robin  # One of round_robin, fill_up, random
+    executor:
+      type: global                # global (schedule via agent commands) or local (to local container only)
+      pool_size: 1                # Number of concurrent threads spawning processes
+      spawn_timeout: 600
+      terminate_timeout: 5
+
+  resource_management:
+    max_search_results: 250
+
+  directory:
+    publish_events: False
+
+  service_gateway:
+    trusted_originators: []  # Optional list of trusted addresses; an empty list means open system
+    service_whitelist: []    # Names of services accessible via the gateway. If empty, all are accessible
+    service_blacklist: []    # Names of services not accessible via the gateway. Applies after white list
+    user_cache_size: 2000    # The number of user's whos role data is cached in the gateway
+    develop_mode: True
+    set_cors: True           # Set CORS headers (only in development mode)
+    strict_types: True       # Only accept types according to operation parameter schema, or try to coerce?
+    require_login: True      # Must provide session or token and no anonymous access allowed
+    token_from_session: False  # If True, allow a valid token from session instead
+    no_login_whitelist: []   # List of service operations that can be accessed anonymously: request/svc/op
+    version_packages: scioncc   # Comma separated list of package names to show version for
+    swagger_spec:
+      enable: True           # Support generation of Swagger v2 service interfaces
+      info:
+        version: 3.0.0
+        title: ScionCC Application
+        description: Application deployed on the ScionCC Python service bus.
+        termsOfService: https://github.com/scionrep/scioncc/blob/master/README
+        contact:
+          email: pyonservices@gmail.com
+        license:
+          name: APACHE 2.0
+          url: https://github.com/scionrep/scioncc/blob/master/LICENSE
+      externalDocs:
+        description: ScionCC service gateway
+        url: https://github.com/scionrep/scioncc/wiki/Service-Gateway
+      exclude_services: [container_agent, hello, resource_agent, sample]
+
+units: res/config/units/udunits2.xml

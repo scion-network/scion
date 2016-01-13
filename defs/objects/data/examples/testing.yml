@@ -1,0 +1,41 @@
+# The resources here are used for testing purposes.
+# They provide various geospatial and other attribute types and also define associations and lifecycle
+# to match an observatory resource model.
+
+TestDeviceModel: !Extends_AppResource
+  manufacturer: ""
+  attributes: {}
+
+
+TestDevice: !Extends_TaskableResource
+  location: !GeospatialLocation
+  geospatial_bounds: !GeospatialBounds
+  geospatial_crs: !GeospatialCoordinateReferenceSystem
+  # Tags
+  #@ContentType=str
+  keywords: []
+---
+
+TestInstrument: !Extends_TestDevice
+  firmware_version: ""
+  boundary: {}
+
+
+TestPlatform: !Extends_TestDevice
+  hardware_version: ""
+  boundary: {}
+
+
+TestSite: !Extends_AppResource
+  location: !GeospatialLocation
+  geospatial_bounds: !GeospatialBounds
+  geospatial_crs: !GeospatialCoordinateReferenceSystem
+  temporal_bounds: !TemporalBounds
+  boundary: {}
+
+
+TestDataset: !Extends_InformationResource
+  location: !GeospatialLocation
+  geospatial_bounds: !GeospatialBounds
+  geospatial_crs: !GeospatialCoordinateReferenceSystem
+  temporal_bounds: !TemporalBounds

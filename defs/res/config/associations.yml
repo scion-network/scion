@@ -1,0 +1,147 @@
+# This is the authoritative definition of all permissible resource associations in the system
+
+# Order definitions alphabetically by subsystem
+# cardinality: 1,1 or 1,n or n,1 or n,n If absent n,n is assumed
+
+# All entries must have a docstring!!!
+AssociationDefinitions:
+
+# Resources
+  - predicate: hasAttachment
+    domain: [Resource]
+    range: [Attachment]
+    docstring: References an Attachment for any given resource
+  - predicate: hasResource
+    domain: [Org, Collection]
+    range: [Resource]
+    docstring: References a resource belonging to Org or a Collection
+  - predicate: hasTarget
+    domain: [Commitment]
+    range: [Resource]
+    docstring: References a resource referenced by a Commitment
+  - predicate: hasOwner
+    domain: [Resource]
+    range: [ActorIdentity]
+    docstring: Indicates the owner (identity) for the resource
+
+# Org, Commitment, Negotiation, Policy
+  - predicate: hasMember
+    domain: [Org]
+    range: [ActorIdentity]
+    docstring: Indicates that the identity is a member of given Org
+  - predicate: hasAffiliation
+    domain: [Org]
+    range: [Org]
+    docstring: References an Org that subject Org is affiliated with by electronic contract
+  - predicate: hasPolicy
+    domain: [Resource]
+    range: [Policy]
+    docstring: Indicates the policy for the resource
+  - predicate: hasCommitment
+    domain: [ActorIdentity, Org]
+    range: [Commitment]
+    docstring: References a Commitment for an identity (that is committed) or a resource (that is used)
+  - predicate: hasContract
+    domain: [Negotiation]
+    range: [Commitment]
+    docstring: References the Commitment associated with a succesful Negotiaion
+  - predicate: hasNegotiation
+    domain: [Org, ActorIdentity]
+    range: [Negotiation]
+    docstring: References a Negotiation between the Org, user and a resource
+  - predicate: hasRole
+    domain: [ActorIdentity, Org]
+    range: [UserRole]
+    docstring: Indicates the role definition fulfilled by a resource
+
+# Messaging
+  - predicate: hasExchangeSpace
+    domain: [Org]
+    range: [ExchangeSpace]
+    docstring: References an ExchangeSpace that is the basis for the given Org
+  - predicate: hasExchangeName
+    domain: [ExchangeSpace]
+    range: [ExchangeName]
+    docstring: References an ExchangeName defined in the given ExchangeSpace
+  - predicate: hasExchangePoint
+    domain: [ExchangeSpace]
+    range: [ExchangePoint]
+    docstring: References an ExchangePoint defined in the given ExchangeSpace
+  - predicate: hasExchangeBroker
+    domain: [ExchangeSpace]
+    range: [ExchangeBroker]
+    docstring: References an ExchangeBroker, the given ExchangeSpace is replicated on
+  - predicate: hasStream
+    domain: [Subscription, ExchangePoint]
+    range: [Stream]
+    docstring: References a Stream used by a resource as input (or output)
+  - predicate: hasStreamDefinition
+    domain: [Stream]
+    range: [StreamDefinition]
+    docstring: References the precise definition of a Stream's contents
+  - predicate: hasTopic
+    domain: [Stream, Topic, Subscription]
+    range: [Topic]
+    docstring: References the Exchange Topic associated with other routing elements
+
+# Agents
+  - predicate: hasAgentDefinition
+    domain: [AgentInstance]
+    range: [AgentDefinition]
+    docstring: References the agent definition (type of agent) for given instance, indicates compatible agents
+  - predicate: hasAgentInstance
+    domain: [TaskableResource]
+    range: [AgentInstance]
+    docstring: References the responsible agent instance for given resource
+  - predicate: hasDefinition
+    domain: [TaskableResource]
+    range: [ExecutableResource]
+    docstring:
+
+
+# Computing
+  - predicate: hasProcessDefinition
+    domain: [Resource]
+    range: [ProcessDefinition]
+    docstring: References the ProcessDefinition (type of process with executable) that instantiated or defined the resource
+  - predicate: hasProcess
+    domain: [CapabilityContainer, Service]
+    range: [Process]
+    docstring: References a Process (instance) that is associated with the container or service
+  - predicate: hasServiceDefinition
+    domain: [Service]
+    range: [ServiceDefinition]
+    docstring: References the ServiceDefinition (type) for a given Service (instance)
+
+# Examples, Testing
+  - predicate: hasTestModel
+    domain: [TestSite, TestDevice]
+    range: [TestDeviceModel]
+    docstring: References a device model for a device or site (test only)
+  - predicate: hasTestDataset
+    domain: [TestDevice]
+    range: [TestDataset]
+    docstring: References a dataset for a device (test only)
+  - predicate: hasTestSource
+    domain: [TestDataset]
+    range: [TestDevice, TestSite]
+    docstring: References a dataset for a device (test only)
+  - predicate: hasTestDevice
+    domain: [TestSite, TestDevice]
+    range: [TestDevice]
+    docstring: References a device for a parent device or a site (test only)
+  - predicate: hasTestSite
+    domain: [TestSite]
+    range: [TestSite]
+    docstring: References a child site for a parent site (test only)
+
+
+# This is a configuration for retrieving combinations of associations
+# All predicates must be defined above.
+CompoundAssociations:
+  hasPlatformModel:
+    predicates: [hasDevice,hasModel]
+  hasAgentForDevice:
+    predicates: [hasAgentInstance,hasAgentDefinition]
+  hasResourcesForUser:
+    predicates: [hasInfo,hasOwner]

@@ -1,0 +1,259 @@
+# Enumerates the possible visibility levels of a resource.
+ResourceVisibilityEnum: !enum (values=(PUBLIC, REGISTERED, FACILITY, OWNER), default=PUBLIC)
+---
+
+# Represents an entity known to the system that provides capability and has an identity
+# and a life cycle. Resources can be associated with other resources. Abstract base type and type root.
+# The following are internal attributes common to all objects:
+# _id: A unique identifier that comes with every persisted object;
+# _rev: A revision identifier that comes with every persisted object;
+# type_: The object type
+Resource:
+  # Human readable long name of the resource, e.g. for display in resource lists
+  name: ""
+  # A more verbose description of the resource
+  description: ""
+  # Resource life cycle state. Codeset: DRAFT, PLANNED, DEVELOPED, INTEGRATED, DEPLOYED, RETIRED, DELETED
+  lcstate: "DRAFT"
+  # Resource availability state. Codeset: PRIVATE, DISCOVERABLE, AVAILABLE
+  availability: "PRIVATE"
+  # Resource visibility level
+  visibility: !ResourceVisibilityEnum
+  # Timestamp when resource object was created (str in millis in UNIX epoch)
+  ts_created: ""
+  # Timestamp when resource object was last updated (str in millis in UNIX epoch)
+  ts_updated: ""
+  # Holds a list of alternate IDs to this resource, e.g. for preload in the form prefix:id
+  alt_ids: []
+  # Additional attributes, e.g. from preload import
+  addl: {}
+---
+
+# Describes a resource that represents a system internal component or function. Abstract base type.
+SystemResource: !Extends_Resource
+---
+
+# Describes a resource that is described by itself, without having a physical and data representation.
+# Abstract base type.
+AppResource: !Extends_Resource
+---
+
+# Describes a resource that exists as an electronic artifact, such as science data,
+# attachments, actor identities. Abstract base type.
+InformationResource: !Extends_Resource
+---
+
+# Describes a resource that can be controlled and monitored, such as a physical device
+# or a computational process. Abstract base type.
+TaskableResource: !Extends_Resource
+---
+
+# Describes an electronically described computational entity that can be instantiated into a taskable resource.
+# Abstract base type.
+ExecutableResource: !Extends_InformationResource
+---
+
+# Enumerates the representation type for an attachment. Possible values are:
+# ASCII: the content is ASCII, e.g. JSON or BASE64 encoded by the application;
+# BLOB: the content is a binary;
+# OBJECT: the content is an arbitrary object, such as a dict, list;
+# REFERENCE: the content is a reference document and requires a parser to be ingested
+AttachmentType: !enum (values=(ASCII, BLOB, OBJECT, REFERENCE), default=ASCII)
+
+
+# Abstract base type for objects holding additional information about attachments, specific by type.
+AbstractAttachmentContext:
+---
+
+# Represents separate information attached to a resource, such as a PDF or image file.
+Attachment: !Extends_InformationResource
+  # System representation type of attachment
+  attachment_type: !AttachmentType
+  # Content type of attachment (PDF document, PNG image, etc); expressed as standard MIME types
+  content_type: ""
+  # Unused for holding the actual data
+  content: ""
+  # (SYS) Associated object (resource) ID, for easier indexing
+  object_id: ""
+  # The identity of the creator of the document. For documents imported from external sources,
+  # this is not the same as the creator of this resource.
+  created_by: ""
+  # The identity of someone who has modified of the document. For documents imported from external sources,
+  # this modification may have happened outside of the system
+  modified_by: ""
+  # Keywords indicating the type of attachment (e.g. user manual, log)
+  #@ContentType=str
+  keywords: []
+  # Size of the attachment content, in bytes
+  attachment_size: 0
+  # Provides additional attributes depending on the type of attachment.
+  context: !AbstractAttachmentContext
+
+# Holds information about the definition of a custom attribute
+CustomAttribute:
+  # Name of the attribute
+  name: ""
+  # Type of the attribute. Codelist: str, int, float, bool, list, dict
+  type: ""
+  # Description for the attribute
+  description: ""
+  # Default value for the attribute
+  default: ""
+  # Units applied to the attribute value (if applicable)
+  units: ""
+
+
+# Represents a named set of resources. These may or may not be of the same type, and may or may not be ordered.
+Collection: !Extends_InformationResource
+  # The resources in this collection
+  resources: []
+  # Additional search filter or options
+  options: {}
+---
+
+# Enumerates the availability of a computed attribute's value.
+ComputedValueAvailability: !enum (values=(PROVIDED, NOTAVAILABLE), default=NOTAVAILABLE)
+---
+
+# Holds a computed value and status about its availability. Abstract base type.
+ComputedValue:
+  # Availability of this computed attribute value
+  status: !ComputedValueAvailability
+  # Additional details regarding attribute (un)availability
+  reason: ""
+---
+
+# Holds an integer type computed value and status about its availability.
+ComputedIntValue: !Extends_ComputedValue
+  # Holds the value
+  value: 0
+
+
+# Holds a string type computed value and status about its availability.
+ComputedStringValue: !Extends_ComputedValue
+  # Holds the value
+  value: ""
+
+
+# Holds a float (decimal number) type computed value and status about its availability.
+ComputedFloatValue: !Extends_ComputedValue
+  # Holds the value
+  value: 0.0
+
+
+# Holds a list type computed value and status about its availability.
+ComputedListValue: !Extends_ComputedValue
+  # Holds the value
+  value: []
+
+
+# Holds a dict (mapping) type computed value and status about its availability.
+ComputedDictValue: !Extends_ComputedValue
+  # Holds the value
+  value: {}
+---
+
+# Base container for attributes computed via the extended resource framework. Abstract base type.
+BaseComputedAttributes:
+---
+
+# The base type for computed attribute objects.
+# IMPORTANT!!! NOTHING IN HERE SHOULD REFERENCE LOCAL FUNCTIONS SINCE THIS IS USED ACROSS SERVICES
+ComputedAttributes: !Extends_BaseComputedAttributes
+---
+
+# A non-persistable container for a resource and its related data used by the extended resource framework
+ResourceContainer:
+  #  Unique identifier (matches the id of the internal persistable resource object)
+  _id: ""
+  # Timestamp str in millis in UNIX epoch
+  ts_created: ""
+  # Available lcstate transitions (key event, value target state)
+  lcstate_transitions: {}
+  # Available availability transitions (key event, value target state)
+  availability_transitions: {}
+  # Contains the actual resource object as retrieved from the resource registry
+  resource: !Resource
+  # An optional dict of names and associated objects to get other associations on the fly
+  ext_associations: {}
+---
+
+# A derived object containing common fields for all extended resource objects
+ExtendedResource: !Extends_ResourceContainer
+  computed: !BaseComputedAttributes
+  # A list of any associated policies
+  #@hasPolicy=Policy
+  policies: []
+  # A list of owner information of this resource
+  #@hasOwnerInfo
+  owners: []
+  # A list of orgs to which this resource belongs - NOTE this does not apply to Users!
+  #@hasResource=Org
+  orgs: []
+  # list of sensors attached to this device
+  #@hasAttachment=Attachment
+  attachments: []
+---
+
+#A base object for associations between resources
+AssociatedResources:
+  # key to be used for prepare associations in case of multiple assocs with same resource type
+  # set via @Key decorator, by default will use resource_type value
+  key: ""
+  resource_type: ""
+  multiple_associations: False
+---
+
+#A base object containing common fields for all prepare update objects
+ResourcePrepareSupport:
+  _id: ""   #  Unique identifier (matches the id of the internal persistable resource object)
+  resource: !Resource
+  resource_schema: {}
+---
+
+# An object used for testing of the framework
+#@OriginResourceType=InstrumentDevice
+TestExtendedResource: !Extends_ExtendedResource
+  #@hasPolicy
+  policy_count: 0
+  #@Method
+  resource_object: !Resource
+  #@Method=resource_registry.read
+  remote_resource_object: !Resource
+  #@hasOwnerInfo
+  single_owner: !Resource  # single owner
+  #@hasOwnerInfo
+  owner_count: 0  #count of owners
+
+
+# An object used for testing of the framework
+#@OriginResourceType=InstrumentDevice
+TestPrepareUpdateResource: !Extends_ResourcePrepareSupport
+
+
+# An object used for testing of the framework
+#@OriginResourceType=Device
+TestExtendedResourceDevice: !Extends_ExtendedResource
+  #@hasPolicy
+  policy_count: 0
+
+
+# An object used for testing of the framework
+#@OriginResourceType=Org
+TestExtendedResourceBad: !Extends_ExtendedResource
+  #@hasPolicy
+  policy_count: 0
+
+
+#@OriginResourceType=InformationResource
+TestExtendedInformationResource: !Extends_ExtendedResource
+  #@Method=get_user_id_test
+  user_id: ""
+---
+
+#@OriginResourceType=InformationResource
+ExtendedInformationResource: !Extends_ExtendedResource
+---
+
+#@OriginResourceType=TaskableResource
+ExtendedTaskableResource: !Extends_ExtendedResource

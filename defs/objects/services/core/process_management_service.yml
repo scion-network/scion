@@ -1,0 +1,96 @@
+name: process_management
+
+docstring: |
+  Service to create, read, update and delete process definitions and processes,
+  and manage process execution.  Process definitions represent executables.
+  Processes represent the executing code within the system.
+
+dependencies: [resource_registry]
+
+methods:
+  create_process_definition:
+    docstring: Creates a ProcessDefinition based on given object.
+    in:
+      process_definition: !ProcessDefinition
+    out:
+      process_definition_id: ""
+    throws:
+      BadRequest: arguments invalid or incomplete
+
+  read_process_definition:
+    docstring: Returns a ProcessDefinition as object.
+    in:
+      process_definition_id: ""
+    out:
+      process_definition: !ProcessDefinition
+    throws:
+      BadRequest: arguments invalid or incomplete
+      NotFound: object with specified id does not exist
+
+  delete_process_definition:
+    docstring: Deletes/retires a ProcessDefinition.
+    in:
+      process_definition_id: ""
+    out:
+    throws:
+      BadRequest: arguments invalid or incomplete
+      NotFound: object with specified id does not exist
+
+  # -----------------
+
+  create_process:
+    docstring: |
+      Create a process resource and process id. Does not yet start the process.
+      Argument process is optional and may contain attributes for the Process resource
+    in:
+      process_definition_id: ""
+      process: !Process
+    out:
+      process_id: ""
+    throws:
+      BadRequest: arguments invalid or incomplete
+      NotFound: object with specified id does not exist
+
+  schedule_process:
+    docstring: |
+      Schedule a process definition for execution on an Execution Engine. If no process id is given,
+      a new unique ID is generated.
+    in:
+      process_id: ""
+      process_definition_id: ""
+      schedule: !ProcessSchedule
+      configuration: {}
+      name: ""
+    out:
+      process_id: ""
+    throws:
+      BadRequest: arguments invalid or incomplete
+      NotFound: object with specified id does not exist
+
+  cancel_process:
+    docstring: Cancels the execution of the given process id.
+    in:
+      process_id: ""
+    out:
+      success: True
+    throws:
+      BadRequest: arguments invalid or incomplete
+      NotFound: object with specified id does not exist
+
+  read_process:
+    docstring: Returns a Process as an object.
+    in:
+      process_id: ""
+    out:
+      process: !Process
+    throws:
+      BadRequest: arguments invalid or incomplete
+      NotFound: object with specified id does not exist
+
+  list_processes:
+    docstring: Lists managed processes
+    in:
+    out:
+      processes: []
+    throws:
+      BadRequest: arguments invalid or incomplete
