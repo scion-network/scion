@@ -1,0 +1,73 @@
+<!-- Ant build file -->
+<project name="app" default="info" basedir=".">
+    <description>
+        This is the ANT build file for the SciON based application.
+    </description>
+
+    <!-- load python specific ant tasks from jar file -->
+    <taskdef resource="pyAntTasks.properties" classpath="extern/scioncc/misc/lib/pyAntTasks-1.3.3.jar"/>
+
+    <!-- set global properties for this build -->
+    <property name="src" location="src"/>
+    <property name="build" location="build"/>
+    <property name="dist"  location="dist"/>
+
+    <target name="info">
+        <echo message="Application ant build file. Specify a target to build."/>
+        <echo message="Run 'ant -p' to retrieve a list of targets."/>
+        <echo message="Please run `python bootstrap.py` to start buildout."/>
+    </target>
+
+    <target name="init">
+        <!-- Create the time stamp -->
+        <tstamp/>
+        <mkdir dir="logs" />
+    </target>
+
+    <!-- Precompiles all Python code without executing. Finds compile errors -->
+    <target name="compile" depends="init" description="Compile the sources">
+        <py-compile dir="${src}/scion" pythonpath="${src}" optimize="0"/>
+    </target>
+
+    <target name="clean" description="clean up">
+        <delete>
+            <fileset dir="${src}" includes="**/*.pyc"/>
+            <fileset dir="extern" includes="**/*.pyc"/>
+            <fileset dir="defs" includes="**/*.pyc"/>
+            <fileset dir="." includes="*.pyc"/>
+            <fileset dir="." includes=".coverage"/>
+        </delete>
+        <delete dir="interface"/>
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+        <delete dir="${src}/scion.egg-info"/>
+        <delete dir="coverage_results"/>
+        <delete dir="logs"/>
+        <mkdir dir="logs" />
+    </target>
+
+    <target name="clean-buildout"
+        description="clean up buildout dirs" depends="clean" >
+        <echo message="Clean up buildout directories.  Please see INSTALL for buildout instructions."/>
+        <delete dir="logs"/>
+        <delete dir="parts"/>
+        <delete dir="develop-eggs"/>
+        <delete dir="bin"/>
+        <delete dir="downloads"/>
+        <delete dir="eggs"/>
+        <delete dir="build"/>
+        <delete file=".installed.cfg"/>
+        <delete dir="scion.egg-info"/>
+        <delete dir="${src}/scion.egg-info"/>
+    </target>
+
+
+    <target name="clone-defs" description="copies the scioncc defs to current app">
+        <property name="sciondefs"  location="extern/scioncc/defs"/>
+        <property name="defs"  location="defs"/>
+        <copy todir="${defs}">
+            <fileset dir="${sciondefs}"/>
+        </copy>
+    </target>
+
+</project>
