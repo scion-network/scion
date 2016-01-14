@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # Application system configuration template
-# for AgProX CI to build and run tests
+# for SciON to build and run tests
 # -----------------------------------------------------------------------------
 
 system:

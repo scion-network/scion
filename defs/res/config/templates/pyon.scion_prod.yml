@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # Application system configuration template
-# for AgProX production systems
+# for SciON production systems
 # -----------------------------------------------------------------------------
 
 system:
@@ -24,7 +24,7 @@ server:
     port: 5432
     username: %PG_USER%
     password: %PG_PASSWORD%
-    admin_username: master
+    admin_username: postgres
     admin_password: %PG_ADMIN_PASSWORD%
     default_database: postgres
     database: ion
