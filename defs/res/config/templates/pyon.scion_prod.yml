@@ -1,0 +1,77 @@
+# -----------------------------------------------------------------------------
+# Application system configuration template
+# for AgProX production systems
+# -----------------------------------------------------------------------------
+
+system:
+  load_policy: False
+  name: %SYSNAME%
+  web_ui_url: %WEB_UI_URL%
+
+server:
+  amqp:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  rabbit_manage:
+    port: 15672
+    username: guest
+    password: guest
+  postgresql:
+    type: postgresql
+    host: %PG_HOST%
+    port: 5432
+    username: %PG_USER%
+    password: %PG_PASSWORD%
+    admin_username: master
+    admin_password: %PG_ADMIN_PASSWORD%
+    default_database: postgres
+    database: ion
+    connection_pool_max: 5
+  smtp:
+    type: smtp
+    host: smtp.myhost.net
+    port: 25
+    sender: alerts@server.org
+    user: myusername
+    password: mypassword
+
+container:
+  messaging:
+    timeout:
+      receive: 30
+  objects:
+    validate:
+      interceptor: True
+      setattr: False
+  execution_engine:
+    name: default
+    deployment:
+      region: %DEPLOY_REGION%
+      availability_zone: %DEPLOY_AZ%
+      sub_zone: default
+    heartbeat:
+      enabled: True
+      publish_interval: 10
+    child_configs:
+      UI:
+        name_pattern: "Container-child-[1]"
+        name: ui
+      App:
+        name_pattern: "Container-child-[245678]"
+        name: app
+      Default:
+        name_pattern: "Container-child-[3]"
+        name: default
+  process:
+    log_exceptions: False
+    max_replicas: 0
+    use_process_dispatcher: False
+  filesystem:
+    root: /tmp/scion
+
+process:
+  admin_ui:
+    web_server:
+      port: %ADMIN_UI_SERVER_PORT%

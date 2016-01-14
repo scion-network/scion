@@ -1,0 +1,62 @@
+# -----------------------------------------------------------------------------
+# Application system configuration template
+# for AgProX CI to build and run tests
+# -----------------------------------------------------------------------------
+
+system:
+  load_policy: False
+  name: scionbuild
+
+server:
+  postgresql:
+    type: postgresql
+    host: localhost
+    port: 5432
+    username: ion
+    password: %PG_PASSWORD%
+    admin_username: postgres
+    admin_password: %PG_ADMIN_PASSWORD%
+    default_database: postgres
+    database: ion
+    connection_pool_max: 5
+  smtp:
+    type: smtp
+    host: smtp.myhost.net
+    port: 25
+    sender: alerts@server.org
+    user: myusername
+    password: mypassword
+
+container:
+  messaging:
+    timeout:
+      receive: 30
+  objects:
+    validate:
+      interceptor: True
+      setattr: True
+  execution_engine:
+    name: default
+    deployment:
+      region: default
+      availability_zone: default
+      sub_zone: default
+    heartbeat:
+      enabled: True
+      publish_interval: 10
+    child_configs:
+      UI:
+        name_pattern: "Container-child-[1]"
+        name: ui
+      App:
+        name_pattern: "Container-child-[245678]"
+        name: app
+      Default:
+        name_pattern: "Container-child-[3]"
+        name: default
+  process:
+    log_exceptions: False
+    max_replicas: 0
+    use_process_dispatcher: False
+  filesystem:
+    root: /tmp/scion
