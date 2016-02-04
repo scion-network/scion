@@ -1,0 +1,100 @@
+type: release
+name: scion
+version: 0.1
+description: Scientific Observatory Network
+ion: 2.0
+apps:
+  ##################################
+  # CORE SERVICES
+  # Bootstrap processes perform initializations
+  ##################################
+
+  - name: bootstrapper1
+    processapp: [bootstrapper1, ion.processes.bootstrap.bootstrapper, Bootstrapper]
+    bootlevel: 1
+    config:
+      bootstrap_plugins:
+        - plugin: [ion.processes.bootstrap.plugins.bootstrap_core, BootstrapCore]
+
+  - name: event_persister
+    processapp: [event_persister, ion.processes.event.event_persister, EventPersister]
+    bootlevel: 2
+
+  - name: resource_registry
+    processapp: [resource_registry, ion.services.resource_registry_service, ResourceRegistryService]
+    bootlevel: 5
+    replicas: 1
+
+  - name: system_management
+    processapp: [system_management, ion.services.system_management_service, SystemManagementService]
+    bootlevel: 5
+
+  - name: directory
+    processapp: [directory, ion.services.directory_service, DirectoryService]
+    bootlevel: 8
+
+  - name: identity_management
+    processapp: [identity_management, ion.services.identity_management_service, IdentityManagementService]
+    bootlevel: 8
+
+  - name: policy_management
+    processapp: [policy_management, ion.services.policy_management_service, PolicyManagementService]
+    bootlevel: 8
+
+  - name: exchange_management
+    processapp: [exchange_management, ion.services.exchange_management_service, ExchangeManagementService]
+    bootlevel: 8
+
+  - name: org_management
+    processapp: [org_management, ion.services.org_management_service, OrgManagementService]
+    bootlevel: 8
+
+  - name: bootstrapper2
+    processapp: [bootstrapper2, ion.processes.bootstrap.bootstrapper, Bootstrapper]
+    bootlevel: 9
+    config:
+      bootstrap_plugins:
+        - plugin: [ion.processes.bootstrap.plugins.bootstrap_org, BootstrapOrg]
+        - plugin: [ion.processes.bootstrap.plugins.bootstrap_exchange, BootstrapExchange]
+
+  ##################################
+  # HIGHER LEVEL SERVICES
+  ##################################
+
+  - name: resource_management
+    processapp: [resource_management, ion.services.resource_management_service, ResourceManagementService]
+    bootlevel: 10
+
+  - name: policy_bootstrap
+    processapp: [policy_bootstrap, ion.processes.bootstrap.bootstrapper, Bootstrapper]
+    bootlevel: 29
+    config:
+      bootstrap_plugins:
+        - plugin: [ion.processes.bootstrap.plugins.bootstrap_policy, BootstrapPolicy]
+
+  ##################################
+  # APPLICATION SERVICES
+  ##################################
+
+  - name: scion_management
+    processapp: [scion_management, scion.service.scion_management, ScionManagementService]
+    bootlevel: 40
+
+  ##################################
+  # DEMO DATA PRELOAD
+  ##################################
+
+  - name: bootstrapper_app
+    processapp: [bootstrapper_app, ion.processes.bootstrap.bootstrapper, Bootstrapper]
+    bootlevel: 41
+    config:
+      bootstrap_plugins:
+        - plugin: [scion.process.bootstrap.boot_preload, BootstrapPreload]
+
+  ##################################
+  # UI SERVER WITH SERVICE GATEWAY
+  ##################################
+
+  - name: ui_server
+    processapp: [ui_server, ion.processes.ui.server, UIServer]
+    bootlevel: 50

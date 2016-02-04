@@ -1,0 +1,79 @@
+name: scion_management
+
+docstring: |
+   Manages SciON users, organizations, assets and supporting resources.
+
+dependencies: [resource_registry, identity_management, org_management, resource_management]
+
+methods:
+
+  # ---------------------------------------------------------------------------
+  # SciON users
+
+  read_user:
+    docstring: Returns details for a user.
+    in:
+      #@UserContextId
+      user_id: ""
+    out:
+      user_info: {}
+    throws:
+      NotFound: object with specified id does not exist
+
+  define_user:
+    docstring: Create or updates a user with given attributes.
+    in:
+      first_name: ""
+      last_name: ""
+      username: ""
+      password: ""
+      email: ""
+      attributes: {}
+    out:
+    throws:
+      NotFound: object with specified id does not exist
+      BadRequest: user could not be created
+
+  update_user_contact:
+    docstring: Updates entire user contact information or individual contact entries
+    in:
+      #@UserContextId
+      user_id: ""
+      contact: !ContactInformation
+      contact_entries: {}
+    out:
+    throws:
+      BadRequest: arguments invalid or incomplete
+      NotFound: object with specified id does not exist
+
+  delete_user:
+    docstring: Deletes a user.
+    in:
+      #@UserContextId
+      user_id: ""
+    out:
+    throws:
+      NotFound: object with specified id does not exist
+
+  update_user_profile:
+    docstring: Updates individual entries in the user's profile (ActorIdentity.details.profile dict).
+    in:
+      #@UserContextId
+      user_id: ""
+      profile_entries: {}
+    out:
+    throws:
+      NotFound: object with specified id does not exist
+
+  get_user_profile:
+    doctring: |
+      Returns entries from the user's profile.
+      Returns only the settings entries with keys matching given settings_filter, if provided
+    in:
+      #@UserContextId
+      user_id: ""
+      settings_filter: []
+    out:
+      profile_entries: {}
+    throws:
+      NotFound: object with specified id does not exist

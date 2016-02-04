@@ -1,0 +1,20 @@
+# Preload file
+
+preload_type: steps
+
+actions:
+
+# -----------------------------------------------------------------------------
+# Users
+
+- action: resource:APP_ScionUser
+  id: USER_jdoe
+  resource:
+    details[UserIdentityDetails].contact.individual_names_given: John
+    details[UserIdentityDetails].contact.individual_name_family: Doe
+    details[UserIdentityDetails].contact.email: jdoe@hotmail.com
+    details[UserIdentityDetails].profile:
+      scion_init_pwdsalt: $2a$12$I3wcw9Ek7VI3Pe/eVx1SFO
+      scion_init_pwdhash: $2a$12$I3wcw9Ek7VI3Pe/eVx1SFOavjM.GaX7pVHoh5iQg3bFdHbs5KwtmS
+  username: jdoe
+  password: foo
