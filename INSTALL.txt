@@ -1,0 +1,74 @@
+===========================================================
+SciON - Scientific Observatory Network
+
+(C) Individual Contributors, 2015
+(C) The Regents of the University of California, 2015
+All rights reserved.
+===========================================================
+
+
+INSTALLATION
+============
+
+Install SciON capability container dependencies on a new Ubuntu VM:
+    Follow instructions in this file (after git submodule update):
+    See ./extern/scioncc/INSTALL
+    or https://github.com/scionrep/scioncc/blob/master/INSTALL
+    for basic dependencies to install on Mac OS or Ubuntu Linux.
+    Note: it is not required to install the scioncc code or virtualenv
+
+Setup a virtualenv:
+    > mkvirtualenv scion
+    > pip install --upgrade pip setuptools
+
+Clone this source code repository:
+    > cd ~/code   # Whereever your code repositories are
+    > git clone git@github.com:scion-network/scion
+    > cd scion
+    > git submodule update --init
+
+Use buildout to install the python package dependencies:
+    > python bootstrap.py -v 2.3.1
+    > bin/buildout
+    Note: if there are errors related to numpy or scipy, install these into
+    the virtualenv first and then run buildout again
+
+Optional: Install additional dependencies to run command line utils:
+    > bin/buildout install utils
+    # OR: Working against a parallel scioncc repository instead of submodule
+    > bin/buildout -c buildout_scion_local.cfg install utils
+
+Add current directory to PYTHONPATH (you can add this to your ~/.profile
+    or bash_profile):
+    > add2virtualenv .    # To add repo dir to virtualenv PYTHONPATH, OR:
+    > export PYTHONPATH=.
+
+Generate service definition interfaces and abstract base classes:
+    > bin/generate_interfaces
+    Note: These will be placed in the interfaces/ subdirectory.
+
+
+CONFIGURATION
+=============
+
+SciON container configuration
+-----------------------------
+
+Provide local configuration (e.g. host names, passwords) in:
+    > res/config/pyon.local.yml
+    Note: You can copy from res/config/examples. DO NOT EDIT the provided config files.
+
+    At the minimum, check and override the following config properties in pyon.local.yml:
+
+server:
+  postgresql:
+    username: ion
+    password: xxxx
+    admin_username: postgres            # If empty, defaults to current login username
+    admin_password: yyyy
+
+    Note: the sysname (system.name) is the cluster identifier. It is ok to run 2 system
+    instances on the same database, broker, host as log as the sysname is different.
+
+If desired, provide log level configuration override in:
+    > res/config/logging.local.yml
