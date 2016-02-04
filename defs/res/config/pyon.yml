@@ -282,6 +282,10 @@ process:
       port: 8080
     association_graph: False    # Show D3 graph of associations
     read_only: False            # Run in read-only mode
+    plugin: scion.ui.adminui_ext.AdminUIExtension
+    menu:
+      extensions:
+      - SciON,Instrument,Dataset
 
   ui_server:
     server:
@@ -305,7 +309,8 @@ process:
     service_gateway:
       enabled: True
       url_prefix: /service
-    extensions: []   # A list of fully qualified class names implementing the UIExtension interface
+    extensions:              # A list of fully qualified class names implementing the UIExtension interface
+    - scion.ui.scionui_ext.ScionUIExtension
 
 
 # ----------------------------------------------------------------------------------
