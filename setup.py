@@ -36,7 +36,7 @@ setup(  name='scion',
         author='Michael Meisinger',
         author_email='michael.meisinger@gmail.com',
         keywords=['scion'],
-        packages=find_packages('src') + find_packages('.') + find_packages(SCIONCC_SRC) if INCLUDE_SCIONCC else [],
+        packages=find_packages('src') + find_packages('.') + (find_packages(SCIONCC_SRC) if INCLUDE_SCIONCC else []),
         package_dir={'': 'src',
                      'interface': 'interface',
                      'defs': 'defs',
@@ -49,7 +49,7 @@ setup(  name='scion',
         package_data={
             '': ['*.yml', '*.txt', "*.xml", "*.html"] +
                 get_data_dirs("defs", ["*.yml", "*.sql", "*.xml", "*.json", "*.p12", "*.jpg"]) +
-                get_data_dirs(SCIONCC_SRC + "/ion/processes/ui", ["*.css", "*.js"]) if INCLUDE_SCIONCC else [],
+                (get_data_dirs(SCIONCC_SRC + "/ion/processes/ui", ["*.css", "*.js"]) if INCLUDE_SCIONCC else []),
         },
         dependency_links=[
         ],
