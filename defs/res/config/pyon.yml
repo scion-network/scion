@@ -51,7 +51,7 @@ bootstrap:
   set_bootmode: auto
 
   # Path to policy initialization rule set (YML file)
-  initial_policy_rules: res/config/policy/basic_policy_rules.yml
+  initial_policy_rules: res/config/policy/scion_policy_rules.yml
 
 
 # ----------------------------------------------------------------------------------
@@ -296,8 +296,8 @@ process:
     security:
       secret: ""                     # Server secret for cookie encryption
       session_timeout: 900           # Timeout in seconds
-      extend_session_timeout: False  # If True, reset session timeout on activity
-      max_session_validity: 0        # Maximum seconds since authentication
+      extend_session_timeout: True   # If True, reset session timeout on activity
+      max_session_validity: 86400    # Maximum seconds since authentication
       remember_user: True            # If True, maintain user_id/access_token in server session for resume
     oauth:
       enabled: True
@@ -351,7 +351,8 @@ service:
     strict_types: True       # Only accept types according to operation parameter schema, or try to coerce?
     require_login: True      # Must provide session or token and no anonymous access allowed
     token_from_session: False  # If True, allow a valid token from session instead
-    no_login_whitelist: []   # List of service operations that can be accessed anonymously: request/svc/op
+    no_login_whitelist:   # List of service operations that can be accessed anonymously: request/svc/op
+    - request/scion_management/register_user
     version_packages: scioncc   # Comma separated list of package names to show version for
     swagger_spec:
       enable: True           # Support generation of Swagger v2 service interfaces

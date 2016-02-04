@@ -1,0 +1,42 @@
+# Rule set for Scion system policies based on Orgs, roles and authenticated actors
+# Referenced rule definition files are relative to this directory if not absolute paths
+
+type: scioncc_policy_rules
+
+rules:
+
+- name: Superuser_Permit_Everything
+  policy_type: common_service_access
+  rule_def: rule_01_superuser_permit_everything.xml
+  description: A global policy rule that permits access to everything with the SUPERUSER role
+  ordinal: 1
+
+
+- name: SCION_Anonymous_Service_Operations
+  policy_type: service_access
+  service_name: scion_management
+  rule_def: rule_51_scion_anonymous_permits.xml
+  description: Permit these operations in the Scion Management Service to anonymous users
+  ordinal: 51
+
+- name: SCION_Deny_Non_Self
+  policy_type: service_access
+  service_name: scion_management
+  rule_def: rule_52_scion_deny_non_self.xml
+  description: Deny operations in the Scion Management Service if user context differs from current actor
+  ordinal: 52
+
+- name: SCION_User_Permits
+  policy_type: service_access
+  service_name: scion_management
+  rule_def: rule_53_scion_user_permits.xml
+  description: Permit these operations in the Scion Management Service to authenticated users
+  ordinal: 53
+
+
+- name: SCION_Deny_Everything
+  policy_type: common_service_access
+  rule_def: rule_99_scion_deny_everything.xml
+  description: A global policy rule that denies access to everything by default
+  comment: This rule has been modified to Deny for only specific services. Everything else will be allowed.
+  ordinal: 99
