@@ -139,3 +139,13 @@ class ScionManagementService(ScionManagementServiceBase):
         if settings_filter:
             profile_data = {k: v for k, v in profile_data.items() if k in settings_filter}
         return profile_data
+
+    # -------------------------------------------------------------------------
+
+    def find_instruments(self):
+        inst_objs, _ = self.rr.find_resources(RT.Instrument, id_only=False)
+        return inst_objs
+
+    def find_datasets(self):
+        dataset_objs, _ = self.rr.find_resources(RT.Dataset, id_only=False)
+        return dataset_objs

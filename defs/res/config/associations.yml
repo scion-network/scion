@@ -6,6 +6,12 @@
 # All entries must have a docstring!!!
 AssociationDefinitions:
 
+# SciON
+  - predicate: hasDataset
+    domain: [Instrument]
+    range: [Dataset]
+    docstring: References a dataset for an instrument
+
 # Resources
   - predicate: hasAttachment
     domain: [Resource]

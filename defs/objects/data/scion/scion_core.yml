@@ -1,0 +1,12 @@
+GeospatialArea:
+  # WKT defined area boundary
+  boundary: ""
+---
+
+Instrument: !Extends_AppResource
+  location: !GeospatialLocation
+  model_info: {}
+
+
+Dataset: !Extends_AppResource
+  schema_definition: {}

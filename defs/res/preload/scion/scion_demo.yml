@@ -18,3 +18,35 @@ actions:
       scion_init_pwdhash: $2a$12$I3wcw9Ek7VI3Pe/eVx1SFOavjM.GaX7pVHoh5iQg3bFdHbs5KwtmS
   username: jdoe
   password: foo
+
+- action: resource:Instrument
+  id: IN_sensor1
+  owner: USER_jdoe
+  resource:
+    name: Sensor 1
+    location[GeospatialLocation].latitude: 32.867079
+    location[GeospatialLocation].longitude: -117.257324
+
+- action: resource:Instrument
+  id: IN_sensor2
+  owner: USER_jdoe
+  resource:
+    name: Sensor 2
+    location[GeospatialLocation].latitude: 32.868285
+    location[GeospatialLocation].longitude: -117.252962
+
+- action: resource:Dataset
+  id: DS_sensor1
+  owner: USER_jdoe
+  resource:
+    name: Dataset Sensor 1
+  associations:
+  - FROM,IN_sensor1,hasDataset
+
+- action: resource:Dataset
+  id: DS_sensor2
+  owner: USER_jdoe
+  resource:
+    name: Dataset Sensor 2
+  associations:
+  - FROM,IN_sensor2,hasDataset

@@ -77,3 +77,29 @@ methods:
       profile_entries: {}
     throws:
       NotFound: object with specified id does not exist
+
+  # ---------------------------------------------------------------------------
+  # Instruments
+
+  find_instruments:
+    docstring: |
+      Returns matching instruments
+    in:
+    out:
+     instrument_list: []
+    throws:
+      BadRequest: arguments invalid or incomplete
+      NotFound: object with specified id does not exist
+
+  # ---------------------------------------------------------------------------
+  # Datasets
+
+  find_datasets:
+    docstring: |
+      Returns matching datasets
+    in:
+    out:
+     dataset_list: []
+    throws:
+      BadRequest: arguments invalid or incomplete
+      NotFound: object with specified id does not exist

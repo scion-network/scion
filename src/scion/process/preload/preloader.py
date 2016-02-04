@@ -122,3 +122,15 @@ class ScionLoader(ImmediateProcess, Preloader):
         res_obj.alt_ids += ['PRE:'+action_cfg[KEY_ID]]
         self.container.resource_registry.update(res_obj)
         self._register_id(action_cfg[KEY_ID], actor_id, res_obj)
+
+    def _load_resource_Instrument(self, action_cfg):
+        if action_cfg[KEY_ID] in self.resource_ids:
+            return
+        res_id = self.basic_resource_create(action_cfg, RT.Instrument, "resource_registry", "create", support_bulk=True)
+        self.basic_associations_create(action_cfg, action_cfg[KEY_ID], support_bulk=True)
+
+    def _load_resource_Dataset(self, action_cfg):
+        if action_cfg[KEY_ID] in self.resource_ids:
+            return
+        res_id = self.basic_resource_create(action_cfg, RT.Dataset, "resource_registry", "create", support_bulk=True)
+        self.basic_associations_create(action_cfg, action_cfg[KEY_ID], support_bulk=True)
