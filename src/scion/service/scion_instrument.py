@@ -23,3 +23,11 @@ class ScionInstrumentOps(ScionManagementServiceBase):
     def find_datasets(self):
         dataset_objs, _ = self.rr.find_resources(RT.Dataset, id_only=False)
         return dataset_objs
+
+    # -------------------------------------------------------------------------
+
+    def start_agent(self, asset_id='', arguments=None):
+        pass
+
+    def stop_agent(self, asset_id=''):
+        pass

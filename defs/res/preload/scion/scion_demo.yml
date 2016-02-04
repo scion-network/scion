@@ -32,8 +32,8 @@ actions:
   owner: USER_jdoe
   resource:
     name: Sensor 2
-    location[GeospatialLocation].latitude: 32.868285
-    location[GeospatialLocation].longitude: -117.252962
+    location[GeospatialLocation].latitude: 36.802557
+    location[GeospatialLocation].longitude: -121.788526
 
 - action: resource:Dataset
   id: DS_sensor1

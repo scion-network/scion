@@ -30,6 +30,7 @@ methods:
       email: ""
       attributes: {}
     out:
+      user_id: ""
     throws:
       NotFound: object with specified id does not exist
       BadRequest: user could not be created
@@ -86,10 +87,10 @@ methods:
       Returns matching instruments
     in:
     out:
-     instrument_list: []
+      instrument_list: []
     throws:
       BadRequest: arguments invalid or incomplete
-      NotFound: object with specified id does not exist
+
 
   # ---------------------------------------------------------------------------
   # Datasets
@@ -99,7 +100,31 @@ methods:
       Returns matching datasets
     in:
     out:
-     dataset_list: []
+      dataset_list: []
+    throws:
+      BadRequest: arguments invalid or incomplete
+
+  # ---------------------------------------------------------------------------
+  # Agents
+
+  start_agent:
+    docstring: |
+      Starts an agent based on a given resource (instrument or similar)
+    in:
+      asset_id: ""
+      arguments: {}
+    out:
+      process_id: ""
+    throws:
+      BadRequest: arguments invalid or incomplete
+      NotFound: object with specified id does not exist
+
+  stop_agent:
+    docstring: |
+      Stops an agent based on a given resource (instrument or similar or process)
+    in:
+      asset_id: ""
+    out:
     throws:
       BadRequest: arguments invalid or incomplete
       NotFound: object with specified id does not exist

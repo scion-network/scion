@@ -3,10 +3,29 @@ GeospatialArea:
   boundary: ""
 ---
 
+# Describes an agent for a device with initial configuration
+AgentInfo:
+  name: ""
+  config: {}
+
+# Describes a data packet emitted by an agent or data source on a stream
+PacketInfo:
+  name: ""
+  schema: {}
+---
+Packet:
+
+---
+
 Instrument: !Extends_AppResource
   location: !GeospatialLocation
   model_info: {}
+  #
+  agent_info: []
+  # Defines packets published by agents
+  packet_info: []
 
 
 Dataset: !Extends_AppResource
+  # Defines a dataset schema
   schema_definition: {}

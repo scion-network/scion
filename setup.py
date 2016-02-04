@@ -22,7 +22,7 @@ if sys.platform == 'darwin':
 VERSION = read("VERSION").strip()
 
 # Flag that includes ScionCC code in this egg
-INCLUDE_SCIONCC = True
+INCLUDE_SCIONCC = False
 # Relative path to ScionCC sources (in submodule)
 SCIONCC_SRC = "extern/scioncc/src"
 
