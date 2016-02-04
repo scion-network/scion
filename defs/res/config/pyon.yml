@@ -282,6 +282,7 @@ process:
       port: 8080
     association_graph: False    # Show D3 graph of associations
     read_only: False            # Run in read-only mode
+    url_prefix: "/admin"        # URL prefix for any content
     plugin: scion.ui.adminui_ext.AdminUIExtension
     menu:
       extensions:
