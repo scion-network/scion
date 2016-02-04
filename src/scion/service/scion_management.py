@@ -8,6 +8,7 @@ from pyon.util.containers import is_valid_identifier, parse_ion_ts, BASIC_VALID
 from ion.services.identity_management_service import IdentityUtils
 
 from scion.service.scion_base import ScionManagementServiceBase
+from scion.service.scion_instrument import ScionInstrumentOps
 
 from interface.objects import ActorIdentity, UserIdentityDetails, Credentials, ContactInformation
 from interface.objects import MediaResponse, ResourceVisibilityEnum
@@ -16,11 +17,14 @@ from interface.objects import MediaResponse, ResourceVisibilityEnum
 EMAIL_VALID = BASIC_VALID + "@.-"
 
 
-class ScionManagementService(ScionManagementServiceBase):
+class ScionManagementService(ScionInstrumentOps):
 
     def on_init(self):
         log.info("SciON Management service starting")
         ScionManagementServiceBase.on_init(self)
+
+        # Initialize helpers
+        ScionInstrumentOps._on_init(self)
 
 
     # -------------------------------------------------------------------------
@@ -140,12 +144,3 @@ class ScionManagementService(ScionManagementServiceBase):
             profile_data = {k: v for k, v in profile_data.items() if k in settings_filter}
         return profile_data
 
-    # -------------------------------------------------------------------------
-
-    def find_instruments(self):
-        inst_objs, _ = self.rr.find_resources(RT.Instrument, id_only=False)
-        return inst_objs
-
-    def find_datasets(self):
-        dataset_objs, _ = self.rr.find_resources(RT.Dataset, id_only=False)
-        return dataset_objs
