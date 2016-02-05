@@ -16,7 +16,21 @@ class AdminUIExtension(object):
         self.rr = Container.instance.resource_registry
 
     def system_commands(self, fragments):
-        pass
+        fragments.append(build_command("Reload access policy", "/cmd/sys_reload_policy"))
 
     def resource_commands(self, resource_id, restype, fragments):
         pass
+
+    def _process_cmd_sys_reload_policy(self, resource_id, res_obj=None):
+        policy_ids, _ = self.rr.find_resources(RT.Policy, id_only=True)
+        for pol_id in policy_ids:
+            self.rr.delete(pol_id)
+
+        from ion.processes.bootstrap.load_system_policy import LoadSystemPolicy
+        LoadSystemPolicy.op_load_system_policies(self.adminui)
+
+        new_policy_ids, _ = self.rr.find_resources(RT.Policy, id_only=True)
+
+        msg_text = "Deleted %s policies.<br>Added %s new policies.<br><br>OK." % (len(policy_ids), len(new_policy_ids))
+
+        return msg_text
