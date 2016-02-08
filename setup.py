@@ -65,6 +65,11 @@ setup(  name='scion',
         install_requires=[
             # NOTE: Install order is bottom to top! Lower level dependencies need to be down
             'yoyo-migrations==4.2.5',
+            'shapely==1.5.7',
+            #'pyproj==1.9.4',
+            #'tables==3.2.2',
+            'h5py==2.5.0',
+            'Cython==0.23.4',
 
             # Pin dependent libraries
             # Last (because dependencies installed first) scioncc with largest number of pinned dependencies
