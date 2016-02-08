@@ -26,6 +26,11 @@ actions:
     name: Sensor 1
     location[GeospatialLocation].latitude: 32.867079
     location[GeospatialLocation].longitude: -117.257324
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.vmmon.vmmon_plugin.VMMON_DataAgentPlugin
+        sampling_interval: 3
 
 - action: resource:Instrument
   id: IN_sensor2
@@ -38,6 +43,7 @@ actions:
 - action: resource:Dataset
   id: DS_sensor1
   owner: USER_jdoe
+  schema_def: ds_vmmon_main
   resource:
     name: Dataset Sensor 1
   associations:
@@ -46,6 +52,7 @@ actions:
 - action: resource:Dataset
   id: DS_sensor2
   owner: USER_jdoe
+  schema_def: ds_vmmon_main
   resource:
     name: Dataset Sensor 2
   associations:
