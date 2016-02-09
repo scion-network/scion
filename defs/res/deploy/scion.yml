@@ -92,6 +92,14 @@ apps:
         - plugin: [scion.process.bootstrap.boot_preload, BootstrapPreload]
 
   ##################################
+  # DATA INGESTION
+  ##################################
+
+  - name: ingestion_process
+    processapp: [ingestion_process, ion.processes.data.ingest.ingestion_process, IngestionProcess]
+    bootlevel: 45
+
+  ##################################
   # UI SERVER WITH SERVICE GATEWAY
   ##################################
 

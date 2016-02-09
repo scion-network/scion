@@ -30,7 +30,7 @@ class ScionInstrumentOps(ScionManagementServiceBase):
     def start_agent(self, asset_id='', arguments=None):
         asset_obj = self._validate_resource_id("asset_id", asset_id, RT.Instrument)
         if not asset_obj.agent_info:
-            raise BadRequest("Canot find agent information")
+            raise BadRequest("Cannot find agent information")
 
         log.info("Start agent for %s", asset_id)
         agent_info = asset_obj.agent_info[0]
@@ -43,4 +43,7 @@ class ScionInstrumentOps(ScionManagementServiceBase):
         return agent_pid
 
     def stop_agent(self, asset_id=''):
+        asset_obj = self._validate_resource_id("asset_id", asset_id, RT.Instrument)
         log.info("Stop agent for %s", asset_id)
+        agent_ctl = AgentControl(resource_id=asset_id)
+        agent_ctl.terminate_agent()

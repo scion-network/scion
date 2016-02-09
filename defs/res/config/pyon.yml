@@ -194,7 +194,7 @@ container:
   filesystem:
     root: /tmp                    # Content root parent (content root is subject to force_clean).
                                   # Entries for standard aliases (lower case) can map to local directories.
-    sci_data: ""                  # Define non-standard aliases and mappings on same level.
+                                  # Define non-standard aliases and mappings on same level.
 
   tracer:                         # Configures the tracer development tool (records messages and db access)
     enabled: False                # Toggle switch
@@ -313,6 +313,13 @@ process:
       url_prefix: /service
     extensions:              # A list of fully qualified class names implementing the UIExtension interface
     - scion.ui.scionui_ext.ScionUIExtension
+
+  ingestion_process:
+    stream_subscriptions:           # List of either stream names (str) or [XP, stream_name] tuples
+    - basic_streams
+    plugin: scion.process.data.ingestion_plugin.ScionIngestionPlugin
+    persist:
+      persistence_format: hdf5
 
 
 # ----------------------------------------------------------------------------------

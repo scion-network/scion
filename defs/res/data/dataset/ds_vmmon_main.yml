@@ -5,14 +5,19 @@ description: Schema for test VM monitor sensor dataset
 attributes:
   basic_shape: 1d_timeseries
   time_variable: time
+  persistence:
+    format: hdf5
+    layout: vars_combined
+    row_increment: 1000
 
 variables:
-  time:
+  - name: time
     base_type: ntp_time
-    storage_type:
-    units:
-    position: 1
-  cpu_load:
+    storage_dtype: u8
+    unit: ""
+    description: NTPv4 timestamp
+  - name: cpu_percent
     base_type: float
-    description: Air temperature
-    position: 2
+    storage_dtype: f4
+    unit: ""
+    description: CPU load percentage

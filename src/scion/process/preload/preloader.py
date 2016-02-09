@@ -139,3 +139,8 @@ class ScionLoader(ImmediateProcess, Preloader):
         res_id = self.basic_resource_create(action_cfg, RT.Dataset, "resource_registry", "create", support_bulk=True,
                                             set_attributes=dict(schema_definition=schema_def))
         self.basic_associations_create(action_cfg, action_cfg[KEY_ID], support_bulk=True)
+
+    def _load_action_StartAgent(self, action_cfg):
+        asset_id = action_cfg["asset_id"]
+        agent_res_id = self.resource_ids[asset_id]
+        self.scion_client.start_agent(agent_res_id)

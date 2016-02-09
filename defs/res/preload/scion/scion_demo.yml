@@ -31,6 +31,8 @@ actions:
       config:
         plugin: scion.agent.model.vmmon.vmmon_plugin.VMMON_DataAgentPlugin
         sampling_interval: 3
+        auto_streaming: True
+        stream_name: basic_streams
 
 - action: resource:Instrument
   id: IN_sensor2
@@ -57,3 +59,6 @@ actions:
     name: Dataset Sensor 2
   associations:
   - FROM,IN_sensor2,hasDataset
+
+- action: action:StartAgent
+  asset_id: IN_sensor1
