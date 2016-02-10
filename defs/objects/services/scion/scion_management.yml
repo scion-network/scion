@@ -104,6 +104,18 @@ methods:
     throws:
       BadRequest: arguments invalid or incomplete
 
+  get_asset_data:
+    docstring: |
+      Returns data for an asset such as an instrument
+    in:
+      asset_id: ""
+      data_format: ""
+      data_filter: {}
+    out:
+      data: {}
+    throws:
+      BadRequest: arguments invalid or incomplete
+
   # ---------------------------------------------------------------------------
   # Agents
 

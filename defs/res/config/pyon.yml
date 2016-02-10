@@ -369,6 +369,7 @@ service:
     - request/scion_management/register_user
     - request/scion_management/find_instruments
     - request/scion_management/find_datasets
+    - request/scion_management/get_asset_data
     version_packages: scioncc   # Comma separated list of package names to show version for
     swagger_spec:
       enable: True           # Support generation of Swagger v2 service interfaces

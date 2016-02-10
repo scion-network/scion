@@ -24,6 +24,7 @@ actions:
   owner: USER_jdoe
   resource:
     name: Sensor 1
+    description: A VM CPU monitor for testing purposes
     location[GeospatialLocation].latitude: 32.867079
     location[GeospatialLocation].longitude: -117.257324
     agent_info:
