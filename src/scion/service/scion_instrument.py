@@ -34,9 +34,9 @@ class ScionInstrumentOps(ScionManagementServiceBase):
 
         from ion.data.persist.hdf5_dataset import DatasetHDF5Persistence
         persistence = DatasetHDF5Persistence(dataset_obj._id, dataset_obj.schema_definition, "hdf5")
-        data_filter = dict(transpose_time=True, time_format="unix_millis", max_rows=1000)
-        data_filter.update(data_filter or {})
-        raw_data = persistence.get_data(data_filter=data_filter)
+        data_filter1 = dict(transpose_time=True, time_format="unix_millis", max_rows=1000)
+        data_filter1.update(data_filter or {})
+        raw_data = persistence.get_data(data_filter=data_filter1)
 
         data_info = dict(dataset_id=dataset_obj._id,
                          ts_generated=get_ion_ts(),

@@ -10,6 +10,7 @@ attributes:
     #layout: vars_combined
     layout: vars_individual
     row_increment: 1000
+    time_index_step: 1000
 
 variables:
   - name: time
