@@ -36,6 +36,9 @@
             <fileset dir="defs" includes="**/*.pyc"/>
             <fileset dir="." includes="*.pyc"/>
             <fileset dir="." includes=".coverage"/>
+            <fileset dir="." includes="cc-pid-*"/>
+            <fileset dir="." includes="gls-*"/>
+            <fileset dir="." includes="manhole-*"/>
         </delete>
         <delete dir="interface"/>
         <delete dir="${build}"/>
