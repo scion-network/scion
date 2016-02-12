@@ -49,7 +49,7 @@ setup(  name='scion',
         package_data={
             '': ['*.yml', '*.txt', "*.xml", "*.html"] +
                 get_data_dirs("defs", ["*.yml", "*.sql", "*.xml", "*.json", "*.p12", "*.jpg"]) +
-                (get_data_dirs(SCIONCC_SRC + "/ion/processes/ui", ["*.css", "*.js"]) if INCLUDE_SCIONCC else []),
+                (get_data_dirs(SCIONCC_SRC + "/ion/process/ui", ["*.css", "*.js"]) if INCLUDE_SCIONCC else []),
         },
         dependency_links=[
         ],

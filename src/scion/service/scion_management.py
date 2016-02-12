@@ -5,7 +5,7 @@ __author__ = 'Michael Meisinger'
 from pyon.public import log, CFG, BadRequest, EventPublisher, Conflict, Unauthorized, AssociationQuery, NotFound, PRED, OT, ResourceQuery, RT
 from pyon.util.containers import is_valid_identifier, parse_ion_ts, BASIC_VALID
 
-from ion.services.identity_management_service import IdentityUtils
+from ion.service.identity_management_service import IdentityUtils
 
 from scion.service.scion_base import ScionManagementServiceBase
 from scion.service.scion_instrument import ScionInstrumentOps

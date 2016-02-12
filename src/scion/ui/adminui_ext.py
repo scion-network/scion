@@ -4,7 +4,7 @@ __author__ = 'Michael Meisinger'
 
 from pyon.ion.resource import create_access_args
 from pyon.public import log, Container, PRED, RT, OT, ResourceQuery, AssociationQuery
-from ion.processes.ui.admin_ui import build_command, build_link, get_rr_access_args
+from ion.process.ui.admin_ui import build_command, build_link, get_rr_access_args
 
 from interface.services.scion.iscion_management import ScionManagementProcessClient
 
@@ -50,7 +50,7 @@ class AdminUIExtension(object):
         for pol_id in policy_ids:
             self.rr.delete(pol_id)
 
-        from ion.processes.bootstrap.load_system_policy import LoadSystemPolicy
+        from ion.process.bootstrap.load_system_policy import LoadSystemPolicy
         LoadSystemPolicy.op_load_system_policies(self.adminui)
 
         new_policy_ids, _ = self.rr.find_resources(RT.Policy, id_only=True)

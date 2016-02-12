@@ -2,7 +2,7 @@
 
 __author__ = 'Michael Meisinger'
 
-from ion.processes.data.ingest.ingestion_process import IngestionPlugin
+from ion.process.data.ingest.ingestion_process import IngestionPlugin
 from pyon.public import log, StandaloneProcess, BadRequest, CFG, StreamSubscriber, PRED, RT
 
 from interface.objects import StreamRoute, DataPacket, Instrument
