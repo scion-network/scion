@@ -42,6 +42,13 @@ actions:
     name: Sensor 2
     location[GeospatialLocation].latitude: 36.802557
     location[GeospatialLocation].longitude: -121.788526
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.sim01.sim01_plugin.SIM01_DataAgentPlugin
+        sampling_interval: 5
+        auto_streaming: True
+        stream_name: basic_streams
 
 - action: resource:Dataset
   id: DS_sensor1
@@ -55,7 +62,7 @@ actions:
 - action: resource:Dataset
   id: DS_sensor2
   owner: USER_jdoe
-  schema_def: ds_vmmon_main
+  schema_def: ds_sim01_main
   resource:
     name: Dataset Sensor 2
   associations:
@@ -63,3 +70,6 @@ actions:
 
 - action: action:StartAgent
   asset_id: IN_sensor1
+
+- action: action:StartAgent
+  asset_id: IN_sensor2

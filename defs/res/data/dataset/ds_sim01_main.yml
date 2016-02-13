@@ -1,0 +1,34 @@
+type: scion_data_schema_1
+
+description: Schema for test sine and random generator sensor dataset
+
+attributes:
+  basic_shape: 1d_timeseries
+  time_variable: time
+  persistence:
+    format: hdf5
+    layout: vars_individual
+    row_increment: 1000
+    time_index_step: 1000
+
+variables:
+  - name: time
+    base_type: ntp_time
+    storage_dtype: i8
+    unit: ""
+    description: NTPv4 timestamp
+  - name: wave1
+    base_type: float
+    storage_dtype: f8
+    unit: ""
+    description: Sine wave form
+  - name: wave2
+    base_type: float
+    storage_dtype: f8
+    unit: ""
+    description: Sine wave form
+  - name: random1
+    base_type: float
+    storage_dtype: f8
+    unit: ""
+    description: Random values
