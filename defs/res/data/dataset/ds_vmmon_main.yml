@@ -15,7 +15,7 @@ attributes:
 variables:
   - name: time
     base_type: ntp_time
-    storage_dtype: u8
+    storage_dtype: i8
     unit: ""
     description: NTPv4 timestamp
   - name: cpu_percent
