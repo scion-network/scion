@@ -55,3 +55,134 @@ Start SciON (note: -fc prepares a clean database):
 The same command without -fc restarts an existing system.
 
 Access the REST service gateway at http://localhost:4000/service
+
+
+USER INTERFACE
+==============
+
+The web UI for SciON is available at:
+    https://github.com/scion-network/scion_ui
+
+You can run it locally for development purposes, against a local scion backend.
+Please follow the instructions in:
+    https://github.com/scion-network/scion_ui/blob/master/README.txt
+    https://github.com/scion-network/scion_ui/blob/master/INSTALL.txt
+
+
+DEVELOPMENT
+===========
+
+To clean all generated files (including *.pyc) in case of errors, execute regularly:
+    > ant clean
+
+To clean queues off the RabbitMQ broker (-bc cleans and -X does not start a container):
+    > bin/pycc -bc -X
+
+To delete existing PostgreSQL databases:
+    > bin/clear_db scion
+
+To get the latest code:
+    > git fetch
+    > git checkout origin/master    # Alternatively: git pull origin master
+    > git submodule update
+
+In case of module not found errors when starting bin/pycc, try ant clean first,
+    and subsequently deleting/rebuilding the virtualenv and the buildout.
+    Sometimes it is useful to restart the RabbitMQ message broker
+
+Git submodule hooks (optional):
+    There is a helper git hook to work with submodules that asks to update
+    the submodule whenever you fetch/pull or commit.
+        http://blog.chaitanyagupta.com/2009/08/couple-of-hooks-to-make-life-easy-with.html
+
+    Setup like this:
+    > cd /some/tmp/directory
+    > git clone https://github.com/chaitanyagupta/gitutils.git
+    > sh gitutils/submodule-hooks/install.sh /path/to/your/gitrepo/dir
+
+    See more about submodules:
+    - http://book.git-scm.com/5_submodules.html
+    - http://speirs.org/blog/2009/5/11/understanding-git-submodules.html
+    - http://blog.endpoint.com/2010/04/git-submodule-workflow.html
+
+Development environment:
+    A good IDE is PyCharm (free community edition works). Just configure:
+    - Buildout Support: Enable buildout support by pointing at bin/pycc
+    - Project Structure: source root is ./src
+    - Project Structure: add content root extern/scioncc/src
+    - Python Interpreter: use the python binary from your virtualenv directory
+    - Python Debugger: Enable Gevent compatibility mode
+
+The container supports debuggers, e.g. with PyCharm (see above). Make sure to
+    start from repository root directory via bin/pycc script with arguments.
+
+RabbitMQ management interface (login as guest/guest):
+    http://localhost:15672
+
+Database inspection using psql tool (example):
+    psql postgres
+    \l
+    \c scion_ion
+    \dt+
+    \d ion_resources
+    select id,type_,name from ion_resources;
+    \q
+
+Using IPython with buildout:
+    > bin/ipython
+
+
+TEST
+====
+
+To run automated tests:
+    > bin/nosetests
+
+Test options (selection, can be combined):
+    > bin/nosetests -v      # List test names and status while running
+    > bin/nosetests -s      # Show console output while running
+
+You can run subsets of tests:
+    > bin/nosetests -a UNIT   # Unit tests only (mocked out backend dependencies)
+    > bin/nosetests -a INT    # Integration tests only (loads full service stack)
+    > bin/nosetests -a SMOKE  # Small cross-section of tests to quickly check function
+
+    > bin/nosetests scion.path.to.package  # Run a subset by code package
+    > bin/nosetests scion.path.to.package.module:TestClass.test_method  # Run a specific test
+
+You can run tests of ScionCC (not included by default):
+    > bin/nosetests pyon      # Container and core capabilities
+    > bin/nosetests ion       # Core services
+
+Code coverage.
+    See http://nedbatchelder.com/code/coverage for details, options etc.
+    > bin/coverage bin/nosetests   # Can run with any test
+    > bin/coverage report
+    > bin/coverage html
+
+
+DEPLOYMENT
+==========
+
+To create a distribution egg in ./dist:
+    > dist_version=`cat VERSION`
+    > ant clean_buildout
+    > python bootstrap.py -v 2.3.1
+    > bin/buildout
+    > bin/generate_interfaces
+    > bin/buildout setup . bdist_egg
+    > tar -zcvf dist/scion-${dist_version}_eggs.tar.gz eggs/
+
+    Note: if buildout is configured to cache, this does not package all necessary eggs!
+    You may need to manually copy the needed egg directories.
+    A complete list of all needed eggs can be found e.g. in bin/pycc
+    > ln -sf ~/.buildout/eggs/z*c.recipe* ./dist
+    > grep ~/.buildout/eggs bin/pycc | awk -F [/\'] '{print $8;}' | xargs -I{} ln -sf -t ./dist ~/.buildout/eggs/{}
+
+See ./misc/deploy for how to setup SciON as an Upstart daemon on Ubuntu or SystemD component on CentOS.
+
+The container can be run in the background without shell:
+    > bin/pycc -n -r res/deploy/scion.yml >/dev/null &
+
+Use a manhole shell to connect to a running container for the PID
+    > bin/manhole

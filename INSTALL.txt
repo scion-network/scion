@@ -14,7 +14,7 @@ Install SciON capability container dependencies on a new Ubuntu VM:
     Follow instructions in this file (after git submodule update):
     See ./extern/scioncc/INSTALL
     or https://github.com/scionrep/scioncc/blob/master/INSTALL
-    for basic dependencies to install on Mac OS or Ubuntu Linux.
+    for basic dependencies to install on Mac OS or Ubuntu/CentOS Linux.
     Note: it is not required to install the scioncc code or virtualenv
 
 Setup a virtualenv:
@@ -58,7 +58,8 @@ Provide local configuration (e.g. host names, passwords) in:
     > res/config/pyon.local.yml
     Note: You can copy from res/config/examples. DO NOT EDIT the provided config files.
 
-    At the minimum, check and override the following config properties in pyon.local.yml:
+    At the minimum, check and override the following config properties in pyon.local.yml
+    (for a MacOS installation, no changes should be necessary):
 
 server:
   postgresql:
@@ -68,7 +69,7 @@ server:
     admin_password: yyyy
 
     Note: the sysname (system.name) is the cluster identifier. It is ok to run 2 system
-    instances on the same database, broker, host as log as the sysname is different.
+    instances on the same database, broker, host as long as the sysname is different.
 
 If desired, provide log level configuration override in:
     > res/config/logging.local.yml
