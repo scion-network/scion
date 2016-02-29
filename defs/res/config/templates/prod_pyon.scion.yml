@@ -71,6 +71,7 @@ container:
     use_process_dispatcher: False
   filesystem:
     root: /tmp
+    scidata: /data/scion/scidata
 
 process:
   ui_server:

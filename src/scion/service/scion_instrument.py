@@ -4,7 +4,7 @@ __author__ = 'Michael Meisinger'
 
 from pyon.public import log, CFG, BadRequest, EventPublisher, Conflict, Unauthorized, AssociationQuery, NotFound, PRED, OT, ResourceQuery, RT, get_ion_ts
 
-from ion.agent.control import AgentControl
+from ion.agent.control import AgentControl, StreamingAgentClient
 from scion.service.scion_base import ScionManagementServiceBase
 
 
@@ -66,5 +66,11 @@ class ScionInstrumentOps(ScionManagementServiceBase):
     def stop_agent(self, asset_id=''):
         asset_obj = self._validate_resource_id("asset_id", asset_id, RT.Instrument)
         log.info("Stop agent for %s", asset_id)
-        agent_ctl = AgentControl(resource_id=asset_id)
-        agent_ctl.terminate_agent()
+        try:
+            agent_ctl = AgentControl(resource_id=asset_id)
+            agent_ctl.terminate_agent()
+        finally:
+            if StreamingAgentClient.is_agent_active(asset_id):
+                log.warn("Removing agent directory entry for %s", asset_id)
+            proc_id = StreamingAgentClient._get_agent_process_id(asset_id)
+            self.container.directory.unregister_safe("/Agents", proc_id)
