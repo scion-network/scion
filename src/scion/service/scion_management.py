@@ -35,9 +35,17 @@ class ScionManagementService(ScionInstrumentOps):
 
         return user_obj
 
-    def define_user(self, first_name='', last_name='', username='', password='', email='', attributes=None):
+    def register_user(self, first_name='', last_name='', username='', password='', email=''):
+        return self.define_user(first_name=first_name, last_name=last_name, username=username,
+                                password=password, email=email)
+
+    def define_user(self, user_id='', first_name='', last_name='', username='', password='',
+                    email='', attributes=None):
+        if user_id:
+            raise NotImplementedError("Update not supported")
         if not email:
             raise BadRequest('Email is required')
+        username = username or email
 
         user = self._get_user_by_email(email)
         if user:
@@ -144,3 +152,9 @@ class ScionManagementService(ScionInstrumentOps):
             profile_data = {k: v for k, v in profile_data.items() if k in settings_filter}
         return profile_data
 
+    def change_password(self, old_pwd='', new_pwd=''):
+        user_id = self._get_actor_id()
+        user_obj = self._validate_resource_id("user_id", user_id, RT.ActorIdentity)
+        self.idm_client.check_actor_credentials(user_obj.credentials[0].username, old_pwd)
+        IdentityUtils.check_password_policy(new_pwd)
+        self.idm_client.set_actor_credentials(user_id, user_obj.credentials[0].username , new_pwd)

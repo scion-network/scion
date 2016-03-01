@@ -20,9 +20,23 @@ methods:
     throws:
       NotFound: object with specified id does not exist
 
+  register_user:
+    docstring: Self register a user with given attributes.
+    in:
+      first_name: ""
+      last_name: ""
+      username: ""
+      password: ""
+      email: ""
+    out:
+      user_id: ""
+    throws:
+      BadRequest: user could not be created
+
   define_user:
     docstring: Create or updates a user with given attributes.
     in:
+      user_id: ""
       first_name: ""
       last_name: ""
       username: ""
@@ -78,6 +92,15 @@ methods:
       profile_entries: {}
     throws:
       NotFound: object with specified id does not exist
+
+  change_password:
+    docstring: Change user password.
+    in:
+      old_pwd: ""
+      new_pwd: ""
+    out:
+    throws:
+      NotFound: Invalid password
 
   # ---------------------------------------------------------------------------
   # Instruments

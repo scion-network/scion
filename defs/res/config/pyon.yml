@@ -307,7 +307,7 @@ process:
       remember_user: True            # If True, maintain user_id/access_token in server session for resume
     oauth:
       enabled: True
-      default_scope: scioncc
+      default_scope: scion
     service_gateway:
       enabled: True
       url_prefix: /service
