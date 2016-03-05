@@ -42,7 +42,7 @@ class ScionManagementService(ScionInstrumentOps):
     def define_user(self, user_id='', first_name='', last_name='', username='', password='',
                     email='', attributes=None):
         if user_id:
-            raise NotImplementedError("Update not supported")
+            raise NotImplementedError("Update not supported: user_id=%s" % user_id)
         if not email:
             raise BadRequest('Email is required')
         username = username or email

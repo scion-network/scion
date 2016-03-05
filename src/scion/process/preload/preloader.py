@@ -115,8 +115,9 @@ class ScionLoader(ImmediateProcess, Preloader):
         log.debug("Preload user '%s', alias=%s", username, user_alias)
 
         actor_id = self.scion_client.define_user(
-                actor_obj.details.contact.individual_names_given, actor_obj.details.contact.individual_name_family,
-                username, password, email=actor_obj.details.contact.email,
+                first_name=actor_obj.details.contact.individual_names_given,
+                last_name=actor_obj.details.contact.individual_name_family,
+                username=username, password=password, email=actor_obj.details.contact.email,
                 attributes=actor_obj.details.profile)
         self.scion_client.update_user_contact(actor_id, actor_obj.details.contact)
 
