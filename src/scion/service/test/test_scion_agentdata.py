@@ -83,13 +83,13 @@ class TestScionAgentData(IonIntegrationTestCase):
             self.recv_rows += len(packet.data["data"])
             log.info("Received data packet #%s: rows=%s, cols=%s", len(self.recv_packets), len(packet.data["data"]),
                      packet.data["cols"])
-        self.stream_sub = StreamSubscriber(process=self.scion_proc, stream="basic_streams", callback=process_packet_cb)
-        self.stream_sub.start()
-
         def cleanup_stream_sub():
             if self.stream_sub:
                 self.stream_sub.stop()
                 self.stream_sub = None
+
+        self.stream_sub = StreamSubscriber(process=self.scion_proc, stream="basic_streams", callback=process_packet_cb)
+        self.stream_sub.start()
 
         self.addCleanup(cleanup_stream_sub)
 
@@ -130,6 +130,15 @@ class TestScionAgentData(IonIntegrationTestCase):
 
         self.assertGreaterEqual(len(self.recv_packets), self.recv_rows)
         self.assertLessEqual(abs(self.recv_rows - num_rows_t2), 2)
+
+        # Take down agent
+        sac.stop_streaming()  # Not required to stop agent, just to test here
+        agent_status = sac.get_status()
+        self.assertEquals(agent_status["current_state"], StreamingAgent.AGENTSTATE_CONNECTED)
+
+        sac.disconnect()
+        agent_status = sac.get_status()
+        self.assertEquals(agent_status["current_state"], StreamingAgent.AGENTSTATE_INITIALIZED)
 
         self.scion_client.stop_agent(inst_id)
 
