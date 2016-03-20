@@ -50,6 +50,21 @@ actions:
         auto_streaming: True
         stream_name: basic_streams
 
+- action: resource:Instrument
+  id: IN_sensor_3
+  owner: USER_jdoe
+  resource:
+    name: Sensor 3
+    location[GeospatialLocation].latitude: 42.867079
+    location[GeospatialLocation].longitude: -127.257324
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        sampling_interval: 0.5
+        auto_streaming: True
+        stream_name: basic_streams
+
 - action: resource:Dataset
   id: DS_sensor1
   owner: USER_jdoe
