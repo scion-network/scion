@@ -9,7 +9,7 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
 
 
     def on_start_streaming(self,streaming_args):
-      log.info('Orb_DataAgentPlugin..on_start_streaming'
+      log.info('Orb_DataAgentPlugin..on_start_streaming')
       self.streaming_args = streaming_args
       cmd_args = ['/opt/antelope/5.5/bin/python', './orbstart.py', streaming_args['orb_name'], streaming_args['select']]
       if 'reject' in streaming_args:
