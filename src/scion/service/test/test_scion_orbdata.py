@@ -62,7 +62,7 @@ class TestScionOrbAgentData(IonIntegrationTestCase):
         # Create dataset
         """
         schema_def = DataSchemaParser.parse_schema_ref("ds_vmmon_main")
-        ds_obj = Dataset(name="Dataset Sensor 1",
+        ds_obj = Dataset(name="Dataset Sensor 3",
                          schema_definition=schema_def)
         ds_id, _ = self.rr.create(ds_obj, actor_id=actor_id)
 
