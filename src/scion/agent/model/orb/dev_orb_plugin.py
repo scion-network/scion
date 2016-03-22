@@ -47,7 +47,7 @@ class OrbPluginPrototype():
   def on_start_streaming(self,streaming_args):
     print 'OrbPluginPrototype.on_start_streaming'
     self.streaming_args = streaming_args
-    cmd_args = ['/opt/antelope/5.5/bin/python', './orbstart.py', streaming_args['orb_name'], streaming_args['select']]
+    cmd_args = ['orb_reap', './orbstart.py', streaming_args['orb_name'], streaming_args['select']]
     if 'reject' in streaming_args:
       cmd_args.append('--reject').append(streaming_args['reject'])
     if 'after' in streaming_args:
@@ -57,7 +57,7 @@ class OrbPluginPrototype():
     if 'qsize' in streaming_args:
       cmd_args.append('--qsize').append(streaming_args['qsize'])
     print str(cmd_args)
-    self.proc = subprocess.Popen(cmd_args)
+    self.proc = subprocess.Popen(cmd_args, executable='/opt/antelope/5.5/bin/python')
     print 'Orb reap process started, ', self.proc.pid
     self.data_dir = '/tmp/scion-data/%s/' % (streaming_args['select'].replace('/','-'))
 

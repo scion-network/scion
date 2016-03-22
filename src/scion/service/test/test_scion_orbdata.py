@@ -110,15 +110,22 @@ class TestScionOrbAgentData(IonIntegrationTestCase):
         agent_status = sac.get_status()
         self.assertEquals(agent_status["current_state"], StreamingAgent.AGENTSTATE_INITIALIZED)
 
-        """
         sac.connect()
         agent_status = sac.get_status()
         self.assertEquals(agent_status["current_state"], StreamingAgent.AGENTSTATE_CONNECTED)
 
-        sac.start_streaming()
+        # Coming in from the agent config.
+        streaming_args = { 
+            'orb_name' : 'taexport.ucsd.edu:usarrayTA',
+            #'select' : 'TA_109C/MGENC/M40',
+            'select' : 'TA_121A/MGENC/M40',
+            '--timeout' : 5,
+            'sample_interval' : 5 
+        }
+
+        sac.start_streaming(streaming_args)
         agent_status = sac.get_status()
         self.assertEquals(agent_status["current_state"], StreamingAgent.AGENTSTATE_STREAMING)
-        """
 
         # Retrieve data
         """
@@ -142,11 +149,9 @@ class TestScionOrbAgentData(IonIntegrationTestCase):
         """
 
         # Take down agent
-        """
         sac.stop_streaming()  # Not required to stop agent, just to test here
         agent_status = sac.get_status()
         self.assertEquals(agent_status["current_state"], StreamingAgent.AGENTSTATE_CONNECTED)
-        """
 
         sac.disconnect()
         agent_status = sac.get_status()
