@@ -127,6 +127,8 @@ class TestScionOrbAgentData(IonIntegrationTestCase):
         agent_status = sac.get_status()
         self.assertEquals(agent_status["current_state"], StreamingAgent.AGENTSTATE_STREAMING)
 
+        gevent.sleep(20)
+
         # Retrieve data
         """
         gevent.sleep(1)

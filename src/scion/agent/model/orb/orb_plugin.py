@@ -7,11 +7,10 @@ from ion.agent.data_agent import DataAgentPlugin
 
 class Orb_DataAgentPlugin(DataAgentPlugin):
 
-
     def on_start_streaming(self,streaming_args):
       log.info('Orb_DataAgentPlugin..on_start_streaming: args %s' % str(streaming_args))
       self.streaming_args = streaming_args
-      cmd_args = ['orb_reap', './orbstart.py', streaming_args['orb_name'], streaming_args['select']]
+      cmd_args = ['orb_reap', 'src/scion/agent/model/orb/orbstart.py', streaming_args['orb_name'], streaming_args['select']]
       if 'reject' in streaming_args:
         cmd_args.append('--reject').append(streaming_args['reject'])
       if 'after' in streaming_args:
