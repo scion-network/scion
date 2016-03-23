@@ -96,8 +96,6 @@ def orb_start(orbname, select=None, reject=None, after=-1, timeout=-1, queuesize
         pkt_data = parse_packet(orbpkt)
         if not data_dir:
           data_dir = '/tmp/scion-data/%s/' % srcname.replace('/','-')
-          if os.path.exists(data_dir):
-            shutil.rmtree(data_dir)
           os.makedirs(data_dir)
         fpath = '/tmp/scion-data/%s/pkt_%i.json' % (srcname.replace('/','-'), pktid)
         print 'writing packet %s' % fpath

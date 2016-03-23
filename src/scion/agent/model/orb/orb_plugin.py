@@ -1,5 +1,6 @@
 import os
 import subprocess
+import shutil
 
 from pyon.public import log
 from ion.agent.data_agent import DataAgentPlugin
@@ -20,9 +21,11 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
       if 'qsize' in streaming_args:
         cmd_args.append('--qsize').append(streaming_args['qsize'])
       log.info('Orb reap args: ' + str(cmd_args))
+      self.data_dir = '/tmp/scion-data/%s/' % (streaming_args['select'].replace('/','-'))
+      if os.path.exists(self.data_dir):
+        shutil.rmtree(self.data_dir)
       self.proc = subprocess.Popen(cmd_args, executable='/opt/antelope/5.5/bin/python')
       log.info('Orb reap process started, %i' % self.proc.pid)
-      self.data_dir = '/tmp/scion-data/%s/' % (streaming_args['select'].replace('/','-'))
 
     def on_stop_streaming(self):
       log.info('Orb_DataAgentPlugin.on_stop_streaming')
@@ -34,18 +37,16 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
 
     def acquire_samples(self):
       log.info('Orb_DataAgentPlugin.acquire_samples') 
-      #if os.path.exists(self.data_dir):
-      #  files = os.listdir(self.data_dir)
-      #  print 'Samples present: '
-      #  for f in files:
-      #    fpath = self.data_dir + f 
-      #    print fpath
+      if os.path.exists(self.data_dir):
+        files = os.listdir(self.data_dir)
+        for f in files:
+          fpath = self.data_dir + f 
+          log.info('sample: ' + fpath)
 
     """
     Sample return format.
     {'data': [['\xda\x99z\x1d\x13[@\x00', 3.2]], 'cols': ['time', 'cpu_percent']}
     """
-
 
     """
     def acquire_samples(self, max_samples=0):
