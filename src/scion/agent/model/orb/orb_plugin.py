@@ -1,6 +1,7 @@
 import os
 import subprocess
 import shutil
+import json
 
 from pyon.public import log
 from ion.agent.data_agent import DataAgentPlugin
@@ -41,8 +42,12 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
         files = os.listdir(self.data_dir)
         for f in files:
           fpath = self.data_dir + f 
-          log.info('sample: ' + fpath)
-
+          with open(fpath) as fh:
+            pkt = json.load(fh)
+            fh.close()
+            os.remove(fpath)
+            log.info('sample: ' + fpath)
+            #log.info(str(pkt))
     """
     Sample return format.
     {'data': [['\xda\x99z\x1d\x13[@\x00', 3.2]], 'cols': ['time', 'cpu_percent']}

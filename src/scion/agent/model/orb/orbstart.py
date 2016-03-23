@@ -51,7 +51,8 @@ def parse_packet(pkt):
     channel['chan'] = c.chan
     channel['cuser1'] = c.cuser1
     channel['cuser2'] = c.cuser2
-    channel['data'] = 'array of int or float data'
+    #channel['data'] = 'array of int or float data'
+    channel['data'] = c.data
     channel['duser1'] = c.duser1
     channel['duser2'] = c.duser2
     channel['iuser1'] = c.iuser1
