@@ -1,0 +1,57 @@
+type: scion_data_schema_mgenc_m40
+
+description: Schema for ORB MGENC M40 packet data
+
+attributes:
+  basic_shape: 1d_timeseries
+  time_variable: time
+  persistence:
+    format: hdf5
+    layout: vars_individual
+    row_increment: 1000
+    time_index_step: 1000
+
+variables:
+  - name: time
+    base_type: ntp_time
+    storage_dtype: f8
+    unit: ""
+    description: epoch timestamp
+  - name: BHZ
+    base_type: int 
+    storage_dtype: 400u2
+    unit: ""
+    description: Array of samples in period as integer deltas, up-down
+    packing:
+      shape: 1d
+      type: fixed_sampling_rate
+      samples_period: 10.0 
+      description: Sample array for 10 sec with fixed time increments
+    attributes:
+      seg_type: 'V'
+  - name: BHN
+    base_type: int 
+    storage_dtype: 400u2
+    unit: "" 
+    description: Array of samples in period as integer deltas, North-South
+    packing:
+      shape: 1d
+      type: fixed_sampling_rate
+      samples_period: 10.0 
+      description: Sample array for 10 sec with fixed time increments
+    attributes:
+      seg_type: 'V'
+   - name: BHE
+    base_type: int 
+    storage_dtype: 400u2
+    unit: ""  
+    description: Array of samples in period as integer deltas, East-West
+    packing:
+      shape: 1d
+      type: fixed_sampling_rate
+      samples_period: 10.0 
+      description: Sample array for 10 sec with fixed time increments
+    attributes:
+      seg_type: 'V'
+ 
+
