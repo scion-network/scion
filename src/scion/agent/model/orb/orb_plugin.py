@@ -5,7 +5,7 @@ import json
 
 from pyon.public import log
 from ion.agent.data_agent import DataAgentPlugin
-
+from ion.util.ntp_time import NTP4Time
 
 class Orb_DataAgentPlugin(DataAgentPlugin):
 
@@ -40,6 +40,8 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
       log.info('Orb_DataAgentPlugin.acquire_samples') 
       if os.path.exists(self.data_dir):
         files = os.listdir(self.data_dir)
+        cols = []
+        rows = []
         for f in files:
           fpath = self.data_dir + f 
           with open(fpath) as fh:
@@ -47,23 +49,25 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
             fh.close()
             os.remove(fpath)
             log.info('sample: ' + fpath)
-            #log.info(str(pkt))
-    """
-    Sample return format.
-    {'data': [['\xda\x99z\x1d\x13[@\x00', 3.2]], 'cols': ['time', 'cpu_percent']}
-    """
+            if not cols:
+              cols = [c['chan'] for c in pkt['channels']]
+            rows.append(self._extract_row(pkt,cols))
+      
+        if cols:
+          cols.append('time')
+          samples = dict(cols=cols, data=rows)
+          return samples
 
-    """
-    def acquire_samples(self, max_samples=0):
-
-        sample = [NTP4Time.utcnow().to_ntp64(), psutil.cpu_percent()]
-
-        sample_desc = dict(cols=["time", "cpu_percent"],
-                           data=[sample])
-
-        #log.info("vmmon sample returning: %s" % str(sample_desc))
-        return sample_desc
-    """
+    def _extract_row(self, pkt, cols):
+      row = []
+      for c in cols:
+        for ch in pkt['channels']:
+          if ch['chan'] == c:
+            row.extend(ch['data'])
+            break
+      orbtime = pkt['channels'][0]['time']
+      row.append(NTP4Time(orbtime).to_ntp64())
+      return row
 
 
 
