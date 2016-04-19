@@ -1,4 +1,4 @@
-type: scion_data_schema_mgenc_m40
+type: scion_data_schema_1
 
 description: Schema for ORB MGENC M40 packet data
 
@@ -14,7 +14,7 @@ attributes:
 variables:
   - name: time
     base_type: ntp_time
-    storage_dtype: f8
+    storage_dtype: i8
     unit: ""
     description: epoch timestamp
   - name: BHZ
@@ -41,7 +41,7 @@ variables:
       description: Sample array for 10 sec with fixed time increments
     attributes:
       seg_type: 'V'
-   - name: BHE
+  - name: BHE
     base_type: int 
     storage_dtype: 400u2
     unit: ""  
