@@ -50,7 +50,7 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
             os.remove(fpath)
             log.info('sample: ' + fpath)
             if not cols:
-              cols = [c['chan'] for c in pkt['channels']]
+              cols = [str(c['chan']) for c in pkt['channels']]
             rows.append(self._extract_row(pkt,cols))
       
         if cols:
