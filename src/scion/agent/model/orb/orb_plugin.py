@@ -54,8 +54,12 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
             rows.append(self._extract_row(pkt,cols))
       
         if cols:
+          coltypes = {}
+          for c in cols:
+            coltypes[c] = '400u2'
           cols.append('time')
-          samples = dict(cols=cols, data=rows)
+          samples = dict(cols=cols, data=rows, coltypes=coltypes)
+
           return samples
 
     def _extract_row(self, pkt, cols):
@@ -63,7 +67,7 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
       for c in cols:
         for ch in pkt['channels']:
           if ch['chan'] == c:
-            row.extend(ch['data'])
+            row.append(tuple(ch['data']))
             break
       orbtime = pkt['channels'][0]['time']
       row.append(NTP4Time(orbtime).to_ntp64())
