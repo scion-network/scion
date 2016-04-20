@@ -60,8 +60,7 @@ class TestScionOrbAgentData(IonIntegrationTestCase):
         inst_id, _ = self.rr.create(inst_obj, actor_id=actor_id)
 
         # Create dataset
-        """
-        schema_def = DataSchemaParser.parse_schema_ref("ds_vmmon_main")
+        schema_def = DataSchemaParser.parse_schema_ref("ds_orb_mgenc_m40")
         ds_obj = Dataset(name="Dataset Sensor 3",
                          schema_definition=schema_def)
         ds_id, _ = self.rr.create(ds_obj, actor_id=actor_id)
@@ -74,7 +73,6 @@ class TestScionOrbAgentData(IonIntegrationTestCase):
         inst_data_t0 = self.scion_client.get_asset_data(inst_id)
         self.assertEquals(inst_data_t0["dataset_id"], ds_id)
         self.assertEquals(inst_data_t0["num_rows"], 0)
-        """
 
         # Install a data packet catcher
         """
