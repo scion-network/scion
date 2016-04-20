@@ -75,7 +75,6 @@ class TestScionOrbAgentData(IonIntegrationTestCase):
         self.assertEquals(inst_data_t0["num_rows"], 0)
 
         # Install a data packet catcher
-        """
         self.recv_packets, self.recv_rows = [], 0
         def process_packet_cb(packet, route, stream):
             if not isinstance(packet, DataPacket):
@@ -94,7 +93,6 @@ class TestScionOrbAgentData(IonIntegrationTestCase):
         self.stream_sub.start()
         
         self.addCleanup(cleanup_stream_sub)
-        """
 
         # Start agent
         self.assertFalse(StreamingAgentClient.is_agent_active(inst_id))
