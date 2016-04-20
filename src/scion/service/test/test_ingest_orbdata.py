@@ -53,7 +53,7 @@ class TestIngestOrbData(IonIntegrationTestCase):
         data_filename = os.path.join(os.path.split(__file__)[0], "testdata/orb_replay_data.yml")
         agent_info=[dict(agent_type="data_agent",
                          config=dict(plugin="scion.agent.model.orb.orb_replay_plugin.ORBReplay_DataAgentPlugin",
-                                     sampling_interval=0.5, stream_name="basic_streams",
+                                     sampling_interval=0.2, stream_name="basic_streams",
                                      replay_file=data_filename, replay_scenario="basic",
                                      auto_streaming=False))]
         inst_obj = Instrument(name="ORB Sensor 1", description="Seismic stream",
@@ -102,23 +102,18 @@ class TestIngestOrbData(IonIntegrationTestCase):
         self.assertEquals(agent_status["current_state"], StreamingAgent.AGENTSTATE_STREAMING)
 
         # Retrieve data
-        gevent.sleep(1)
+        gevent.sleep(1.5)
         self.assertTrue(os.path.exists(ds_filename))
-
-        inst_data_t1 = self.scion_client.get_asset_data(inst_id)
-        self.assertEquals(inst_data_t1["dataset_id"], ds_id)
-        self.assertEquals(inst_data_t1["variables"], ['time', 'sample_vector'])
-        self.assertIn("sample_vector", inst_data_t1["data"])
-        num_rows_t1 = inst_data_t1["num_rows"]
-        self.assertGreaterEqual(num_rows_t1, 2)
-
-        gevent.sleep(1)
         inst_data_t2 = self.scion_client.get_asset_data(inst_id)
-        num_rows_t2 = inst_data_t2["num_rows"]
-        self.assertGreater(num_rows_t2, num_rows_t1)
+        print "T2", inst_data_t2
 
-        self.assertGreaterEqual(len(self.recv_packets), self.recv_rows)
-        self.assertLessEqual(abs(self.recv_rows - num_rows_t2), 2)
+        num_rows_t2 = inst_data_t2["num_rows"]
+        self.assertEquals(num_rows_t2, 40)
+        sample_data = inst_data_t2["data"]["sample_vector"]
+        self.assertEquals(sample_data[0][1], 100)
+        self.assertEquals(sample_data[39][1], 409)
+        self.assertEquals(sample_data[1][0] - sample_data[0][0], 100)
+        self.assertEquals(sample_data[39][0] - sample_data[0][0], 3900)
 
         # Take down agent
         sac.stop_streaming()  # Not required to stop agent, just to test here
