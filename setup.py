@@ -67,8 +67,10 @@ setup(  name='scion',
             'yoyo-migrations==4.2.5',
             'shapely==1.5.7',
             #'pyproj==1.9.4',
-            #'tables==3.2.2',
             'h5py==2.5.0',
+            'obspy==1.0.1',
+            'matplotlib==1.4.3',
+            'scipy==0.16.0',
             'Cython==0.23.4',
 
             # Pin dependent libraries

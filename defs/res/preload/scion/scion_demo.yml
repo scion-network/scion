@@ -51,7 +51,7 @@ actions:
         stream_name: basic_streams
 
 - action: resource:Instrument
-  id: IN_sensor_3
+  id: IN_sensor3
   owner: USER_jdoe
   resource:
     name: Sensor 3
@@ -64,6 +64,10 @@ actions:
         sampling_interval: 0.5
         auto_streaming: True
         stream_name: basic_streams
+        orb_name: taexport.ucsd.edu:usarrayTA
+        select: TA_121A/MGENC/M40
+        '--timeout': 5
+        sample_interval: 5
 
 - action: resource:Dataset
   id: DS_sensor1
@@ -73,6 +77,15 @@ actions:
     name: Dataset Sensor 1
   associations:
   - FROM,IN_sensor1,hasDataset
+
+- action: resource:Dataset
+  id: DS_sensor3
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor 3
+  associations:
+  - FROM,IN_sensor3,hasDataset
 
 - action: resource:Dataset
   id: DS_sensor2
@@ -88,3 +101,6 @@ actions:
 
 - action: action:StartAgent
   asset_id: IN_sensor2
+
+#- action: action:StartAgent
+#  asset_id: IN_sensor3
