@@ -9,7 +9,7 @@ attributes:
     format: hdf5
     layout: vars_individual
     row_increment: 1000
-    time_index_step: 1000
+    time_index_step: 100000
 
 variables:
   - name: time

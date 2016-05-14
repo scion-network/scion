@@ -121,3 +121,25 @@ class TestIngestOrbData(IonIntegrationTestCase):
         self.scion_client.stop_agent(inst_id)
 
         self.assertFalse(StreamingAgentClient.is_agent_active(inst_id))
+
+        inst_data = self.scion_client.get_asset_data(inst_id, data_filter=dict(max_rows=20))
+        self.assertEquals(len(inst_data["data"]["sample_vector"]), 20)
+        self.assertEquals(inst_data["data"]["sample_vector"][0][1], 300)
+
+        inst_data = self.scion_client.get_asset_data(inst_id, data_filter=dict(start_time="1460694001000"))
+        self.assertEquals(len(inst_data["data"]["sample_vector"]), 30)
+        self.assertEquals(inst_data["data"]["sample_vector"][0][1], 200)
+
+        # Note: Time filter applies before expansion
+        inst_data = self.scion_client.get_asset_data(inst_id, data_filter=dict(start_time="1460694001000", start_time_include=False))
+        self.assertEquals(len(inst_data["data"]["sample_vector"]), 20)
+        self.assertEquals(inst_data["data"]["sample_vector"][0][1], 300)
+
+        inst_data = self.scion_client.get_asset_data(inst_id, data_filter=dict(start_time="1460694001000", max_rows=10))
+        self.assertEquals(len(inst_data["data"]["sample_vector"]), 10)
+        self.assertEquals(inst_data["data"]["sample_vector"][0][1], 400)
+
+        inst_data = self.scion_client.get_asset_data(inst_id, data_filter=dict(start_time="1460694001000", end_time="1460694002000"))
+        print inst_data
+        self.assertEquals(len(inst_data["data"]["sample_vector"]), 20)
+        self.assertEquals(inst_data["data"]["sample_vector"][0][1], 200)

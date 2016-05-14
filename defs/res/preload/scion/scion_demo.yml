@@ -23,8 +23,8 @@ actions:
   id: IN_sensor1
   owner: USER_jdoe
   resource:
-    name: Sensor 1
-    description: A VM CPU monitor for testing purposes
+    name: VM Monitor
+    description: Monitors CPU load percent on current VM
     location[GeospatialLocation].latitude: 32.867079
     location[GeospatialLocation].longitude: -117.257324
     agent_info:
@@ -39,7 +39,8 @@ actions:
   id: IN_sensor2
   owner: USER_jdoe
   resource:
-    name: Sensor 2
+    name: Sensor Simulator
+    description: Emits 3 simulated variables, random and sine wave
     location[GeospatialLocation].latitude: 36.802557
     location[GeospatialLocation].longitude: -121.788526
     agent_info:
@@ -54,7 +55,8 @@ actions:
   id: IN_sensor3
   owner: USER_jdoe
   resource:
-    name: Sensor 3
+    name: TA121A Seismometer
+    description: Transportable Array seismic station TA121A (New Mexico near Silver City)
     location[GeospatialLocation].latitude: 42.867079
     location[GeospatialLocation].longitude: -127.257324
     agent_info:
