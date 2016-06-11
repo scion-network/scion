@@ -1,0 +1,46 @@
+type: scion_data_schema_1
+
+description: Schema for CDIP buoy sensor dataset
+
+attributes:
+  basic_shape: 1d_timeseries
+  time_variable: time
+  persistence:
+    format: hdf5
+    layout: vars_individual
+    row_increment: 1000
+    time_index_step: 1000
+
+variables:
+  - name: time
+    base_type: ntp_time
+    storage_dtype: i8
+    unit: ""
+    description: NTPv4 timestamp
+  - name: Hs
+    base_type: float
+    storage_dtype: f8
+    unit: "meters"
+    description: Significant wave height
+  - name: Tp
+    base_type: float
+    storage_dtype: f8
+    unit: "seconds"
+    description: Peak wave period
+  - name: Dp
+    base_type: int
+    storage_dtype: i4
+    unit: "degrees"
+    description: Peak wave direction
+  - name: Ta
+    base_type: float
+    storage_dtype: f8
+    unit: "seconds"
+    description: Average wave period
+  - name: Temp
+    base_type: float
+    storage_dtype: f8
+    unit: "celcius"
+    description: Surface temperature
+
+
