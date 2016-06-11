@@ -120,28 +120,56 @@ class TestScionCDIPAgentData(IonIntegrationTestCase):
         agent_status = sac.get_status()
         self.assertEquals(agent_status["current_state"], StreamingAgent.AGENTSTATE_STREAMING)
 
-        gevent.sleep(60)
+        # Set to progressively high values for real data stream tests.
+        gevent.sleep(20)
 
         # Retrieve data
-        """
-        gevent.sleep(1)
         self.assertTrue(os.path.exists(ds_filename))
 
-        inst_data_t1 = self.scion_client.get_asset_data(inst_id)
-        self.assertEquals(inst_data_t1["dataset_id"], ds_id)
-        self.assertEquals(inst_data_t1["variables"], ['time', 'cpu_percent'])
-        self.assertIn("cpu_percent", inst_data_t1["data"])
-        num_rows_t1 = inst_data_t1["num_rows"]
-        self.assertGreaterEqual(num_rows_t1, 2)
-
-        gevent.sleep(1)
-        inst_data_t2 = self.scion_client.get_asset_data(inst_id)
-        num_rows_t2 = inst_data_t2["num_rows"]
-        self.assertGreater(num_rows_t2, num_rows_t1)
-
-        self.assertGreaterEqual(len(self.recv_packets), self.recv_rows)
-        self.assertLessEqual(abs(self.recv_rows - num_rows_t2), 2)
+        inst_data = self.scion_client.get_asset_data(inst_id)
         """
+        {'data': {'Dp': [[1465682100000, 325]],
+            'Hs': [[1465682100000, 3.03]],
+            'Ta': [[1465682100000, 6.92]],
+            'Temp': [[1465682100000, 12.2]],
+            'Tp': [[1465682100000, 9.09]]},
+         'dataset_id': '08bc829159e6401182462b713b180dbe',
+         'num_rows': 1,
+         'ts_generated': '1465685467675',
+         'var_def': [{'base_type': 'ntp_time',
+              'description': 'NTPv4 timestamp',
+              'name': 'time',
+              'storage_dtype': 'i8',
+              'unit': ''},
+             {'base_type': 'float',
+              'description': 'Significant wave height',
+              'name': 'Hs',
+              'storage_dtype': 'f8',
+              'unit': 'meters'},
+             {'base_type': 'float',
+              'description': 'Peak wave period',
+              'name': 'Tp',
+              'storage_dtype': 'f8',
+              'unit': 'seconds'},
+             {'base_type': 'int',
+              'description': 'Peak wave direction',
+              'name': 'Dp',
+              'storage_dtype': 'i4',
+              'unit': 'degrees'},
+             {'base_type': 'float',
+              'description': 'Average wave period',
+              'name': 'Ta',
+              'storage_dtype': 'f8',
+              'unit': 'seconds'},
+             {'base_type': 'float',
+              'description': 'Surface temperature',
+              'name': 'Temp',
+              'storage_dtype': 'f8',
+              'unit': 'celcius'}],
+         'variables': ['time', 'Hs', 'Tp', 'Dp', 'Ta', 'Temp']}
+        """
+        num_rows = inst_data["num_rows"]
+        log.info('CDIP test produced %i data rows.' % num_rows)
 
         # Take down agent
         sac.stop_streaming()  # Not required to stop agent, just to test here
