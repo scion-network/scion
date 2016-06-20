@@ -18,13 +18,18 @@ PacketInfo:
 
 Instrument: !Extends_AppResource
   location: !GeospatialLocation
+  # Information about the model for this device
   model_info: {}
-  #
+  # Specific info and configuration for agents
   agent_info: []
   # Defines packets published by agents
   packet_info: []
+  # Additional key-value attributes
+  attributes: {}
 
 
 Dataset: !Extends_AppResource
   # Defines a dataset schema
   schema_definition: {}
+  # Additional key-value attributes
+  attributes: {}

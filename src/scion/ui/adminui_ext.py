@@ -4,7 +4,7 @@ __author__ = 'Michael Meisinger'
 
 from pyon.ion.resource import create_access_args
 from pyon.public import log, Container, PRED, RT, OT, ResourceQuery, AssociationQuery
-from ion.process.ui.admin_ui import build_command, build_link, get_rr_access_args
+from ion.process.ui.admin_ui import build_command, build_link, get_rr_access_args, get_arg, _link
 
 from interface.services.scion.iscion_management import ScionManagementProcessClient
 
@@ -19,6 +19,7 @@ class AdminUIExtension(object):
 
     def system_commands(self, fragments):
         fragments.append(build_command("Reload access policy", "/cmd/sys_reload_policy"))
+        fragments.append(build_command("Run preload scenario", "/cmd/sys_run_preload"))
 
     def resource_commands(self, resource_id, restype, fragments):
         if restype == "Instrument":
@@ -57,4 +58,31 @@ class AdminUIExtension(object):
 
         msg_text = "Deleted %s policies.<br>Added %s new policies.<br><br>OK." % (len(policy_ids), len(new_policy_ids))
 
+        return msg_text
+
+
+    def _process_cmd_sys_run_preload(self, resource_id, res_obj=None):
+        fragments = []
+        if get_arg("scenario"):
+            scenario = get_arg("scenario")
+            if scenario:
+                from scion.process.preload.preloader import ScionLoader
+                preloader = ScionLoader()
+                preloader.container = Container.instance
+                preloader.process = self.adminui
+                preloader.CFG = dict(op="load", agprox=dict(preload_master=scenario))
+                preloader.on_init()
+                fragments.append("Preload scenario '%s' executed.<br>OK" % scenario)
+            else:
+                fragments.append("Invalid arguments for scenario.")
+
+        else:
+            fragments.append("</pre><h2>Run Preload Scenario</h2>")
+            fragments.append("<form id='form_run_preload' action='%s' method='post'>" % _link('/cmd/sys_run_preload'))
+            fragments.append("Scenario: <input name='scenario'><br>")
+            fragments.append("<input name='submit' type='submit' value='Run'><br>")
+            fragments.append("</form>")
+            fragments.append("<pre>")
+
+        msg_text = "".join(fragments)
         return msg_text
