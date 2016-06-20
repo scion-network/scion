@@ -124,6 +124,8 @@ actions:
     description: Datawell directional buoy 11 nm SW of Venice Beach
     location[GeospatialLocation].latitude: 33.8546
     location[GeospatialLocation].longitude: -118.6326
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -150,6 +152,8 @@ actions:
     description: Datawell directional buoy Point Reyes, CA
     location[GeospatialLocation].latitude: 37.9383 
     location[GeospatialLocation].longitude: -123.0633
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -176,6 +180,8 @@ actions:
     description: Datawell directional buoy 4.5 nm SW entrance to Grays Harbor, WA
     location[GeospatialLocation].latitude: 46.8583
     location[GeospatialLocation].longitude: -124.2439
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -202,6 +208,8 @@ actions:
     description: Datawell directional buoy 2 nm WNW of Oceanside Harbor entrance
     location[GeospatialLocation].latitude: 33.2198
     location[GeospatialLocation].longitude: -117.4394 
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -228,6 +236,8 @@ actions:
     description: Datawell directional buoy 4 nm WSW of Oceanside Harbor entrance
     location[GeospatialLocation].latitude: 33.1794
     location[GeospatialLocation].longitude: -117.4714
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -254,6 +264,8 @@ actions:
     description: Datawell directional buoy 15.5 nm W of NW corner of San Nicholas Island
     location[GeospatialLocation].latitude:  33.2205
     location[GeospatialLocation].longitude:  -119.8807
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -280,6 +292,8 @@ actions:
     description: Datawell directional buoy 15.5 nm W of Point Conception
     location[GeospatialLocation].latitude:  34.4544
     location[GeospatialLocation].longitude:  -120.783
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -306,6 +320,8 @@ actions:
     description: Datawell directional buoy .2 nm offshore of Diablo Canyon Nuclear Power Plant
     location[GeospatialLocation].latitude:  35.2038
     location[GeospatialLocation].longitude:  -120.8593
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -332,6 +348,8 @@ actions:
     description: Datawell directional buoy 5.5 nm S of Point Fermin
     location[GeospatialLocation].latitude: 33.6178
     location[GeospatialLocation].longitude: -118.3168
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -359,6 +377,8 @@ actions:
     description: Datawell directional buoy 17.5 nm SW of Cape Mendocino
     location[GeospatialLocation].latitude: 40.2875
     location[GeospatialLocation].longitude: -124.7193
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -385,6 +405,8 @@ actions:
     description: Datawell directional buoy 4 nm SE of Mokapu Point, HI
     location[GeospatialLocation].latitude: 21.415   
     location[GeospatialLocation].longitude: -157.6783
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -411,6 +433,8 @@ actions:
     description: Datawell directional buoy 6.5 nm W of Torrey Pines State Beach, CA
     location[GeospatialLocation].latitude: 32.9334
     location[GeospatialLocation].longitude: -117.3908
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -437,6 +461,8 @@ actions:
     description: Datawell directional buoy 4.3 nm W of Sunset Point, Waimea Bay, HI
     location[GeospatialLocation].latitude: 21.6705
     location[GeospatialLocation].longitude: -158.1171
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -463,6 +489,8 @@ actions:
     description: Datawell directional buoy 4.7 nm SW of Goleta Point, CA
     location[GeospatialLocation].latitude: 34.3334
     location[GeospatialLocation].longitude: -119.8034
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -489,6 +517,8 @@ actions:
     description: Datawell directional buoy 10 nm W of Hollywood Beach, Anacapa Passage, CA
     location[GeospatialLocation].latitude: 34.1669
     location[GeospatialLocation].longitude: -119.4346
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -515,6 +545,8 @@ actions:
     description: Datawell directional buoy 1 nm offshore Ipan Beach Park, Guam
     location[GeospatialLocation].latitude: 13.3542
     location[GeospatialLocation].longitude: 144.7883
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -541,6 +573,8 @@ actions:
     description: Datawell directional buoy 7.5 nm E of St. Mary's Entrance, Fernandina Beach, FL
     location[GeospatialLocation].latitude: 30.709
     location[GeospatialLocation].longitude: -81.2918
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -567,6 +601,8 @@ actions:
     description: Datawell directional buoy 6 nm NE of Fort Pierce Inlet Entrance, FL
     location[GeospatialLocation].latitude: 27.551 
     location[GeospatialLocation].longitude: -80.222
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -593,6 +629,8 @@ actions:
     description: Datawell directional buoy approx. 8 nm NW of San Nicholas Island, Begg Rock, CA
     location[GeospatialLocation].latitude: 33.4
     location[GeospatialLocation].longitude: -119.6515
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -619,6 +657,8 @@ actions:
     description: Datawell directional buoy 15.5 nm NW of Winchester Bay entrance, Umpqua Offshore, OR
     location[GeospatialLocation].latitude: 43.7662
     location[GeospatialLocation].longitude: -124.5507
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -645,6 +685,8 @@ actions:
     description: Datawell directional buoy 4 nm SW of the Pt. Bonita Light, San Francisco Bar, CA
     location[GeospatialLocation].latitude: 37.7862
     location[GeospatialLocation].longitude: -122.6342
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -671,6 +713,8 @@ actions:
     description: Datawell directional buoy 3 nm E of Cape Canaveral entrance, FL
     location[GeospatialLocation].latitude: 28.4
     location[GeospatialLocation].longitude: -80.5333
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -697,6 +741,8 @@ actions:
     description: Datawell directional buoy 82 nm W of Tampa Bay entrance, St. Peterspurg Offshore, FL
     location[GeospatialLocation].latitude: 27.3415
     location[GeospatialLocation].longitude: -84.2723
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -723,6 +769,8 @@ actions:
     description: Datawell directional buoy 1 nm W of Kaumalapu Harbor, Lanai, HI
     location[GeospatialLocation].latitude: 20.7878
     location[GeospatialLocation].longitude: -157.0098
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -749,6 +797,8 @@ actions:
     description: Datawell directional buoy 13 nm E of Cape Henry, VA
     location[GeospatialLocation].latitude: 36.9152
     location[GeospatialLocation].longitude: -75.7198
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -776,6 +826,8 @@ actions:
     description: Datawell directional buoy 6.5 nm off the coastal reserve, Masonborol Inlet, ILM2, NC
     location[GeospatialLocation].latitude: 34.1411
     location[GeospatialLocation].longitude: -77.7166
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -802,6 +854,8 @@ actions:
     description: Datawell directional buoy 24 nm SE of Block Island, RI
     location[GeospatialLocation].latitude: 40.9687
     location[GeospatialLocation].longitude: -71.1271
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -828,6 +882,8 @@ actions:
     description: Datawell directional buoy 10 nautical miles West of Pt. Sur lighthouse. Point Sur, CA
     location[GeospatialLocation].latitude: 36.341
     location[GeospatialLocation].longitude: -122.1016
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -854,6 +910,8 @@ actions:
     description: Datawell directional buoy 0.3 nm offshore of Pacific Grove CA. at the southern end of Monterey Bay
     location[GeospatialLocation].latitude: 36.6263
     location[GeospatialLocation].longitude: -121.9071
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -880,6 +938,8 @@ actions:
     description: Datawell directional buoy 29 nm SE of Portsmouth, NH, Jeffreys Ledge
     location[GeospatialLocation].latitude: 42.798
     location[GeospatialLocation].longitude: -70.168
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -906,6 +966,8 @@ actions:
     description: Datawell directional buoy 4 nm W of Clatsop Spit., OR
     location[GeospatialLocation].latitude: 46.2156
     location[GeospatialLocation].longitude: -124.1273
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -932,6 +994,8 @@ actions:
     description: Datawell directional buoy 1 mile east of Delap Point, Kalo, Majuro, Marshall Islands
     location[GeospatialLocation].latitude: 7.0835
     location[GeospatialLocation].longitude: 171.3918
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -958,6 +1022,8 @@ actions:
     description: Datawell directional buoy 1.5 nm SW off of Barber's Point, HI
     location[GeospatialLocation].latitude: 21.2814
     location[GeospatialLocation].longitude: -158.1237
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -984,6 +1050,8 @@ actions:
     description: Datawell directional buoy Ocean Station PAPA
     location[GeospatialLocation].latitude: 49.9036
     location[GeospatialLocation].longitude: -145.2434
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1010,6 +1078,8 @@ actions:
     description: Datawell directional buoy Humbolt Bay Nort Spit, 8.7 nm offshore of Eureka CA.
     location[GeospatialLocation].latitude: 40.896
     location[GeospatialLocation].longitude: -124.357
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1036,6 +1106,8 @@ actions:
     description: Datawell directional buoy 27 nm W of Clatsop Spit., Astoria Canyon, OR
     location[GeospatialLocation].latitude: 46.1339
     location[GeospatialLocation].longitude: -124.6402
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1062,6 +1134,8 @@ actions:
     description: Datawell directional buoy 23 nm WNW of Monterey, CA
     location[GeospatialLocation].latitude: 36.7229
     location[GeospatialLocation].longitude: -122.3508
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1088,6 +1162,8 @@ actions:
     description: Datawell directional buoy  8.4nm Southeast of the tip of Cape Charles, VA
     location[GeospatialLocation].latitude: 37.0232
     location[GeospatialLocation].longitude: -75.8098
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1114,6 +1190,8 @@ actions:
     description: Datawell directional buoy 6.5 nm off coast of Pauwela, Maui, HI
     location[GeospatialLocation].latitude: 21.0182
     location[GeospatialLocation].longitude: -156.4252
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1140,6 +1218,8 @@ actions:
     description: Datawell directional buoy 3.5 nm NE of Lehia Park, Hilo, HI
     location[GeospatialLocation].latitude: 19.78
     location[GeospatialLocation].longitude: -154.97
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1166,6 +1246,8 @@ actions:
     description: Datawell directional buoy 4 nm East of Alao, Aunuu, American Samoa
     location[GeospatialLocation].latitude: 14.2651
     location[GeospatialLocation].longitude: -170.4935
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1192,6 +1274,8 @@ actions:
     description: Datawell directional buoy 15.5 nm W of the Imperial Beach Pier, Point Loma South, CA
     location[GeospatialLocation].latitude: 32.5296
     location[GeospatialLocation].longitude: -117.4214
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1218,6 +1302,8 @@ actions:
     description: Datawell directional buoy 19 nm SE of Nags Head, Oregon Inlet, NC
     location[GeospatialLocation].latitude: 35.75
     location[GeospatialLocation].longitude: -75.33
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1244,6 +1330,8 @@ actions:
     description: Datawell directional buoy 3.25 nm NW of Ritidian Point, Guam
     location[GeospatialLocation].latitude: 13.6837
     location[GeospatialLocation].longitude: 144.8121
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1270,6 +1358,8 @@ actions:
     description: Datawell directional buoy 5 nm NW from Smiling Cove Harbor, Tanapang Saipan, NMI
     location[GeospatialLocation].latitude: 15.268
     location[GeospatialLocation].longitude: 145.6623
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1296,6 +1386,8 @@ actions:
     description: Datawell directional buoy 1.5 nm N off shores of Kaneohe Bay, HI
     location[GeospatialLocation].latitude: 21.4775
     location[GeospatialLocation].longitude: -157.7526
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1314,15 +1406,6 @@ actions:
   associations:
   - FROM,IN_sensor49,hasDataset  
 
-
-
-
-
-
-
-
-
-
 - action: resource:Instrument
   id: IN_sensor50
   owner: USER_jdoe
@@ -1331,6 +1414,8 @@ actions:
     description: Datawell directional buoy 7.75 nm off point of Cape Fear, Wilmington Harbor, NC
     location[GeospatialLocation].latitude: 33.721
     location[GeospatialLocation].longitude: -78.0148
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1357,6 +1442,8 @@ actions:
     description: Datawell directional buoy .50 nautical miles from the end of Scripps Pier, La Jolla CA
     location[GeospatialLocation].latitude: 32.8679
     location[GeospatialLocation].longitude: -117.2667
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1383,6 +1470,8 @@ actions:
     description: Datawell directional buoy 28.5 nm N of San Nicolas Island, Santa Cruz Basin CA
     location[GeospatialLocation].latitude: 33.7601
     location[GeospatialLocation].longitude: -119.5496
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1409,6 +1498,8 @@ actions:
     description: Datawell directional buoy 9 nm WSW of Homer, Lower Cook Inlet, AK
     location[GeospatialLocation].latitude: 59.5973
     location[GeospatialLocation].longitude: -151.8291
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1435,6 +1526,8 @@ actions:
     description: Datawell directional buoy 3.26 off the Northern tip of Betton Island, Ketchikan, AK
     location[GeospatialLocation].latitude: 55.604
     location[GeospatialLocation].longitude: -131.7632
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1461,6 +1554,8 @@ actions:
     description: Datawell directional buoy 16 nm offshore of the Barnegat Bay lighthouse, Barnegat, NJ
     location[GeospatialLocation].latitude: 39.778
     location[GeospatialLocation].longitude: -73.769
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1487,6 +1582,8 @@ actions:
     description: Datawell directional buoy 23 nm E of Virginia Beach, Offshore Wind Area, VA
     location[GeospatialLocation].latitude: 36.8724
     location[GeospatialLocation].longitude: -75.4918
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1513,6 +1610,8 @@ actions:
     description: Datawell directional buoy 9.5nm due S of Long Beach Harbor, San Pedro South, CA
     location[GeospatialLocation].latitude: 33.5759
     location[GeospatialLocation].longitude: -118.1813
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1539,6 +1638,8 @@ actions:
     description: Datawell directional buoy 9 nm W of Egmont channel entrance, FL
     location[GeospatialLocation].latitude: 27.5895
     location[GeospatialLocation].longitude: -82.9307
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1565,6 +1666,8 @@ actions:
     description: Datawell directional buoy 3.30 nm ESE of Long Beach Channel, CA
     location[GeospatialLocation].latitude: 33.7003
     location[GeospatialLocation].longitude: -118.2007
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1591,6 +1694,8 @@ actions:
     description: Datawell directional buoy 216
     location[GeospatialLocation].latitude: 34.4388
     location[GeospatialLocation].longitude: -120.7657
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1617,6 +1722,8 @@ actions:
     description: Datawell directional buoy 27 nm SE of New River Inlet, Onslow Bay Outer, NC
     location[GeospatialLocation].latitude: 34.2102
     location[GeospatialLocation].longitude: -76.9482
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1643,6 +1750,8 @@ actions:
     description: Datawell directional buoy 12 nm west of Mission Bay Channel entrance, CA
     location[GeospatialLocation].latitude: 32.75
     location[GeospatialLocation].longitude: -117.5
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1669,6 +1778,8 @@ actions:
     description: Datawell directional buoy 6nm N of Sandy Neck, Cape Cod Bay, MA
     location[GeospatialLocation].latitude: 41.8397
     location[GeospatialLocation].longitude: -70.329
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
@@ -1695,6 +1806,8 @@ actions:
     description: Datawell directional buoy 52nm W of Purisima Point California, Santa Lucia Escarpment, CA
     location[GeospatialLocation].latitude: 34.7318
     location[GeospatialLocation].longitude: -121.6643
+    model_info:
+      model_group: CDIP Stations
     agent_info:
     - agent_type: data_agent
       config:
