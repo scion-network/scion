@@ -33,3 +33,5 @@ Dataset: !Extends_AppResource
   schema_definition: {}
   # Additional key-value attributes
   attributes: {}
+  # Static metadata
+  metadata: {}
