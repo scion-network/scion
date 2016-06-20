@@ -27,6 +27,8 @@ actions:
     description: Monitors CPU load percent on current VM
     location[GeospatialLocation].latitude: 32.867079
     location[GeospatialLocation].longitude: -117.257324
+    model_info:
+      model_group: Simulators
     agent_info:
     - agent_type: data_agent
       config:
@@ -43,6 +45,8 @@ actions:
     description: Emits 3 simulated variables, random and sine wave
     location[GeospatialLocation].latitude: 36.802557
     location[GeospatialLocation].longitude: -121.788526
+    model_info:
+      model_group: Simulators
     agent_info:
     - agent_type: data_agent
       config:
@@ -57,8 +61,10 @@ actions:
   resource:
     name: TA121A Seismometer
     description: Transportable Array seismic station TA121A (New Mexico near Silver City)
-    location[GeospatialLocation].latitude: 42.867079
-    location[GeospatialLocation].longitude: -127.257324
+    location[GeospatialLocation].latitude: 32.53
+    location[GeospatialLocation].longitude: -107.79
+    model_info:
+      model_group: Seismometers
     agent_info:
     - agent_type: data_agent
       config:
