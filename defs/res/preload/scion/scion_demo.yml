@@ -120,7 +120,7 @@ actions:
   id: IN_sensor4
   owner: USER_jdoe
   resource:
-    name: CDIP station 28
+    name: CDIP station 028
     description: Datawell directional buoy 11 nm SW of Venice Beach
     location[GeospatialLocation].latitude: 33.8546
     location[GeospatialLocation].longitude: -118.6326
@@ -148,7 +148,7 @@ actions:
   id: IN_sensor5
   owner: USER_jdoe
   resource:
-    name: CDIP station 29
+    name: CDIP station 029
     description: Datawell directional buoy Point Reyes, CA
     location[GeospatialLocation].latitude: 37.9383 
     location[GeospatialLocation].longitude: -123.0633
@@ -176,7 +176,7 @@ actions:
   id: IN_sensor6
   owner: USER_jdoe
   resource:
-    name: CDIP station 36
+    name: CDIP station 036
     description: Datawell directional buoy 4.5 nm SW entrance to Grays Harbor, WA
     location[GeospatialLocation].latitude: 46.8583
     location[GeospatialLocation].longitude: -124.2439
@@ -204,7 +204,7 @@ actions:
   id: IN_sensor7
   owner: USER_jdoe
   resource:
-    name: CDIP station 43
+    name: CDIP station 043
     description: Datawell directional buoy 2 nm WNW of Oceanside Harbor entrance
     location[GeospatialLocation].latitude: 33.2198
     location[GeospatialLocation].longitude: -117.4394 
@@ -232,7 +232,7 @@ actions:
   id: IN_sensor8
   owner: USER_jdoe
   resource:
-    name: CDIP station 45
+    name: CDIP station 045
     description: Datawell directional buoy 4 nm WSW of Oceanside Harbor entrance
     location[GeospatialLocation].latitude: 33.1794
     location[GeospatialLocation].longitude: -117.4714
@@ -260,7 +260,7 @@ actions:
   id: IN_sensor9
   owner: USER_jdoe
   resource:
-    name: CDIP station 67
+    name: CDIP station 067
     description: Datawell directional buoy 15.5 nm W of NW corner of San Nicholas Island
     location[GeospatialLocation].latitude:  33.2205
     location[GeospatialLocation].longitude:  -119.8807
@@ -288,7 +288,7 @@ actions:
   id: IN_sensor10
   owner: USER_jdoe
   resource:
-    name: CDIP station 71
+    name: CDIP station 071
     description: Datawell directional buoy 15.5 nm W of Point Conception
     location[GeospatialLocation].latitude:  34.4544
     location[GeospatialLocation].longitude:  -120.783
@@ -316,7 +316,7 @@ actions:
   id: IN_sensor11
   owner: USER_jdoe
   resource:
-    name: CDIP station 76
+    name: CDIP station 076
     description: Datawell directional buoy .2 nm offshore of Diablo Canyon Nuclear Power Plant
     location[GeospatialLocation].latitude:  35.2038
     location[GeospatialLocation].longitude:  -120.8593
@@ -344,7 +344,7 @@ actions:
   id: IN_sensor12
   owner: USER_jdoe
   resource:
-    name: CDIP station 92
+    name: CDIP station 092
     description: Datawell directional buoy 5.5 nm S of Point Fermin
     location[GeospatialLocation].latitude: 33.6178
     location[GeospatialLocation].longitude: -118.3168
@@ -373,7 +373,7 @@ actions:
   id: IN_sensor13
   owner: USER_jdoe
   resource:
-    name: CDIP station 94
+    name: CDIP station 094
     description: Datawell directional buoy 17.5 nm SW of Cape Mendocino
     location[GeospatialLocation].latitude: 40.2875
     location[GeospatialLocation].longitude: -124.7193
@@ -401,7 +401,7 @@ actions:
   id: IN_sensor14
   owner: USER_jdoe
   resource:
-    name: CDIP station 98
+    name: CDIP station 098
     description: Datawell directional buoy 4 nm SE of Mokapu Point, HI
     location[GeospatialLocation].latitude: 21.415   
     location[GeospatialLocation].longitude: -157.6783
