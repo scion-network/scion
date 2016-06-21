@@ -1690,8 +1690,8 @@ actions:
   id: IN_sensor60
   owner: USER_jdoe
   resource:
-    name: CDIP station 15 nm W off of Point Conception, Harvest Southeast, CA
-    description: Datawell directional buoy 216
+    name: CDIP station 216
+    description: Datawell directional buoy 15 nm W off of Point Conception, Harvest Southeast, CA
     location[GeospatialLocation].latitude: 34.4388
     location[GeospatialLocation].longitude: -120.7657
     model_info:
