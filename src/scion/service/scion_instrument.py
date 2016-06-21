@@ -17,6 +17,17 @@ class ScionInstrumentOps(ScionManagementServiceBase):
 
     def find_instruments(self):
         inst_objs, _ = self.rr.find_resources(RT.Instrument, id_only=False)
+        # Find agent processes and match up
+        agent_entries = self.container.directory.find_child_entries("/Agents", direct_only=True)
+        active_agents_iids = {}
+        for agent_entry in agent_entries:
+            agent_name = agent_entry.attributes.get("name", "")
+            resource_id = agent_entry.attributes.get("resource_id", "")
+            if agent_name.startswith("data_agent_") and resource_id:
+                active_agents_iids[resource_id] = agent_entry.key
+        for inst in inst_objs:
+            inst.addl["agent_active"] = bool(inst._id in active_agents_iids)
+            inst.addl["agent_pid"] = active_agents_iids.get(inst._id, "")
         return inst_objs
 
     # -------------------------------------------------------------------------
