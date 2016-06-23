@@ -6,7 +6,7 @@ import base64
 import os
 
 from pyon.ion.resource import create_access_args
-from pyon.public import ImmediateProcess, CFG, log, OT, PRED, RT, IonObject, get_ion_ts, BadRequest, NotFound, get_sys_name
+from pyon.public import ImmediateProcess, CFG, log, OT, PRED, RT, IonObject, get_ion_ts, BadRequest, NotFound, get_sys_name, dict_merge
 from pyon.ion.identifier import create_unique_resource_id, create_unique_association_id
 from ion.util.preload import Preloader, KEY_ID
 
@@ -135,8 +135,11 @@ class ScionLoader(ImmediateProcess, Preloader):
     def _load_resource_Dataset(self, action_cfg):
         if action_cfg[KEY_ID] in self.resource_ids:
             return
+        schema_def = {}
         if "schema_def" in action_cfg:
             schema_def = DataSchemaParser.parse_schema_ref(action_cfg["schema_def"])
+        if "schema_override" in action_cfg:
+            dict_merge(schema_def, action_cfg["schema_override"], inplace=True)
         res_id = self.basic_resource_create(action_cfg, RT.Dataset, "resource_registry", "create", support_bulk=True,
                                             set_attributes=dict(schema_definition=schema_def))
         self.basic_associations_create(action_cfg, action_cfg[KEY_ID], support_bulk=True)
