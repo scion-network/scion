@@ -90,6 +90,7 @@ apps:
     config:
       bootstrap_plugins:
         - plugin: [scion.process.bootstrap.boot_preload, BootstrapPreload]
+        - plugin: [scion.process.bootstrap.boot_startagents, BootstrapStartAgents]
 
   ##################################
   # DATA INGESTION

@@ -70,6 +70,10 @@ class ScionInstrumentOps(ScionManagementServiceBase):
         agent_ctl = AgentControl()
         agent_pid = agent_ctl.launch_agent(asset_id, agent_info["agent_type"], agent_info.get("config") or {})
 
+        asset_obj.agent_state = {}  # We assume only 1 agent per asset
+        asset_obj.agent_state[agent_pid] = dict(start_ts=get_ion_ts())
+        self.rr.update(asset_obj)
+
         log.info("Agent started for %s with pid=%s", asset_id, agent_pid)
 
         return agent_pid
@@ -80,8 +84,12 @@ class ScionInstrumentOps(ScionManagementServiceBase):
         try:
             agent_ctl = AgentControl(resource_id=asset_id)
             agent_ctl.terminate_agent()
+
         finally:
             if StreamingAgentClient.is_agent_active(asset_id):
                 log.warn("Removing agent directory entry for %s", asset_id)
             proc_id = StreamingAgentClient._get_agent_process_id(asset_id)
             self.container.directory.unregister_safe("/Agents", proc_id)
+
+            asset_obj.agent_state = {}
+            self.rr.update(asset_obj)

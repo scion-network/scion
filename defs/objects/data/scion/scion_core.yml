@@ -26,6 +26,8 @@ Instrument: !Extends_AppResource
   packet_info: []
   # Additional key-value attributes
   attributes: {}
+  # Maintains state about the agent
+  agent_state: {}
 
 
 Dataset: !Extends_AppResource
