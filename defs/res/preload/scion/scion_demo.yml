@@ -1817,14 +1817,11 @@ actions:
         stream_name: basic_streams
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?222+pm
 
-
-
-
-
-
-
-
-
-
-
-
+- action: resource:Dataset
+  id: DS_sensor64
+  owner: USER_jdoe
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 64
+  associations:
+  - FROM,IN_sensor64,hasDataset
