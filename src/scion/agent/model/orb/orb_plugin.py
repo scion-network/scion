@@ -32,9 +32,9 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
         log.info('Orb_DataAgentPlugin.on_stop_streaming')
         self.proc.terminate()
         log.info('Waiting for orb reap to terminate...')
-        retcode = self.proc.wait()
-        log.info('Orb reap process terminated, %i' % self.proc.pid)
-        self.proc = None
+        #retcode = self.proc.wait()
+        #log.info('Orb reap process terminated, %i' % self.proc.pid)
+        #self.proc = None
 
     def acquire_samples(self):
         log.debug('Orb_DataAgentPlugin.acquire_samples')
@@ -45,21 +45,29 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
             for f in files:
                 fpath = self.data_dir + f
                 with open(fpath) as fh:
-                    pkt = json.load(fh)
-                    fh.close()
-                    os.remove(fpath)
-                    log.info('sample: ' + fpath)
-                    if not cols:
-                        cols = [str(c['chan']) for c in pkt['channels']]
-                    rows.append(self._extract_row(pkt, cols))
-
-            if cols:
+                    try:
+                        pkt = json.load(fh)
+                        if not cols:
+                            cols = [str(c['chan']) for c in pkt['channels']]              
+                        row = self._extract_row(pkt, cols)
+                        dims = [len(c) for c in row[:3]]
+                        if all(d==400 for d in dims):
+                            rows.append(row)
+                        else:
+                            log.warning('Inconsistent dimensions %s, %s' % (str(dims), fpath))
+                        fh.close()
+                        os.remove(fpath)
+                        log.info('sample: ' + fpath)
+                    except Exception as ex:
+                        log.warn(ex)
+                        log.warn('Incomplete packet %s' % fpath)
+                        
+            if cols and rows:
                 coltypes = {}
                 for c in cols:
                     coltypes[c] = '400u2'
                 cols.append('time')
                 samples = dict(cols=cols, data=rows, coltypes=coltypes)
-
                 return samples
 
     def _extract_row(self, pkt, cols):
