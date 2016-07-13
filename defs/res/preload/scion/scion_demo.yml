@@ -18,6 +18,8 @@ actions:
       scion_init_pwdhash: $2a$12$I3wcw9Ek7VI3Pe/eVx1SFOavjM.GaX7pVHoh5iQg3bFdHbs5KwtmS
   username: jdoe
   password: foo
+  roles:
+  - ION.OPERATOR
 
 - action: resource:Instrument
   id: IN_sensor1

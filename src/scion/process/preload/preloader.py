@@ -105,6 +105,15 @@ class ScionLoader(ImmediateProcess, Preloader):
     def _load_preload_CommitBulk(self, action_cfg):
         self.commit_bulk()
 
+    def _load_resource_CORE_CreateRole(self, action_cfg):
+        org_name = action_cfg["org"]
+        role_name = action_cfg["role"]
+        org_obj = self.org_client.find_org(org_name)
+        role_obj = IonObject(RT.UserRole, name=role_name, governance_name=role_name,
+                             description="Role %s.%s" % (org_name, role_name))
+
+        self.org_client.add_org_role(org_obj._id, role_obj, headers=self._get_system_actor_headers())
+
     def _load_resource_APP_ScionUser(self, action_cfg):
         actor_obj = self.create_object_from_cfg(action_cfg, RT.ActorIdentity)
         username, password = action_cfg["username"], action_cfg.get("password", None)
@@ -125,6 +134,13 @@ class ScionLoader(ImmediateProcess, Preloader):
         res_obj.alt_ids += ['PRE:'+action_cfg[KEY_ID]]
         self.container.resource_registry.update(res_obj)
         self._register_id(action_cfg[KEY_ID], actor_id, res_obj)
+
+        # Roles
+        roles = action_cfg.get("roles", [])
+        for role in roles:
+            org_name, role_name = role.split(".", 1)
+            org_obj = self.org_client.find_org(org_name)
+            self.org_client.grant_role(org_obj._id, actor_id, role_name, headers=self._get_system_actor_headers())
 
     def _load_resource_Instrument(self, action_cfg):
         if action_cfg[KEY_ID] in self.resource_ids:
