@@ -164,3 +164,8 @@ class ScionLoader(ImmediateProcess, Preloader):
         asset_id = action_cfg["asset_id"]
         agent_res_id = self.resource_ids[asset_id]
         self.scion_client.start_agent(agent_res_id)
+
+    def _load_action_StopAgent(self, action_cfg):
+        asset_id = action_cfg["asset_id"]
+        agent_res_id = self.resource_ids[asset_id]
+        self.scion_client.stop_agent(agent_res_id)
