@@ -400,3 +400,6 @@ scion:
     default_master: ""
     scenarios:
     - [all, scion/scion_demo.yml]
+
+  antelope:
+    path: /opt/antelope/5.6

@@ -6,6 +6,8 @@ from pyon.public import log
 from ion.agent.data_agent import DataAgentPlugin
 from ion.util.ntp_time import NTP4Time
 
+from pyon.public import CFG
+
 
 class Orb_DataAgentPlugin(DataAgentPlugin):
     def on_start_streaming(self, streaming_args):
@@ -25,7 +27,8 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
         self.data_dir = '/tmp/scion-data/%s/' % (streaming_args['select'].replace('/', '-'))
         if os.path.exists(self.data_dir):
             shutil.rmtree(self.data_dir)
-        self.proc = subprocess.Popen(cmd_args, executable='/opt/antelope/5.5/bin/python')
+        antelope_path = CFG.get_safe("scion.antelope.path", "/opt/antelope/5.6")
+        self.proc = subprocess.Popen(cmd_args, executable=antelope_path+'/bin/python')
         log.info('Orb reap process started, %i' % self.proc.pid)
 
     def on_stop_streaming(self):

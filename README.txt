@@ -56,6 +56,9 @@ The same command without -fc restarts an existing system.
 
 Access the REST service gateway at http://localhost:4000/service
 
+To enable Antelope support, execute the following before starting pycc (note: version may vary):
+    > . /opt/antelope/5.6/setup.sh
+
 
 USER INTERFACE
 ==============
