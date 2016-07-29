@@ -10,6 +10,12 @@ attributes:
     layout: vars_individual
     row_increment: 1000
     time_index_step: 100000
+  pruning:
+    trigger_mode: on_ingest
+    prune_mode: max_age_rel
+    prune_action: rewrite
+    trigger_age: 172800.0
+    retain_age: 86400.0
 
 variables:
   - name: time
