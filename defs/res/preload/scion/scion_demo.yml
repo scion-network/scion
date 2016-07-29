@@ -21,6 +21,20 @@ actions:
   roles:
   - ION.OPERATOR
 
+- action: resource:APP_ScionUser
+  id: USER_admin
+  resource:
+    details[UserIdentityDetails].contact.individual_names_given: SciON
+    details[UserIdentityDetails].contact.individual_name_family: Admin
+    details[UserIdentityDetails].contact.email: admin@scion.ucsd.edu
+    details[UserIdentityDetails].profile:
+      scion_init_pwdsalt: $2a$12$N1D5qVWhsQNnwbKLIaAzPO
+      scion_init_pwdhash: $2a$12$N1D5qVWhsQNnwbKLIaAzPOBPHgNrk/anK.dL.fDTYDyEEnY9VZbDi
+  username: admin
+  password: sio123
+  roles:
+  - ION.OPERATOR
+
 - action: resource:Instrument
   id: IN_sensor1
   owner: USER_jdoe
