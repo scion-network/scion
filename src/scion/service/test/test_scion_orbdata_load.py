@@ -30,7 +30,7 @@ class TestScionOrbAgentData(IonIntegrationTestCase):
         self._start_container()
         self.patch_alt_cfg('scion.process.preload.preloader.CFG',
                            {'scion': {'preload': {'enabled': False}}})
-        gevent.wait(1)  # Avoid address in use error
+        gevent.sleep(1)  # Avoid address in use error
         self.container.start_rel_from_url('res/deploy/scion.yml')
 
         self.rr = self.container.resource_registry
