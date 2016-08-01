@@ -2,10 +2,12 @@
 
 __author__ = 'Michael Meisinger'
 
-from pyon.public import log, CFG, BadRequest, EventPublisher, Conflict, Unauthorized, AssociationQuery, NotFound, PRED, OT, ResourceQuery, RT, get_ion_ts
+from pyon.public import log, CFG, BadRequest, EventPublisher, Conflict, Unauthorized, AssociationQuery, NotFound, PRED, OT, ResourceQuery, RT, get_ion_ts, get_ion_ts_millis
 
 from ion.agent.control import AgentControl, StreamingAgentClient
 from scion.service.scion_base import ScionManagementServiceBase
+
+from interface.objects import MediaResponse
 
 
 class ScionInstrumentOps(ScionManagementServiceBase):
@@ -56,6 +58,31 @@ class ScionInstrumentOps(ScionManagementServiceBase):
                          data=raw_data,
                          num_rows=len(raw_data.values()[0]) if raw_data else 0)
         return data_info
+
+    def download_asset_data(self, asset_id='', data_format='', data_filter=None):
+        asset_obj = self._validate_resource_id("asset_id", asset_id, RT.Instrument)
+        dataset_objs, _ = self.rr.find_objects(asset_id, PRED.hasDataset, RT.Dataset, id_only=False)
+        if not dataset_objs:
+            raise BadRequest("Could not find dataset")
+        dataset_obj = dataset_objs[0]
+
+        if data_format and data_format != "hdf5":
+            raise BadRequest("Unsupported download data format")
+
+        from ion.data.persist.hdf5_dataset import DatasetHDF5Persistence
+        persistence = DatasetHDF5Persistence(dataset_obj._id, dataset_obj.schema_definition, "hdf5")
+        data_filter1 = dict(transpose_time=True, time_format="unix_millis", max_rows=100000,
+                            start_time=get_ion_ts_millis() - 86400000)
+        data_filter1.update(data_filter or {})
+        temp_filename = persistence.get_data_copy(data_filter=data_filter1)
+
+        resp_hdrs = {"Content-Disposition": 'attachment; filename="ds_%s.hdf5"' % asset_obj._id}
+
+        mr = MediaResponse(media_mimetype="application/octet-stream", body=temp_filename,
+                           internal_encoding="filename", response_headers=resp_hdrs)
+
+        return mr
+
 
     # -------------------------------------------------------------------------
 

@@ -139,6 +139,18 @@ methods:
     throws:
       BadRequest: arguments invalid or incomplete
 
+  download_asset_data:
+    docstring: |
+      Returns data for an asset such as an instrument in downloadable form
+    in:
+      asset_id: ""
+      data_format: ""
+      data_filter: {}
+    out:
+      data: !MediaResponse
+    throws:
+      BadRequest: arguments invalid or incomplete
+
   # ---------------------------------------------------------------------------
   # Agents
 
