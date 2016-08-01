@@ -113,7 +113,7 @@ class TestScionAgentData(IonIntegrationTestCase):
         self.assertEquals(agent_status["current_state"], StreamingAgent.AGENTSTATE_STREAMING)
 
         # Retrieve data
-        gevent.sleep(1)
+        gevent.sleep(1.1)
         self.assertTrue(os.path.exists(ds_filename))
 
         inst_data_t1 = self.scion_client.get_asset_data(inst_id)
