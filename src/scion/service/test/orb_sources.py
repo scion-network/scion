@@ -3,7 +3,10 @@
 
 import subprocess
 
-cmd = ". /opt/antelope/5.5/setup.sh;orbstat -s ceusnexport.ucsd.edu:usarray | grep M40 | grep seconds | cut -d' ' -f1"
+from pyon.public import CFG
+
+antelope_path = CFG.get_safe("scion.antelope.path", "/opt/antelope/5.6")
+cmd = ". " + antelope_path + "/setup.sh;orbstat -s ceusnexport.ucsd.edu:usarray | grep M40 | grep seconds | cut -d' ' -f1"
 
 max_sources = 5
 
