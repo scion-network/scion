@@ -16,6 +16,8 @@ attributes:
     prune_action: rewrite
     trigger_age: 172800.0
     retain_age: 86400.0
+  graph:
+    style: seismic
 
 variables:
   - name: time

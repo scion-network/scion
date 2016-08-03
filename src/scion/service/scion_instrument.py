@@ -49,14 +49,22 @@ class ScionInstrumentOps(ScionManagementServiceBase):
         persistence = DatasetHDF5Persistence(dataset_obj._id, dataset_obj.schema_definition, "hdf5")
         data_filter1 = dict(transpose_time=True, time_format="unix_millis", max_rows=1000)
         data_filter1.update(data_filter or {})
-        raw_data = persistence.get_data(data_filter=data_filter1)
 
-        data_info = dict(dataset_id=dataset_obj._id,
-                         ts_generated=get_ion_ts(),
-                         variables=[var_info["name"] for var_info in dataset_obj.schema_definition["variables"]],
-                         var_def=dataset_obj.schema_definition["variables"],
-                         data=raw_data,
-                         num_rows=len(raw_data.values()[0]) if raw_data else 0)
+        data_info = dict(dataset_id=dataset_obj._id, ts_generated=get_ion_ts(),
+                         data={}, info={}, num_rows=0)
+
+        if data_filter.get("get_info", None) is True:
+            data_info["variables"] = [var_info["name"] for var_info in dataset_obj.schema_definition["variables"]]
+            data_info["schema"] = dataset_obj.schema_definition
+            res_info = persistence.get_data_info(data_filter1)
+            data_info["info"].update(res_info)
+
+        if data_filter.get("include_data", True):
+            # TODO: Auto bin (if need decimation, then bin, otherwise return raw)
+            raw_data = persistence.get_data(data_filter=data_filter1)
+            data_info["data"] = raw_data
+            data_info["num_rows"] = len(raw_data.values()[0]) if raw_data else 0
+
         return data_info
 
     def download_asset_data(self, asset_id='', data_format='', data_filter=None):
