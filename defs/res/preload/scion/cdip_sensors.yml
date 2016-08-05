@@ -1,0 +1,1717 @@
+# Preload file
+
+preload_type: steps
+
+actions:
+# -----------------------------------------------------------------------------
+# CDIP data sources
+
+- action: resource:Instrument
+  id: IN_sensor4
+  owner: USER_admin
+  resource:
+    name: CDIP station 028
+    description: Datawell directional buoy 11 nm SW of Venice Beach
+    location[GeospatialLocation].latitude: 33.8546
+    location[GeospatialLocation].longitude: -118.6326
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?028+pm
+
+- action: resource:Dataset
+  id: DS_sensor4
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 4
+  associations:
+  - FROM,IN_sensor4,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor5
+  owner: USER_admin
+  resource:
+    name: CDIP station 029
+    description: Datawell directional buoy Point Reyes, CA
+    location[GeospatialLocation].latitude: 37.9383 
+    location[GeospatialLocation].longitude: -123.0633
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?029+pm
+
+- action: resource:Dataset
+  id: DS_sensor5
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 5
+  associations:
+  - FROM,IN_sensor5,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor6
+  owner: USER_admin
+  resource:
+    name: CDIP station 036
+    description: Datawell directional buoy 4.5 nm SW entrance to Grays Harbor, WA
+    location[GeospatialLocation].latitude: 46.8583
+    location[GeospatialLocation].longitude: -124.2439
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?036+pm
+
+- action: resource:Dataset
+  id: DS_sensor6
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 6
+  associations:
+  - FROM,IN_sensor6,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor7
+  owner: USER_admin
+  resource:
+    name: CDIP station 043
+    description: Datawell directional buoy 2 nm WNW of Oceanside Harbor entrance
+    location[GeospatialLocation].latitude: 33.2198
+    location[GeospatialLocation].longitude: -117.4394 
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?043+pm
+
+- action: resource:Dataset
+  id: DS_sensor7
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 7
+  associations:
+  - FROM,IN_sensor7,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor8
+  owner: USER_admin
+  resource:
+    name: CDIP station 045
+    description: Datawell directional buoy 4 nm WSW of Oceanside Harbor entrance
+    location[GeospatialLocation].latitude: 33.1794
+    location[GeospatialLocation].longitude: -117.4714
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?045+pm
+
+- action: resource:Dataset
+  id: DS_sensor8
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 8
+  associations:
+  - FROM,IN_sensor8,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor9
+  owner: USER_admin
+  resource:
+    name: CDIP station 067
+    description: Datawell directional buoy 15.5 nm W of NW corner of San Nicholas Island
+    location[GeospatialLocation].latitude:  33.2205
+    location[GeospatialLocation].longitude:  -119.8807
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?067+pm
+
+- action: resource:Dataset
+  id: DS_sensor9
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 9
+  associations:
+  - FROM,IN_sensor9,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor10
+  owner: USER_admin
+  resource:
+    name: CDIP station 071
+    description: Datawell directional buoy 15.5 nm W of Point Conception
+    location[GeospatialLocation].latitude:  34.4544
+    location[GeospatialLocation].longitude:  -120.783
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?071+pm
+
+- action: resource:Dataset
+  id: DS_sensor10
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 10
+  associations:
+  - FROM,IN_sensor10,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor11
+  owner: USER_admin
+  resource:
+    name: CDIP station 076
+    description: Datawell directional buoy .2 nm offshore of Diablo Canyon Nuclear Power Plant
+    location[GeospatialLocation].latitude:  35.2038
+    location[GeospatialLocation].longitude:  -120.8593
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?076+pm
+
+- action: resource:Dataset
+  id: DS_sensor11
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 11
+  associations:
+  - FROM,IN_sensor11,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor12
+  owner: USER_admin
+  resource:
+    name: CDIP station 092
+    description: Datawell directional buoy 5.5 nm S of Point Fermin
+    location[GeospatialLocation].latitude: 33.6178
+    location[GeospatialLocation].longitude: -118.3168
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?092+pm
+
+- action: resource:Dataset
+  id: DS_sensor12
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 12
+  associations:
+  - FROM,IN_sensor12,hasDataset
+
+
+- action: resource:Instrument
+  id: IN_sensor13
+  owner: USER_admin
+  resource:
+    name: CDIP station 094
+    description: Datawell directional buoy 17.5 nm SW of Cape Mendocino
+    location[GeospatialLocation].latitude: 40.2875
+    location[GeospatialLocation].longitude: -124.7193
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?094+pm
+
+- action: resource:Dataset
+  id: DS_sensor13
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 13
+  associations:
+  - FROM,IN_sensor13,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor14
+  owner: USER_admin
+  resource:
+    name: CDIP station 098
+    description: Datawell directional buoy 4 nm SE of Mokapu Point, HI
+    location[GeospatialLocation].latitude: 21.415   
+    location[GeospatialLocation].longitude: -157.6783
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?098+pm
+
+- action: resource:Dataset
+  id: DS_sensor14
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 14
+  associations:
+  - FROM,IN_sensor14,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor15
+  owner: USER_admin
+  resource:
+    name: CDIP station 100
+    description: Datawell directional buoy 6.5 nm W of Torrey Pines State Beach, CA
+    location[GeospatialLocation].latitude: 32.9334
+    location[GeospatialLocation].longitude: -117.3908
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?100+pm
+
+- action: resource:Dataset
+  id: DS_sensor15
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 15
+  associations:
+  - FROM,IN_sensor15,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor16
+  owner: USER_admin
+  resource:
+    name: CDIP station 106
+    description: Datawell directional buoy 4.3 nm W of Sunset Point, Waimea Bay, HI
+    location[GeospatialLocation].latitude: 21.6705
+    location[GeospatialLocation].longitude: -158.1171
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?106+pm
+
+- action: resource:Dataset
+  id: DS_sensor16
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 16
+  associations:
+  - FROM,IN_sensor16,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor17
+  owner: USER_admin
+  resource:
+    name: CDIP station 107
+    description: Datawell directional buoy 4.7 nm SW of Goleta Point, CA
+    location[GeospatialLocation].latitude: 34.3334
+    location[GeospatialLocation].longitude: -119.8034
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?107+pm
+
+- action: resource:Dataset
+  id: DS_sensor17
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 17
+  associations:
+  - FROM,IN_sensor17,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor18
+  owner: USER_admin
+  resource:
+    name: CDIP station 111
+    description: Datawell directional buoy 10 nm W of Hollywood Beach, Anacapa Passage, CA
+    location[GeospatialLocation].latitude: 34.1669
+    location[GeospatialLocation].longitude: -119.4346
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?111+pm
+
+- action: resource:Dataset
+  id: DS_sensor18
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 18
+  associations:
+  - FROM,IN_sensor18,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor19
+  owner: USER_admin
+  resource:
+    name: CDIP station 121
+    description: Datawell directional buoy 1 nm offshore Ipan Beach Park, Guam
+    location[GeospatialLocation].latitude: 13.3542
+    location[GeospatialLocation].longitude: 144.7883
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?121+pm
+
+- action: resource:Dataset
+  id: DS_sensor19
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 19
+  associations:
+  - FROM,IN_sensor19,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor20
+  owner: USER_admin
+  resource:
+    name: CDIP station 132
+    description: Datawell directional buoy 7.5 nm E of St. Mary's Entrance, Fernandina Beach, FL
+    location[GeospatialLocation].latitude: 30.709
+    location[GeospatialLocation].longitude: -81.2918
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?132+pm
+
+- action: resource:Dataset
+  id: DS_sensor20
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 20
+  associations:
+  - FROM,IN_sensor20,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor21
+  owner: USER_admin
+  resource:
+    name: CDIP station 134
+    description: Datawell directional buoy 6 nm NE of Fort Pierce Inlet Entrance, FL
+    location[GeospatialLocation].latitude: 27.551 
+    location[GeospatialLocation].longitude: -80.222
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?134+pm
+
+- action: resource:Dataset
+  id: DS_sensor21
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 21
+  associations:
+  - FROM,IN_sensor21,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor22
+  owner: USER_admin
+  resource:
+    name: CDIP station 138
+    description: Datawell directional buoy approx. 8 nm NW of San Nicholas Island, Begg Rock, CA
+    location[GeospatialLocation].latitude: 33.4
+    location[GeospatialLocation].longitude: -119.6515
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?138+pm
+
+- action: resource:Dataset
+  id: DS_sensor22
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 22
+  associations:
+  - FROM,IN_sensor22,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor23
+  owner: USER_admin
+  resource:
+    name: CDIP station 139
+    description: Datawell directional buoy 15.5 nm NW of Winchester Bay entrance, Umpqua Offshore, OR
+    location[GeospatialLocation].latitude: 43.7662
+    location[GeospatialLocation].longitude: -124.5507
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?139+pm
+
+- action: resource:Dataset
+  id: DS_sensor23
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 23
+  associations:
+  - FROM,IN_sensor23,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor24
+  owner: USER_admin
+  resource:
+    name: CDIP station 142
+    description: Datawell directional buoy 4 nm SW of the Pt. Bonita Light, San Francisco Bar, CA
+    location[GeospatialLocation].latitude: 37.7862
+    location[GeospatialLocation].longitude: -122.6342
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?142+pm
+
+- action: resource:Dataset
+  id: DS_sensor24
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 24
+  associations:
+  - FROM,IN_sensor24,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor25
+  owner: USER_admin
+  resource:
+    name: CDIP station 143
+    description: Datawell directional buoy 3 nm E of Cape Canaveral entrance, FL
+    location[GeospatialLocation].latitude: 28.4
+    location[GeospatialLocation].longitude: -80.5333
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?143+pm
+
+- action: resource:Dataset
+  id: DS_sensor25
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 25
+  associations:
+  - FROM,IN_sensor25,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor26
+  owner: USER_admin
+  resource:
+    name: CDIP station 144
+    description: Datawell directional buoy 82 nm W of Tampa Bay entrance, St. Peterspurg Offshore, FL
+    location[GeospatialLocation].latitude: 27.3415
+    location[GeospatialLocation].longitude: -84.2723
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?144+pm
+
+- action: resource:Dataset
+  id: DS_sensor26
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 26
+  associations:
+  - FROM,IN_sensor26,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor27
+  owner: USER_admin
+  resource:
+    name: CDIP station 146
+    description: Datawell directional buoy 1 nm W of Kaumalapu Harbor, Lanai, HI
+    location[GeospatialLocation].latitude: 20.7878
+    location[GeospatialLocation].longitude: -157.0098
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?146+pm
+
+- action: resource:Dataset
+  id: DS_sensor27
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 27
+  associations:
+  - FROM,IN_sensor27,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor28
+  owner: USER_admin
+  resource:
+    name: CDIP station 147
+    description: Datawell directional buoy 13 nm E of Cape Henry, VA
+    location[GeospatialLocation].latitude: 36.9152
+    location[GeospatialLocation].longitude: -75.7198
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?147+pm
+
+- action: resource:Dataset
+  id: DS_sensor28
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 28
+  associations:
+  - FROM,IN_sensor28,hasDataset  
+
+
+- action: resource:Instrument
+  id: IN_sensor29
+  owner: USER_admin
+  resource:
+    name: CDIP station 150
+    description: Datawell directional buoy 6.5 nm off the coastal reserve, Masonborol Inlet, ILM2, NC
+    location[GeospatialLocation].latitude: 34.1411
+    location[GeospatialLocation].longitude: -77.7166
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?150+pm
+
+- action: resource:Dataset
+  id: DS_sensor29
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 29
+  associations:
+  - FROM,IN_sensor29,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor30
+  owner: USER_admin
+  resource:
+    name: CDIP station 154
+    description: Datawell directional buoy 24 nm SE of Block Island, RI
+    location[GeospatialLocation].latitude: 40.9687
+    location[GeospatialLocation].longitude: -71.1271
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?154+pm
+
+- action: resource:Dataset
+  id: DS_sensor30
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 30
+  associations:
+  - FROM,IN_sensor30,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor31
+  owner: USER_admin
+  resource:
+    name: CDIP station 157
+    description: Datawell directional buoy 10 nautical miles West of Pt. Sur lighthouse. Point Sur, CA
+    location[GeospatialLocation].latitude: 36.341
+    location[GeospatialLocation].longitude: -122.1016
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?157+pm
+
+- action: resource:Dataset
+  id: DS_sensor31
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 31
+  associations:
+  - FROM,IN_sensor31,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor32
+  owner: USER_admin
+  resource:
+    name: CDIP station 158
+    description: Datawell directional buoy 0.3 nm offshore of Pacific Grove CA. at the southern end of Monterey Bay
+    location[GeospatialLocation].latitude: 36.6263
+    location[GeospatialLocation].longitude: -121.9071
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?158+pm
+
+- action: resource:Dataset
+  id: DS_sensor32
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 32
+  associations:
+  - FROM,IN_sensor32,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor33
+  owner: USER_admin
+  resource:
+    name: CDIP station 160
+    description: Datawell directional buoy 29 nm SE of Portsmouth, NH, Jeffreys Ledge
+    location[GeospatialLocation].latitude: 42.798
+    location[GeospatialLocation].longitude: -70.168
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?160+pm
+
+- action: resource:Dataset
+  id: DS_sensor33
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 33
+  associations:
+  - FROM,IN_sensor33,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor34
+  owner: USER_admin
+  resource:
+    name: CDIP station 162
+    description: Datawell directional buoy 4 nm W of Clatsop Spit., OR
+    location[GeospatialLocation].latitude: 46.2156
+    location[GeospatialLocation].longitude: -124.1273
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?162+pm
+
+- action: resource:Dataset
+  id: DS_sensor34
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 34
+  associations:
+  - FROM,IN_sensor34,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor35
+  owner: USER_admin
+  resource:
+    name: CDIP station 163
+    description: Datawell directional buoy 1 mile east of Delap Point, Kalo, Majuro, Marshall Islands
+    location[GeospatialLocation].latitude: 7.0835
+    location[GeospatialLocation].longitude: 171.3918
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?163+pm
+
+- action: resource:Dataset
+  id: DS_sensor35
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 35
+  associations:
+  - FROM,IN_sensor35,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor36
+  owner: USER_admin
+  resource:
+    name: CDIP station 165
+    description: Datawell directional buoy 1.5 nm SW off of Barber's Point, HI
+    location[GeospatialLocation].latitude: 21.2814
+    location[GeospatialLocation].longitude: -158.1237
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?165+pm
+
+- action: resource:Dataset
+  id: DS_sensor36
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 36
+  associations:
+  - FROM,IN_sensor36,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor37
+  owner: USER_admin
+  resource:
+    name: CDIP station 166
+    description: Datawell directional buoy Ocean Station PAPA
+    location[GeospatialLocation].latitude: 49.9036
+    location[GeospatialLocation].longitude: -145.2434
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?166+pm
+
+- action: resource:Dataset
+  id: DS_sensor37
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 37
+  associations:
+  - FROM,IN_sensor37,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor38
+  owner: USER_admin
+  resource:
+    name: CDIP station 168
+    description: Datawell directional buoy Humbolt Bay Nort Spit, 8.7 nm offshore of Eureka CA.
+    location[GeospatialLocation].latitude: 40.896
+    location[GeospatialLocation].longitude: -124.357
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?168+pm
+
+- action: resource:Dataset
+  id: DS_sensor38
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 38
+  associations:
+  - FROM,IN_sensor38,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor39
+  owner: USER_admin
+  resource:
+    name: CDIP station 179
+    description: Datawell directional buoy 27 nm W of Clatsop Spit., Astoria Canyon, OR
+    location[GeospatialLocation].latitude: 46.1339
+    location[GeospatialLocation].longitude: -124.6402
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?179+pm
+
+- action: resource:Dataset
+  id: DS_sensor39
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 39
+  associations:
+  - FROM,IN_sensor39,hasDataset
+
+- action: resource:Instrument
+  id: IN_sensor40
+  owner: USER_admin
+  resource:
+    name: CDIP station 185
+    description: Datawell directional buoy 23 nm WNW of Monterey, CA
+    location[GeospatialLocation].latitude: 36.7229
+    location[GeospatialLocation].longitude: -122.3508
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?185+pm
+
+- action: resource:Dataset
+  id: DS_sensor40
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 40
+  associations:
+  - FROM,IN_sensor40,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor41
+  owner: USER_admin
+  resource:
+    name: CDIP station 186
+    description: Datawell directional buoy  8.4nm Southeast of the tip of Cape Charles, VA
+    location[GeospatialLocation].latitude: 37.0232
+    location[GeospatialLocation].longitude: -75.8098
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?186+pm
+
+- action: resource:Dataset
+  id: DS_sensor41
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 41
+  associations:
+  - FROM,IN_sensor41,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor42
+  owner: USER_admin
+  resource:
+    name: CDIP station 187
+    description: Datawell directional buoy 6.5 nm off coast of Pauwela, Maui, HI
+    location[GeospatialLocation].latitude: 21.0182
+    location[GeospatialLocation].longitude: -156.4252
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?187+pm
+
+- action: resource:Dataset
+  id: DS_sensor42
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 42
+  associations:
+  - FROM,IN_sensor42,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor43
+  owner: USER_admin
+  resource:
+    name: CDIP station 188
+    description: Datawell directional buoy 3.5 nm NE of Lehia Park, Hilo, HI
+    location[GeospatialLocation].latitude: 19.78
+    location[GeospatialLocation].longitude: -154.97
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?188+pm
+
+- action: resource:Dataset
+  id: DS_sensor43
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 43
+  associations:
+  - FROM,IN_sensor43,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor44
+  owner: USER_admin
+  resource:
+    name: CDIP station 189
+    description: Datawell directional buoy 4 nm East of Alao, Aunuu, American Samoa
+    location[GeospatialLocation].latitude: 14.2651
+    location[GeospatialLocation].longitude: -170.4935
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?189+pm
+
+- action: resource:Dataset
+  id: DS_sensor44
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 44
+  associations:
+  - FROM,IN_sensor44,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor45
+  owner: USER_admin
+  resource:
+    name: CDIP station 191
+    description: Datawell directional buoy 15.5 nm W of the Imperial Beach Pier, Point Loma South, CA
+    location[GeospatialLocation].latitude: 32.5296
+    location[GeospatialLocation].longitude: -117.4214
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?191+pm
+
+- action: resource:Dataset
+  id: DS_sensor45
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 45
+  associations:
+  - FROM,IN_sensor45,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor46
+  owner: USER_admin
+  resource:
+    name: CDIP station 192
+    description: Datawell directional buoy 19 nm SE of Nags Head, Oregon Inlet, NC
+    location[GeospatialLocation].latitude: 35.75
+    location[GeospatialLocation].longitude: -75.33
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?192+pm
+
+- action: resource:Dataset
+  id: DS_sensor46
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 46
+  associations:
+  - FROM,IN_sensor46,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor47
+  owner: USER_admin
+  resource:
+    name: CDIP station 196
+    description: Datawell directional buoy 3.25 nm NW of Ritidian Point, Guam
+    location[GeospatialLocation].latitude: 13.6837
+    location[GeospatialLocation].longitude: 144.8121
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?196+pm
+
+- action: resource:Dataset
+  id: DS_sensor47
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 47
+  associations:
+  - FROM,IN_sensor47,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor48
+  owner: USER_admin
+  resource:
+    name: CDIP station 197
+    description: Datawell directional buoy 5 nm NW from Smiling Cove Harbor, Tanapang Saipan, NMI
+    location[GeospatialLocation].latitude: 15.268
+    location[GeospatialLocation].longitude: 145.6623
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?197+pm
+
+- action: resource:Dataset
+  id: DS_sensor48
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 48
+  associations:
+  - FROM,IN_sensor48,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor49
+  owner: USER_admin
+  resource:
+    name: CDIP station 198
+    description: Datawell directional buoy 1.5 nm N off shores of Kaneohe Bay, HI
+    location[GeospatialLocation].latitude: 21.4775
+    location[GeospatialLocation].longitude: -157.7526
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?198+pm
+
+- action: resource:Dataset
+  id: DS_sensor49
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 49
+  associations:
+  - FROM,IN_sensor49,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor50
+  owner: USER_admin
+  resource:
+    name: CDIP station 200
+    description: Datawell directional buoy 7.75 nm off point of Cape Fear, Wilmington Harbor, NC
+    location[GeospatialLocation].latitude: 33.721
+    location[GeospatialLocation].longitude: -78.0148
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?200+pm
+
+- action: resource:Dataset
+  id: DS_sensor50
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 50
+  associations:
+  - FROM,IN_sensor50,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor51
+  owner: USER_admin
+  resource:
+    name: CDIP station 201
+    description: Datawell directional buoy .50 nautical miles from the end of Scripps Pier, La Jolla CA
+    location[GeospatialLocation].latitude: 32.8679
+    location[GeospatialLocation].longitude: -117.2667
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?201+pm
+
+- action: resource:Dataset
+  id: DS_sensor51
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 51
+  associations:
+  - FROM,IN_sensor51,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor52
+  owner: USER_admin
+  resource:
+    name: CDIP station 203
+    description: Datawell directional buoy 28.5 nm N of San Nicolas Island, Santa Cruz Basin CA
+    location[GeospatialLocation].latitude: 33.7601
+    location[GeospatialLocation].longitude: -119.5496
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?203+pm
+
+- action: resource:Dataset
+  id: DS_sensor52
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 52
+  associations:
+  - FROM,IN_sensor52,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor53
+  owner: USER_admin
+  resource:
+    name: CDIP station 204
+    description: Datawell directional buoy 9 nm WSW of Homer, Lower Cook Inlet, AK
+    location[GeospatialLocation].latitude: 59.5973
+    location[GeospatialLocation].longitude: -151.8291
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?204+pm
+
+- action: resource:Dataset
+  id: DS_sensor53
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 53
+  associations:
+  - FROM,IN_sensor53,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor54
+  owner: USER_admin
+  resource:
+    name: CDIP station 205
+    description: Datawell directional buoy 3.26 off the Northern tip of Betton Island, Ketchikan, AK
+    location[GeospatialLocation].latitude: 55.604
+    location[GeospatialLocation].longitude: -131.7632
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?205+pm
+
+- action: resource:Dataset
+  id: DS_sensor54
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 54
+  associations:
+  - FROM,IN_sensor54,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor55
+  owner: USER_admin
+  resource:
+    name: CDIP station 209
+    description: Datawell directional buoy 16 nm offshore of the Barnegat Bay lighthouse, Barnegat, NJ
+    location[GeospatialLocation].latitude: 39.778
+    location[GeospatialLocation].longitude: -73.769
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?209+pm
+
+- action: resource:Dataset
+  id: DS_sensor55
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 55
+  associations:
+  - FROM,IN_sensor55,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor56
+  owner: USER_admin
+  resource:
+    name: CDIP station 210
+    description: Datawell directional buoy 23 nm E of Virginia Beach, Offshore Wind Area, VA
+    location[GeospatialLocation].latitude: 36.8724
+    location[GeospatialLocation].longitude: -75.4918
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?210+pm
+
+- action: resource:Dataset
+  id: DS_sensor56
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 56
+  associations:
+  - FROM,IN_sensor56,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor57
+  owner: USER_admin
+  resource:
+    name: CDIP station 213
+    description: Datawell directional buoy 9.5nm due S of Long Beach Harbor, San Pedro South, CA
+    location[GeospatialLocation].latitude: 33.5759
+    location[GeospatialLocation].longitude: -118.1813
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?213+pm
+
+- action: resource:Dataset
+  id: DS_sensor57
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 57
+  associations:
+  - FROM,IN_sensor57,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor58
+  owner: USER_admin
+  resource:
+    name: CDIP station 214
+    description: Datawell directional buoy 9 nm W of Egmont channel entrance, FL
+    location[GeospatialLocation].latitude: 27.5895
+    location[GeospatialLocation].longitude: -82.9307
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?214+pm
+
+- action: resource:Dataset
+  id: DS_sensor58
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 58
+  associations:
+  - FROM,IN_sensor58,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor59
+  owner: USER_admin
+  resource:
+    name: CDIP station 215
+    description: Datawell directional buoy 3.30 nm ESE of Long Beach Channel, CA
+    location[GeospatialLocation].latitude: 33.7003
+    location[GeospatialLocation].longitude: -118.2007
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?215+pm
+
+- action: resource:Dataset
+  id: DS_sensor59
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 59
+  associations:
+  - FROM,IN_sensor59,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor60
+  owner: USER_admin
+  resource:
+    name: CDIP station 216
+    description: Datawell directional buoy 15 nm W off of Point Conception, Harvest Southeast, CA
+    location[GeospatialLocation].latitude: 34.4388
+    location[GeospatialLocation].longitude: -120.7657
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?216+pm
+
+- action: resource:Dataset
+  id: DS_sensor60
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 60
+  associations:
+  - FROM,IN_sensor60,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor61
+  owner: USER_admin
+  resource:
+    name: CDIP station 217
+    description: Datawell directional buoy 27 nm SE of New River Inlet, Onslow Bay Outer, NC
+    location[GeospatialLocation].latitude: 34.2102
+    location[GeospatialLocation].longitude: -76.9482
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?217+pm
+
+- action: resource:Dataset
+  id: DS_sensor61
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 61
+  associations:
+  - FROM,IN_sensor61,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor62
+  owner: USER_admin
+  resource:
+    name: CDIP station 220
+    description: Datawell directional buoy 12 nm west of Mission Bay Channel entrance, CA
+    location[GeospatialLocation].latitude: 32.75
+    location[GeospatialLocation].longitude: -117.5
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?220+pm
+
+- action: resource:Dataset
+  id: DS_sensor62
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 62
+  associations:
+  - FROM,IN_sensor62,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor63
+  owner: USER_admin
+  resource:
+    name: CDIP station 221
+    description: Datawell directional buoy 6nm N of Sandy Neck, Cape Cod Bay, MA
+    location[GeospatialLocation].latitude: 41.8397
+    location[GeospatialLocation].longitude: -70.329
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?221+pm
+
+- action: resource:Dataset
+  id: DS_sensor63
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 63
+  associations:
+  - FROM,IN_sensor63,hasDataset  
+
+- action: resource:Instrument
+  id: IN_sensor64
+  owner: USER_admin
+  resource:
+    name: CDIP station 222
+    description: Datawell directional buoy 52nm W of Purisima Point California, Santa Lucia Escarpment, CA
+    location[GeospatialLocation].latitude: 34.7318
+    location[GeospatialLocation].longitude: -121.6643
+    model_info:
+      model_group: CDIP Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.cdip.cdip_plugin.CDIP_DataAgentPlugin
+        sampling_interval: 120
+        auto_streaming: True
+        stream_name: basic_streams
+        url: http://cdip.ucsd.edu/data_access/justdar.cdip?222+pm
+
+- action: resource:Dataset
+  id: DS_sensor64
+  owner: USER_admin
+  schema_def: ds_cdip01_main
+  resource:
+    name: Dataset Sensor 64
+  associations:
+  - FROM,IN_sensor64,hasDataset

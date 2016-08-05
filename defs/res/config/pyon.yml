@@ -400,6 +400,8 @@ scion:
     default_master: ""
     scenarios:
     - [all, scion/scion_demo.yml]
+    - [all, scion/cdip_sensors.yml]
+    - [all, scion/seismic_sensors.yml]
 
   antelope:
     path: /opt/antelope/5.6
