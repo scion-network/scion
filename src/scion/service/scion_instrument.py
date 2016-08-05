@@ -53,13 +53,13 @@ class ScionInstrumentOps(ScionManagementServiceBase):
         data_info = dict(dataset_id=dataset_obj._id, ts_generated=get_ion_ts(),
                          data={}, info={}, num_rows=0)
 
-        if data_filter.get("get_info", None) is True:
+        if data_filter1.get("get_info", None) is True:
             data_info["variables"] = [var_info["name"] for var_info in dataset_obj.schema_definition["variables"]]
             data_info["schema"] = dataset_obj.schema_definition
             res_info = persistence.get_data_info(data_filter1)
             data_info["info"].update(res_info)
 
-        if data_filter.get("include_data", True):
+        if data_filter1.get("include_data", True):
             # TODO: Auto bin (if need decimation, then bin, otherwise return raw)
             raw_data = persistence.get_data(data_filter=data_filter1)
             data_info["data"] = raw_data
