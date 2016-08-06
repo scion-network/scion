@@ -1,0 +1,5204 @@
+# Preload file
+
+# -----------------------------------------------------------------------------
+# UEUSN data sources
+
+actions:
+
+# 060A	2014035	-1	27.0361	-80.3618	0.0090	Indiantown, FL, USA
+# N4_060A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_060a
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_060A/MGENC/M40 
+    description: Multiplexed generic compressed data frame packet, Indiantown, FL, USA
+    location[GeospatialLocation].latitude: 27.0361
+    location[GeospatialLocation].longitude: -80.3618
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_060A/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_060a
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN 060A
+  associations:
+  - FROM,IN_sensor_ceusn_060a,hasDataset
+
+# 061Z	2014038	-1	25.8657	-80.9070	0.0090	Ochoppi, FL, USA
+# N4_061Z/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#143B	2014030	-1	32.7032	-91.4036	0.0310	Socs Landing, Pioneer, LA, USA
+# N4_143B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#146B	2014061	-1	32.6368	-89.0573	0.1610	Union, MS, USA
+# N4_146B/MGENC/M40 
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#152A	2014034	-1	32.6686	-84.7188	0.2140	Waverly Hall, GA, USA
+# N4_152A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#154A	2014041	-1	32.6131	-83.1066	0.1110	Montrose, GA, USA
+# N4_154A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#237B	2014036	-1	32.0015	-95.8084	0.1160	Washetta, Montalba, TX, USA
+# N4_237B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#250A	2013350	-1	31.9778	-86.2677	0.1520	Grady, AL, USA
+# N4_250A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#255A	2014034	-1	31.9263	-82.4758	0.0450	Hazlehurst, GA, USA
+# N4_255A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#257A	2014021	-1	31.9746	-81.0261	0.0090	Skidaway Island, Savannah, GA, USA
+# N4_257A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#342B	2014017	-1	31.3747	-92.3249	0.0370	Flagon Creek Properties, Pineville, LA, USA
+# N4_342B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#344B	2014023	-1	31.4527	-90.7319	0.0850	Westbrook Farm, Meadville, MS, USA
+# N4_344B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#346B	2014026	-1	31.3876	-89.4649	0.0860	Big Creek Wildlife, Hattiesburg, MS, USA
+# N4_346B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#352A	2014034	-1	31.4793	-84.9274	0.1010	Blakely, GA, USA
+# N4_352A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#441B	2014015	-1	30.7498	-93.1898	0.0330	Storozyszyn Site, DeRidder, LA, USA
+# N4_441B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#451A	2013350	-1	30.6160	-85.7467	0.0200	Vernon, FL, USA
+# N4_451A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#456A	2013353	-1	30.7248	-82.0223	0.0260	Hilliard, FL, USA
+# N4_456A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#545B	2014021	-1	30.0441	-90.4894	0.0080	Wilberts Farm, Edgard, LA, USA
+# N4_545B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#553A	2013350	-1	30.1890	-84.4317	0.0160	Crawfordville, FL, USA
+# N4_553A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#656A	2013354	-1	29.3689	-82.5348	0.0280	Willston, FL, USA
+# N4_656A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#735B	2014058	-1	28.8553	-97.8082	0.1090	Kenedy, TX, USA
+# N4_735B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#B35B	2014116	-1	48.3603	-93.7261	0.3540	Bob, Littlefork, MN, USA
+# N4_B35B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#D32B	2013324	-1	47.1355	-97.0164	0.2710	Dogwood Acres, Gardner, ND, USA
+# N4_D32B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#D41A	2013330	-1	47.0605	-88.5657	0.2710	Chassel, MI, USA
+# N4_D41A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#D62A	2015253	-1	47.0819	-69.0501	0.1890	Allapoint, Allagash, ME, USA
+# N4_D62A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#E28B	2014076	-1	46.5748	-100.6934	0.7040	Huff Hills, Mandan, ND, USA
+# N4_E28B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#E38A	2013330	-1	46.6058	-91.5542	0.3410	The Farm, Brule, WI, USA
+# N4_E38A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#E43A	2013330	-1	46.3758	-86.9954	0.3030	Lone Tree Farm, Eben Junction, MI, USA
+# N4_E43A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#E46A	2013330	-1	46.3665	-84.3062	0.2690	Sault Ste Marie, MI, USA
+# N4_E46A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#E62A	2015254	-1	46.6201	-69.5227	0.3560	Clayton Lake, ME, USA
+# N4_E62A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#E63A	2015251	-1	46.4220	-68.4623	0.2380	Oxbow, ME, USA
+# N4_E63A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#F33B	2014087	-1	45.8398	-96.2929	0.3140	5 Mile Ranch, Herman, MN, USA
+# N4_F33B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#F36B	2014111	-1	45.8618	-93.5241	0.3490	Green Acres Arabians, Milaca, MN, USA
+# N4_F36B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#F42A	2013331	-1	45.7587	-88.1347	0.3580	Maple Grove Farm, Niagara, WI, USA
+# N4_F42A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#F62A	2015257	-1	45.8968	-69.9664	0.3310	Pittston Farm, Pittston Academy Grant, ME, USA
+# N4_F62A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#F63A	2015251	-1	45.7030	-69.1029	0.3860	Nahmakanta, Browneville, ME, USA
+# N4_F63A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#F64A	2015251	-1	45.8633	-68.3496	0.1790	Sherman, ME, USA
+# N4_F64A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#G40A	2013331	-1	45.2684	-90.2006	0.4720	Rib Lake, WI, USA
+# N4_G40A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#G45A	2014195	-1	45.0404	-85.6571	0.2840	Suttons Bay, MI, USA
+# N4_G45A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#G62A	2015258	-1	45.2186	-70.5319	0.4260	West of Eustis, ME, USA
+# N4_G62A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#G65A	2015251	-1	45.2002	-67.5632	0.0780	Princeton, ME, USA
+# N4_G65A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#H43A	2013331	-1	44.4697	-87.7704	0.2740	Windswept, Luxemburg, WI, USA
+# N4_H43A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#H62A	2015243	-1	44.5743	-71.1559	0.3810	Milan, NH, USA
+# N4_H62A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#I37B	2014074	-1	44.0149	-93.4003	0.3540	Waseca, MN, USA
+# N4_I37B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#I40B	2013316	-1	43.8916	-90.6177	0.4190	Norwalk, WI, USA
+# N4_I40B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#I42A	2013331	-1	43.8908	-88.9134	0.2980	Draeger Farm, Ripon, WI, USA
+# N4_I42A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#I45A	2014195	-1	44.0361	-86.2348	0.2150	Fountain, MI, USA
+# N4_I45A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#I49A	2014180	-1	43.9400	-82.8246	0.2170	Point Hope, MI, USA
+# N4_I49A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#I62A	2015265	-1	43.8743	-71.3359	0.2640	Tamworth, NH, USA
+# N4_I62A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#I63A	2015260	-1	44.0505	-70.5809	0.1770	Otisfield, ME, USA
+# N4_I63A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#J47A	2014174	-1	43.2382	-84.8214	0.2360	Sunmer, MI, USA
+# N4_J47A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#J54A	2014290	-1	43.2728	-78.6392	0.1120	Appleton, NY, USA
+# N4_J54A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#J55A	2014283	-1	43.2657	-77.8167	0.0970	Hilton, NY, USA
+# N4_J55A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#J56A	2015169	-1	43.2760	-76.8579	0.0930	Wolcott, NY, USA
+# N4_J56A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#J57A	2015173	-1	43.4099	-75.9968	0.1910	Williamstown, NY, USA
+# N4_J57A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#J58A	2015222	-1	43.3603	-75.2852	0.4360	Remsen, NY, USA
+# N4_J58A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#J59A	2015166	-1	43.4647	-74.5041	0.5410	Piesco, NY, USA
+# N4_J59A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#J61A	2015264	-1	43.3462	-72.5535	0.2530	Chester, VT, USA
+# N4_J61A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#K31B	2014072	-1	42.6229	-98.7547	0.5810	Johnson's Three Eagles, Oneill, NE, USA
+# N4_K31B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#K38B	2014072	-1	42.6472	-92.7709	0.3070	Parkersburg, IA, USA
+# N4_K38B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#K43A	2013331	-1	42.7044	-88.3320	0.2640	Burlington, WI, USA
+# N4_K43A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#K50A	2014204	-1	42.7749	-82.6231	0.1910	Casco, MI, USA
+# N4_K50A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#K57A	2015143	-1	42.7313	-76.5163	0.4080	Scipio Center, NY, USA
+# N4_K57A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#K62A	2015266	-1	42.6651	-72.2345	0.2890	Royalston, MA, USA
+# N4_K62A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#L34B	2014081	-1	41.9666	-96.3762	0.4140	Svendsen Farm, Lyons, NE, USA
+# N4_L34B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#L40A	2013331	-1	42.0628	-91.2218	0.2420	Anamosa, IA, USA
+# N4_L40A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#L42A	2013324	-1	42.0040	-89.6670	0.2570	Oliver, Polo, IL, USA
+# N4_L42A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#L46A	2014147	-1	42.0127	-86.2955	0.2230	Eue Claire, MI, USA
+# N4_L46A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#L48A	2014143	-1	41.9438	-84.4329	0.3690	N Adams, MI, USA
+# N4_L48A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#L56A	2015166	-1	42.1365	-77.5591	0.6880	Greenwood, NY, USA
+# N4_L56A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#L59A	2015162	-1	42.1902	-75.0426	0.6770	Walton, NY, USA
+# N4_L59A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#L64A	2015269	-1	41.9359	-70.8391	0.0170	Middleborough, MA, USA
+# N4_L64A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#M44A	2013312	-1	41.3882	-88.0432	0.2070	Midewin, Midewin Nat. Tallgrass Prarie, IL, USA
+# N4_M44A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#M50A	2014134	-1	41.4035	-83.0428	0.1760	Fremont, OH, USA
+# N4_M50A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#M52A	2014301	-1	41.5405	-81.3570	0.3820	Chesterland, OH, USA
+# N4_M52A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#M55A	2014287	-1	41.4686	-78.7649	0.5310	Ridgway, PA, USA
+# N4_M55A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#M57A	2015138	-1	41.3372	-77.1280	0.3190	Sunshine Farm, Cogan Station, PA, USA
+# N4_M57A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#M63A	2015156	-1	41.4038	-72.0464	0.0440	Gales Ferry, CT, USA
+# N4_M63A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#N33B	2014069	-1	40.7371	-97.4511	0.4820	J Bar K, Exeter, NE, USA
+# N4_N33B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#N35B	2014072	-1	40.8612	-95.6424	0.3530	Tabor, IA, USA
+# N4_N35B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#N38B	2014070	-1	40.7931	-93.2350	0.3220	Corydon, IA, USA
+# N4_N38B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#N41A	2013312	-1	40.7077	-90.8552	0.2260	Harden Midland Farm, Stronghurst, IL, USA
+# N4_N41A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#N47A	2014132	-1	40.8801	-85.6942	0.2520	Urbana, IN, USA
+# N4_N47A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#N49A	2014131	-1	40.9220	-84.1825	0.2250	Columbus Grove, OH, USA
+# N4_N49A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#N51A	2014307	-1	40.9183	-82.3748	0.3430	Ashland, OH, USA
+# N4_N51A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#N53A	2014297	-1	40.8065	-80.8377	0.3600	Lisbon, OH, USA
+# N4_N53A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#N58A	2015134	-1	40.8396	-76.7158	0.2000	Sunbury, PA, USA
+# N4_N58A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#N62A	2015156	-1	40.9313	-73.4677	0.0340	Caumsett State Park, Huntington, NY, USA
+# N4_N62A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#O44A	2013312	-1	40.1526	-88.4671	0.2130	Mansfield, IL, USA
+# N4_O44A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#O49A	2014128	-1	40.1880	-84.3353	0.2920	Covington, OH, USA
+# N4_O49A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#O52A	2014335	-1	40.1158	-81.8361	0.3310	Adamsville, OH, USA
+# N4_O52A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#O54A	2014328	-1	40.1821	-80.3778	0.3570	Avella, PA, USA
+# N4_O54A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#P38B	2014068	-1	39.6248	-93.5321	0.2480	Dawn, MO, USA
+# N4_P38B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#P40B	2014078	-1	39.5298	-92.0483	0.3200	Paris, MO, USA
+# N4_P40B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#P43A	2013312	-1	39.6409	-89.5213	0.1760	Skaggs, Pawnee, IL, USA
+# N4_P43A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#P46A	2013354	-1	39.6178	-87.2067	0.1940	Rosedale, IN, USA
+# N4_P46A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#P48A	2014122	-1	39.4605	-85.4258	0.3000	Milroy, IN, USA
+# N4_P48A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#P51A	2014335	-1	39.4818	-83.0601	0.2110	Williamsport, OH, USA
+# N4_P51A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#P53A	2014328	-1	39.4868	-81.3896	0.2700	Whipple, OH, USA
+# N4_P53A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#P57A	2015125	-1	39.4835	-78.0126	0.1910	Homestead Farm, Martinsburg, WV, USA
+# N4_P57A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#P61A	2015043	-1	39.6734	-74.7919	0.0220	Hammonton, NJ, USA
+# N4_P61A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Q44B	2014047	-1	38.9033	-89.0169	0.1680	Vandalia, IL, USA
+# N4_Q44B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Q51A	2014141	-1	39.0260	-83.3456	0.3620	Peebles, OH, USA
+# N4_Q51A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Q52A	2014335	-1	38.9622	-82.2669	0.2280	Bidwell, OH, USA
+# N4_Q52A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Q54A	2014342	-1	38.9836	-80.8338	0.2540	Coxs Mills, WV, USA
+# N4_Q54A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Q56A	2015125	-1	39.0401	-79.1871	0.4300	Snyder Ridge, Maysville, WV, USA
+# N4_Q56A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#R32B	2014055	-1	38.4225	-98.7111	0.5680	Long Quarter, Great Bend, KS, USA
+# N4_R32B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#R40B	2014069	-1	38.2909	-92.2684	0.2180	Maddies Station, St. Elizabeth, MO, USA
+# N4_R40B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#R49A	2014113	-1	38.2916	-85.1714	0.2510	Shelbyville, KY, USA
+# N4_R49A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#R50A	2014113	-1	38.2816	-84.3274	0.2550	Paris, KY, USA
+# N4_R50A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#R53A	2014343	-1	38.3307	-81.9522	0.2940	Hurricane, WV, USA
+# N4_R53A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#R55A	2015121	-1	38.2825	-80.1195	0.8330	Marlinton, WV, USA
+# NO M40 SOURCE LISTED
+
+
+#R58B	2015118	-1	37.9636	-77.8787	0.1160	Mineral, VA, USA
+# N4_R58B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#R61A	2015040	-1	38.3303	-75.3390	0.0760	Willards, MD, USA
+# N4_R61A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#S39B	2014053	-1	37.6909	-93.3226	0.3400	Bolivar, MO, USA
+# N4_S39B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#S44A	2013350	-1	37.6936	-89.2551	0.1550	Carbondale, IL, USA
+# N4_S44A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#S51A	2014111	-1	37.6392	-83.5935	0.2860	Beattyville, KY, USA
+# N4_S51A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#S54A	2015118	-1	37.7997	-81.3114	0.6360	Dingess, Beckley, WV, USA
+# N4_S54A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#S57A	2015118	-1	37.7605	-78.9536	0.2640	Dark Hollow, Roseland, VA, USA
+# N4_S57A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#S61A	2015040	-1	37.6804	-75.6727	0.0580	Accomac, VA, USA
+# N4_S61A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#T35B	2014050	-1	36.9162	-96.5119	0.4130	Sooner Cattle Company, Foraker, OK, USA
+# N4_T35B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#T42B	2014044	-1	37.0300	-91.0925	0.1650	Van Buren, MO, USA
+# N4_T42B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#T45B	2014042	-1	37.0159	-88.6459	0.1360	Paducah, KY, USA
+# N4_T45B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#T47A	2013350	-1	36.9881	-87.1055	0.2170	Sharon Grove, KY, USA
+# N4_T47A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#T50A	2014107	-1	37.0204	-84.8384	0.3020	Nancy, KY, USA
+# N4_T50A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#T57A	2015077	-1	36.9983	-79.2538	0.2300	Hurt, VA, USA
+# N4_T57A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#T59A	2015035	-1	36.9716	-77.5541	0.0630	Double 'B' Farms, VA, USA
+# N4_T59A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#T60A	2015113	-1	37.1397	-76.7349	0.0110	Surry, VA, USA
+# N4_T60A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#U38B	2014046	-1	36.4394	-94.3857	0.3890	Mount Pleasant Farm, Gravette, AR, USA
+# N4_U38B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#U49A	2014055	-1	36.5129	-85.7796	0.2340	Red Boiling Springs, TN, USA
+# N4_U49A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#U54A	2015103	-1	36.5209	-81.8204	0.8370	Nelson's Funny Farm, Mountain City, TN, USA
+# N4_U54A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#U56A	2015103	-1	36.3472	-80.3829	0.3630	King, NC, USA
+# N4_U56A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#U59A	2015033	-1	36.3526	-77.7925	0.0990	Littleton, NC, USA
+# N4_U59A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#V48A	2013350	-1	35.7400	-86.8219	0.2780	Smith Brothers Farm, Spring Hill, TN, USA
+# N4_V48A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#V51A	2014069	-1	35.8033	-84.3511	0.2430	Loudon, TN, USA
+# N4_V51A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#V52A	2014067	-1	35.8417	-83.5959	0.3280	Sevierville, TN, USA
+# N4_V52A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#V53A	2014073	-1	35.6694	-82.8124	0.6810	Sandy Mush, NC, USA
+# N4_V53A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#V55A	2014353	-1	35.8518	-81.2149	0.3130	Morning Dew, Taylorsville, NC, USA
+# N4_V55A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#V58A	2015036	-1	35.7940	-79.1150	0.1270	Windy Hill, Pittsboro, NC, USA
+# N4_V58A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#V61A	2015033	-1	35.7912	-76.5776	0.0040	Roper, NC, USA
+# N4_V61A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#W45B	2014041	-1	35.1568	-89.1860	0.1820	Hickory Valley, TN, USA
+# N4_W45B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#W50A	2014068	-1	35.2002	-85.3119	0.5870	Signal Mountain, TN, USA
+# N4_W50A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#W52A	2014070	-1	35.0935	-83.9277	0.5190	Murphy, NC, USA
+# N4_W52A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#W57A	2015030	-1	35.1529	-79.9928	0.0850	Gilead, NC, USA
+# N4_W57A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#X48A	2013350	-1	34.4517	-87.0452	0.1800	Hartselle, AL, USA
+# N4_X48A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#X51A	2014102	-1	34.5658	-84.8574	0.2140	Calhoun, GA, USA
+# N4_X51A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#X58A	2015026	-1	34.5548	-79.3388	0.0450	Rowland, NC, USA
+# N4_X58A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Y45B	2014056	-1	33.8656	-89.5431	0.1010	Coffeeville, MS, USA
+# N4_Y45B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Y49A	2013350	-1	33.8577	-86.4119	0.3620	Blount Mountain, AL, USA
+# N4_Y49A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Y52A	2014145	-1	33.8640	-84.0626	0.2860	Lilburn, GA, USA
+# N4_Y52A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Y57A	2015021	-1	34.0170	-80.3915	0.0560	Sumter, SC, USA
+# N4_Y57A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Y58A	2015025	-1	33.9057	-79.6665	0.0190	Scranton, SC, USA
+# N4_Y58A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Y59A	2015025	-1	33.9897	-78.8737	0.0020	Loris, SC, USA
+# N4_Y59A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Y60A	2015030	-1	34.0046	-78.2163	0.0070	Bolivia, NC, USA
+# N4_Y60A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Z35B	2014041	-1	33.3309	-97.2530	0.2340	Perchaven, Sanger, TX, USA
+# N4_Z35B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Z38B	2014043	-1	33.2599	-94.9852	0.1150	Mount Pleasant, TX, USA
+# N4_Z38B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Z47B	2014059	-1	33.1989	-88.0696	0.0640	Carrollton, AL, USA
+# N4_Z47B/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+#Z51A	2013350	-1	33.3167	-85.1747	0.2490	Franklin, GA, USA
+# N4_Z51A/MGENC/M40
+
+- action: resource:Instrument
+  id: IN_sensor_ceusn_XXX
+  owner: USER_jdoe
+  resource:
+    name: CEUSN station N4_XXX/MGENC/M40
+    description: Multiplexed generic compressed data frame packet, XXX
+    location[GeospatialLocation].latitude: XXX
+    location[GeospatialLocation].longitude: XXX
+    model_info:
+      model_group: CEUSN Stations
+    agent_info:
+    - agent_type: data_agent
+      config:
+        plugin: scion.agent.model.orb.orb_plugin.Orb_DataAgentPlugin
+        auto_streaming: True
+        stream_name: basic_streams
+        sampling_interval: 5
+        timeout: 5
+        select: N4_XXX/MGENC/M40
+        orb_name: ceusnexport.ucsd.edu:usarray
+
+- action: resource:Dataset
+  id: DS_sensor_ceusn_XXX
+  owner: USER_jdoe
+  schema_def: ds_orb_mgenc_m40
+  resource:
+    name: Dataset Sensor CEUSN XXX
+  associations:
+  - FROM,IN_sensor_ceusn_XXX,hasDataset
+
+
+
+
+
+
+
+
+
+
+
+
+
