@@ -1,0 +1,29 @@
+# @(#)trillium_120	 01/07/2011 (Eliana)
+# $Id: trillium_120,v 1.5 2007/05/31 22:03:56 vernon Exp $
+# Nanometrics Trillium  8.33E-03 hz seismometer
+# Normalized  response relative to velocity
+# All poles and zeroes in radians/sec
+# 1                   type
+# 5                   num of zeroes
+# 7                   num of poles
+# 0.0                 input sample interval
+# 1                   decim factor
+# 3.080X10^5   normalization factor
+# 1.0                 gain
+# sensitivity  1201 v/m/sec
+theoretical   1 anti-alias   paz    pz6seismo
+3.080E+05
+7             Poles
+ -3.852E-02       3.658E-02     0.0000E+00    0.0000E+00
+ -3.852E-02      -3.658E-02     0.0000E+00    0.0000E+00
+ -178             0.000E+00     0.0000E+00    0.0000E+00
+ -135           160             0.0000E+00    0.0000E+00
+ -135          -160             0.0000E+00    0.0000E+00
+ -671          1154             0.0000E+00    0.0000E+00
+ -671         -1154             0.0000E+00    0.0000E+00
+5             Zeros
+    0.0000E+00    0.0000E+00    0.0000E+00    0.0000E+00
+    0.0000E+00    0.0000E+00    0.0000E+00    0.0000E+00
+  -90             0.0000E+00    0.0000E+00    0.0000E+00
+ -160.7           0.0000E+00    0.0000E+00    0.0000E+00
+-3108             0.0000E+00    0.0000E+00    0.0000E+00
