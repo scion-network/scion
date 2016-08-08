@@ -109,7 +109,7 @@ def generate_preload(metadata, network_name):
   Create an orb array datasource preload yml file.
   @param metadata Metadata of orb sources.
   """
-  fname = '%s_preload.yml' % network_name
+  fname = '%s_sensors.yml' % network_name
   f = open(fname,'w')
   f.write('# Preload file \n\n')
   f.write('preload_type: steps\n\n')
