@@ -34,7 +34,10 @@ class ScionUIExtension(UIExtension):
         log.info("Started SciON UI extension")
 
     def extend_user_session_attributes(self, session, actor_obj):
-        actor_id = actor_obj._id
-        roles = find_roles_by_actor(actor_id)  # dict with org gov names to list of role gov names
-        role_list = ["%s.%s" % (on, rn) for (on, rl) in roles.iteritems() for rn in rl]
-        session["auth_roles"] = sorted(role_list)
+        if actor_obj and hasattr(actor_obj, "_id"):
+            actor_id = actor_obj._id
+            roles = find_roles_by_actor(actor_id)  # dict with org gov names to list of role gov names
+            role_list = ["%s.%s" % (on, rn) for (on, rl) in roles.iteritems() for rn in rl]
+            session["auth_roles"] = sorted(role_list)
+        else:
+            session["auth_roles"] = []
