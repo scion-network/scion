@@ -45,11 +45,12 @@ class CDIP_DataAgentPlugin(DataAgentPlugin):
     def on_stop_streaming(self):
         log.info('CDIP_DataAgentPlugin.on_stop_streaming')
 
-    def acquire_samples(self):
+    def acquire_samples(self, max_samples=0):
         log.debug('CDIP_DataAgentPlugin.acquire_samples')
 
         # Read server, extract last sample.
         data = requests.get(self.streaming_args.url)
+        m = None
         for m in re.finditer(pattern, data.text, flags=re.MULTILINE):
             pass
         if not m:
