@@ -31,6 +31,8 @@ class ScionLoader(ImmediateProcess, Preloader):
 
         if self.op == "auto":
             self.do_auto_preload()
+        elif self.op == "init":
+            pass  # Initialization only for explicit call
         elif self.op == "load":
             preload_master = CFG.get_safe("scion.preload.default_master")
             if preload_master:

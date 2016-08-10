@@ -71,8 +71,10 @@ class AdminUIExtension(object):
                 preloader = ScionLoader()
                 preloader.container = Container.instance
                 preloader.process = self.adminui
-                preloader.CFG = dict(op="load", agprox=dict(preload_master=scenario))
+                preloader.CFG = dict(op="init")
                 preloader.on_init()
+
+                preloader.do_preload_master(scenario)
                 fragments.append("Preload scenario '%s' executed.<br>OK" % scenario)
             else:
                 fragments.append("Invalid arguments for scenario.")
