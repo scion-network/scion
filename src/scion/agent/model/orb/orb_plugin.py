@@ -16,13 +16,17 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
         cmd_args = ['orb_reap', 'src/scion/agent/model/orb/orbstart.py', streaming_args['orb_name'],
                     streaming_args['select']]
         if 'reject' in streaming_args:
-            cmd_args.append('--reject').append(streaming_args['reject'])
+            cmd_args.append('--reject')
+            cmd_args.append(streaming_args['reject'])
         if 'after' in streaming_args:
-            cmd_args.append('--after').append(streaming_args['after'])
+            cmd_args.append('--after')
+            cmd_args.append(streaming_args['after'])
         if 'timeout' in streaming_args:
-            cmd_args.append('--timeout').append(streaming_args['timeout'])
+            cmd_args.append('--timeout')
+            cmd_args.append(streaming_args['timeout'])
         if 'qsize' in streaming_args:
-            cmd_args.append('--qsize').append(streaming_args['qsize'])
+            cmd_args.append('--qsize')
+            cmd_args.append(streaming_args['qsize'])
         log.info('Orb reap args: ' + str(cmd_args))
         self.data_dir = '/tmp/scion-data/%s/' % (streaming_args['select'].replace('/', '-'))
         if os.path.exists(self.data_dir):

@@ -36,5 +36,14 @@ class BootstrapStartAgents(BootstrapPlugin):
         for inst_id in active_agents:
             try:
                 svc_client.start_agent(inst_id)
-            except Exception:
+            except Exception as ex:
                 log.exception("Cannot restart agent for %s" % inst_id)
+                if "Agent already active" in ex.message:
+                    try:
+                        svc_client.stop_agent(inst_id)
+                    except Exception:
+                        pass
+                    try:
+                        svc_client.start_agent(inst_id)
+                    except Exception:
+                        log.warn("Agent stop/start for %s unsuccessful" % inst_id)
