@@ -32,6 +32,7 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
         if os.path.exists(self.data_dir):
             shutil.rmtree(self.data_dir)
         antelope_path = CFG.get_safe("scion.antelope.path", "/opt/antelope/5.6")
+        cmd_args = [str(arg) for arg in cmd_args]
         self.proc = subprocess.Popen(cmd_args, executable=antelope_path+'/bin/python')
         log.info('Orb reap process started, %i' % self.proc.pid)
 
