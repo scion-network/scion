@@ -27,7 +27,7 @@ variables:
     description: epoch timestamp
   - name: BHZ
     base_type: int 
-    storage_dtype: 400u2
+    storage_dtype: 400i4
     unit: ""
     description: Array of samples in period as integer deltas, up-down
     packing:
@@ -39,7 +39,7 @@ variables:
       seg_type: 'V'
   - name: BHN
     base_type: int 
-    storage_dtype: 400u2
+    storage_dtype: 400i4
     unit: "" 
     description: Array of samples in period as integer deltas, North-South
     packing:
@@ -51,7 +51,7 @@ variables:
       seg_type: 'V'
   - name: BHE
     base_type: int 
-    storage_dtype: 400u2
+    storage_dtype: 400i4
     unit: ""  
     description: Array of samples in period as integer deltas, East-West
     packing:

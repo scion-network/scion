@@ -73,7 +73,7 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
             if cols and rows:
                 coltypes = {}
                 for c in cols:
-                    coltypes[c] = '400u2'
+                    coltypes[c] = '400i4'
                 cols.append('time')
                 samples = dict(cols=cols, data=rows, coltypes=coltypes)
                 return samples
