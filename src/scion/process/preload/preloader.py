@@ -64,7 +64,7 @@ class ScionLoader(ImmediateProcess, Preloader):
             self.do_preload_core()
             preload_changed = True
 
-        preload_scenarios = CFG.get_safe("scion.preload.scenarios")
+        preload_scenarios = CFG.get_safe("scion.preload.scenarios") or []
         preload_scope = CFG.get_safe("scion.preload.scope")
         for scenario_info in preload_scenarios:
             scope, scenario = scenario_info

@@ -1,7 +1,7 @@
 type: release
-name: basic
+name: scion_prod
 version: 0.1
-description: SciON basic services
+description: Scientific Observatory Network, production system start
 ion: 2.0
 apps:
   ##################################
@@ -9,14 +9,14 @@ apps:
   # Bootstrap processes perform initializations
   ##################################
 
-  - name: event_persister
-    processapp: [event_persister, ion.process.event.event_persister, EventPersister]
-
   - name: bootstrapper1
     processapp: [bootstrapper1, ion.process.bootstrap.bootstrapper, Bootstrapper]
     config:
       bootstrap_plugins:
         - plugin: [ion.process.bootstrap.plugins.bootstrap_core, BootstrapCore]
+
+  - name: event_persister
+    processapp: [event_persister, ion.process.event.event_persister, EventPersister]
 
   - name: resource_registry
     processapp: [resource_registry, ion.service.resource_registry_service, ResourceRegistryService]
@@ -54,10 +54,6 @@ apps:
   - name: resource_management
     processapp: [resource_management, ion.service.resource_management_service, ResourceManagementService]
 
-#  - name: process_management
-#    processapp: [process_management, ion.service.process_management_service, ProcessManagementService]
-
-  # The bootstrap for loading policy should be the final bootstrap process.
   - name: policy_bootstrap
     processapp: [policy_bootstrap, ion.process.bootstrap.bootstrapper, Bootstrapper]
     config:
@@ -65,7 +61,39 @@ apps:
         - plugin: [ion.process.bootstrap.plugins.bootstrap_policy, BootstrapPolicy]
 
   ##################################
-  # UI SERVER AND SERVICE GATEWAY
+  # APPLICATION SERVICES
+  ##################################
+
+  - name: scion_management
+    processapp: [scion_management, scion.service.scion_management, ScionManagementService]
+
+  ##################################
+  # DEMO DATA PRELOAD
+  ##################################
+
+  - name: bootstrapper_app
+    processapp: [bootstrapper_app, ion.process.bootstrap.bootstrapper, Bootstrapper]
+    config:
+      bootstrap_plugins:
+        - plugin: [scion.process.bootstrap.boot_preload, BootstrapPreload]
+        - plugin: [scion.process.bootstrap.boot_startagents, BootstrapStartAgents]
+
+  ##################################
+  # DATA INGESTION
+  ##################################
+
+  - name: ingestion_process
+    processapp: [ingestion_process, ion.process.data.ingest.ingestion_process, IngestionProcess]
+
+  - name: ingestion_process2
+    processapp: [ingestion_process2, ion.process.data.ingest.ingestion_process, IngestionProcess]
+    config:
+      process:
+        ingestion_process:
+          ingestion_profile: ing2
+
+  ##################################
+  # UI SERVER WITH SERVICE GATEWAY
   ##################################
 
   - name: ui_server

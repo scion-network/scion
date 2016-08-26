@@ -7,43 +7,34 @@ apps:
 
   - name: event_persister
     processapp: [event_persister, ion.process.event.event_persister, EventPersister]
-    bootlevel: 1
 
   - name: bootstrapper1
     processapp: [bootstrapper1, ion.process.bootstrap.bootstrapper, Bootstrapper]
-    bootlevel: 2
     config:
       bootstrap_plugins:
         - plugin: [ion.process.bootstrap.plugins.bootstrap_core, BootstrapCore]
 
   - name: resource_registry
     processapp: [resource_registry, ion.service.resource_registry_service, ResourceRegistryService]
-    bootlevel: 5
     replicas: 1
 
   - name: directory
     processapp: [directory, ion.service.directory_service, DirectoryService]
-    bootlevel: 8
 
   - name: identity_management
     processapp: [identity_management, ion.service.identity_management_service, IdentityManagementService]
-    bootlevel: 8
 
   - name: policy_management
     processapp: [policy_management, ion.service.policy_management_service, PolicyManagementService]
-    bootlevel: 8
 
   - name: exchange_management
     processapp: [exchange_management, ion.service.exchange_management_service, ExchangeManagementService]
-    bootlevel: 8
 
   - name: org_management
     processapp: [org_management, ion.service.org_management_service, OrgManagementService]
-    bootlevel: 8
 
   - name: bootstrapper2
     processapp: [bootstrapper2, ion.process.bootstrap.bootstrapper, Bootstrapper]
-    bootlevel: 9
     config:
       bootstrap_plugins:
         - plugin: [ion.process.bootstrap.plugins.bootstrap_org, BootstrapOrg]
@@ -51,8 +42,6 @@ apps:
 
   - name: process_management
     processapp: [process_management, ion.service.process_management_service, ProcessManagementService]
-    bootlevel: 10
 
   - name: hello
     processapp: [hello, ion.service.examples.hello_service, HelloService]
-    bootlevel: 15

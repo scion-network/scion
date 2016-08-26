@@ -318,12 +318,19 @@ process:
     - scion.ui.scionui_ext.ScionUIExtension
 
   ingestion_process:
-    stream_subscriptions:           # List of either stream names (str) or [XP, stream_name] tuples
-    - basic_streams
-    plugin: scion.process.data.ingestion_plugin.ScionIngestionPlugin
-    persist:
-      persistence_format: hdf5
-
+    ingestion_profile: default
+    profile_default:
+      stream_subscriptions:          # List of either stream names (str) or [XP, stream_name] tuples
+      - basic_streams
+      plugin: scion.process.data.ingestion_plugin.ScionIngestionPlugin
+      persist:
+        persistence_format: hdf5
+    profile_ing2:
+      stream_subscriptions:
+      - streams2
+      plugin: scion.process.data.ingestion_plugin.ScionIngestionPlugin
+      persist:
+        persistence_format: hdf5
 
 # ----------------------------------------------------------------------------------
 # The "service" root entry
