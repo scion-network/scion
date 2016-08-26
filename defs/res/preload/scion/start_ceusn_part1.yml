@@ -1,0 +1,50 @@
+# Preload file
+
+preload_type: steps
+
+actions:
+
+# ---------------------------------------------------------------------------
+# Start CEUSN data sources
+
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_060A
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_061Z
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_143B
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_146B
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_152A
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_154A
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_237B
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_250A
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_255A
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_257A
+
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_342B
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_344B
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_346B
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_352A
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_441B
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_451A
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_456A
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_545B
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_553A
+- action: action:StartAgent
+  asset_id: IN_sensor_ceusn_656A

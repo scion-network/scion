@@ -7,7 +7,7 @@ actions:
 # CDIP data sources
 
 - action: resource:Instrument
-  id: IN_sensor4
+  id: IN_sensor_cdip_4
   owner: USER_admin
   resource:
     name: CDIP station 028
@@ -26,16 +26,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?028+pm
 
 - action: resource:Dataset
-  id: DS_sensor4
+  id: DS_sensor_cdip_4
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 4
   associations:
-  - FROM,IN_sensor4,hasDataset
+  - FROM,IN_sensor_cdip_4,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor5
+  id: IN_sensor_cdip_5
   owner: USER_admin
   resource:
     name: CDIP station 029
@@ -54,16 +54,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?029+pm
 
 - action: resource:Dataset
-  id: DS_sensor5
+  id: DS_sensor_cdip_5
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 5
   associations:
-  - FROM,IN_sensor5,hasDataset
+  - FROM,IN_sensor_cdip_5,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor6
+  id: IN_sensor_cdip_6
   owner: USER_admin
   resource:
     name: CDIP station 036
@@ -82,16 +82,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?036+pm
 
 - action: resource:Dataset
-  id: DS_sensor6
+  id: DS_sensor_cdip_6
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 6
   associations:
-  - FROM,IN_sensor6,hasDataset
+  - FROM,IN_sensor_cdip_6,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor7
+  id: IN_sensor_cdip_7
   owner: USER_admin
   resource:
     name: CDIP station 043
@@ -110,16 +110,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?043+pm
 
 - action: resource:Dataset
-  id: DS_sensor7
+  id: DS_sensor_cdip_7
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 7
   associations:
-  - FROM,IN_sensor7,hasDataset
+  - FROM,IN_sensor_cdip_7,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor8
+  id: IN_sensor_cdip_8
   owner: USER_admin
   resource:
     name: CDIP station 045
@@ -138,16 +138,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?045+pm
 
 - action: resource:Dataset
-  id: DS_sensor8
+  id: DS_sensor_cdip_8
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 8
   associations:
-  - FROM,IN_sensor8,hasDataset
+  - FROM,IN_sensor_cdip_8,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor9
+  id: IN_sensor_cdip_9
   owner: USER_admin
   resource:
     name: CDIP station 067
@@ -166,16 +166,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?067+pm
 
 - action: resource:Dataset
-  id: DS_sensor9
+  id: DS_sensor_cdip_9
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 9
   associations:
-  - FROM,IN_sensor9,hasDataset
+  - FROM,IN_sensor_cdip_9,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor10
+  id: IN_sensor_cdip_10
   owner: USER_admin
   resource:
     name: CDIP station 071
@@ -194,16 +194,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?071+pm
 
 - action: resource:Dataset
-  id: DS_sensor10
+  id: DS_sensor_cdip_10
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 10
   associations:
-  - FROM,IN_sensor10,hasDataset
+  - FROM,IN_sensor_cdip_10,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor11
+  id: IN_sensor_cdip_11
   owner: USER_admin
   resource:
     name: CDIP station 076
@@ -222,16 +222,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?076+pm
 
 - action: resource:Dataset
-  id: DS_sensor11
+  id: DS_sensor_cdip_11
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 11
   associations:
-  - FROM,IN_sensor11,hasDataset
+  - FROM,IN_sensor_cdip_11,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor12
+  id: IN_sensor_cdip_12
   owner: USER_admin
   resource:
     name: CDIP station 092
@@ -250,17 +250,17 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?092+pm
 
 - action: resource:Dataset
-  id: DS_sensor12
+  id: DS_sensor_cdip_12
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 12
   associations:
-  - FROM,IN_sensor12,hasDataset
+  - FROM,IN_sensor_cdip_12,hasDataset
 
 
 - action: resource:Instrument
-  id: IN_sensor13
+  id: IN_sensor_cdip_13
   owner: USER_admin
   resource:
     name: CDIP station 094
@@ -279,16 +279,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?094+pm
 
 - action: resource:Dataset
-  id: DS_sensor13
+  id: DS_sensor_cdip_13
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 13
   associations:
-  - FROM,IN_sensor13,hasDataset
+  - FROM,IN_sensor_cdip_13,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor14
+  id: IN_sensor_cdip_14
   owner: USER_admin
   resource:
     name: CDIP station 098
@@ -307,16 +307,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?098+pm
 
 - action: resource:Dataset
-  id: DS_sensor14
+  id: DS_sensor_cdip_14
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 14
   associations:
-  - FROM,IN_sensor14,hasDataset
+  - FROM,IN_sensor_cdip_14,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor15
+  id: IN_sensor_cdip_15
   owner: USER_admin
   resource:
     name: CDIP station 100
@@ -335,16 +335,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?100+pm
 
 - action: resource:Dataset
-  id: DS_sensor15
+  id: DS_sensor_cdip_15
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 15
   associations:
-  - FROM,IN_sensor15,hasDataset
+  - FROM,IN_sensor_cdip_15,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor16
+  id: IN_sensor_cdip_16
   owner: USER_admin
   resource:
     name: CDIP station 106
@@ -363,16 +363,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?106+pm
 
 - action: resource:Dataset
-  id: DS_sensor16
+  id: DS_sensor_cdip_16
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 16
   associations:
-  - FROM,IN_sensor16,hasDataset
+  - FROM,IN_sensor_cdip_16,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor17
+  id: IN_sensor_cdip_17
   owner: USER_admin
   resource:
     name: CDIP station 107
@@ -391,16 +391,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?107+pm
 
 - action: resource:Dataset
-  id: DS_sensor17
+  id: DS_sensor_cdip_17
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 17
   associations:
-  - FROM,IN_sensor17,hasDataset
+  - FROM,IN_sensor_cdip_17,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor18
+  id: IN_sensor_cdip_18
   owner: USER_admin
   resource:
     name: CDIP station 111
@@ -419,16 +419,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?111+pm
 
 - action: resource:Dataset
-  id: DS_sensor18
+  id: DS_sensor_cdip_18
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 18
   associations:
-  - FROM,IN_sensor18,hasDataset
+  - FROM,IN_sensor_cdip_18,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor19
+  id: IN_sensor_cdip_19
   owner: USER_admin
   resource:
     name: CDIP station 121
@@ -447,16 +447,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?121+pm
 
 - action: resource:Dataset
-  id: DS_sensor19
+  id: DS_sensor_cdip_19
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 19
   associations:
-  - FROM,IN_sensor19,hasDataset
+  - FROM,IN_sensor_cdip_19,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor20
+  id: IN_sensor_cdip_20
   owner: USER_admin
   resource:
     name: CDIP station 132
@@ -475,16 +475,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?132+pm
 
 - action: resource:Dataset
-  id: DS_sensor20
+  id: DS_sensor_cdip_20
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 20
   associations:
-  - FROM,IN_sensor20,hasDataset
+  - FROM,IN_sensor_cdip_20,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor21
+  id: IN_sensor_cdip_21
   owner: USER_admin
   resource:
     name: CDIP station 134
@@ -503,16 +503,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?134+pm
 
 - action: resource:Dataset
-  id: DS_sensor21
+  id: DS_sensor_cdip_21
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 21
   associations:
-  - FROM,IN_sensor21,hasDataset  
+  - FROM,IN_sensor_cdip_21,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor22
+  id: IN_sensor_cdip_22
   owner: USER_admin
   resource:
     name: CDIP station 138
@@ -531,16 +531,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?138+pm
 
 - action: resource:Dataset
-  id: DS_sensor22
+  id: DS_sensor_cdip_22
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 22
   associations:
-  - FROM,IN_sensor22,hasDataset  
+  - FROM,IN_sensor_cdip_22,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor23
+  id: IN_sensor_cdip_23
   owner: USER_admin
   resource:
     name: CDIP station 139
@@ -559,16 +559,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?139+pm
 
 - action: resource:Dataset
-  id: DS_sensor23
+  id: DS_sensor_cdip_23
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 23
   associations:
-  - FROM,IN_sensor23,hasDataset  
+  - FROM,IN_sensor_cdip_23,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor24
+  id: IN_sensor_cdip_24
   owner: USER_admin
   resource:
     name: CDIP station 142
@@ -587,16 +587,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?142+pm
 
 - action: resource:Dataset
-  id: DS_sensor24
+  id: DS_sensor_cdip_24
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 24
   associations:
-  - FROM,IN_sensor24,hasDataset  
+  - FROM,IN_sensor_cdip_24,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor25
+  id: IN_sensor_cdip_25
   owner: USER_admin
   resource:
     name: CDIP station 143
@@ -615,16 +615,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?143+pm
 
 - action: resource:Dataset
-  id: DS_sensor25
+  id: DS_sensor_cdip_25
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 25
   associations:
-  - FROM,IN_sensor25,hasDataset  
+  - FROM,IN_sensor_cdip_25,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor26
+  id: IN_sensor_cdip_26
   owner: USER_admin
   resource:
     name: CDIP station 144
@@ -643,16 +643,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?144+pm
 
 - action: resource:Dataset
-  id: DS_sensor26
+  id: DS_sensor_cdip_26
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 26
   associations:
-  - FROM,IN_sensor26,hasDataset  
+  - FROM,IN_sensor_cdip_26,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor27
+  id: IN_sensor_cdip_27
   owner: USER_admin
   resource:
     name: CDIP station 146
@@ -671,16 +671,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?146+pm
 
 - action: resource:Dataset
-  id: DS_sensor27
+  id: DS_sensor_cdip_27
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 27
   associations:
-  - FROM,IN_sensor27,hasDataset  
+  - FROM,IN_sensor_cdip_27,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor28
+  id: IN_sensor_cdip_28
   owner: USER_admin
   resource:
     name: CDIP station 147
@@ -699,17 +699,17 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?147+pm
 
 - action: resource:Dataset
-  id: DS_sensor28
+  id: DS_sensor_cdip_28
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 28
   associations:
-  - FROM,IN_sensor28,hasDataset  
+  - FROM,IN_sensor_cdip_28,hasDataset  
 
 
 - action: resource:Instrument
-  id: IN_sensor29
+  id: IN_sensor_cdip_29
   owner: USER_admin
   resource:
     name: CDIP station 150
@@ -728,16 +728,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?150+pm
 
 - action: resource:Dataset
-  id: DS_sensor29
+  id: DS_sensor_cdip_29
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 29
   associations:
-  - FROM,IN_sensor29,hasDataset  
+  - FROM,IN_sensor_cdip_29,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor30
+  id: IN_sensor_cdip_30
   owner: USER_admin
   resource:
     name: CDIP station 154
@@ -756,16 +756,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?154+pm
 
 - action: resource:Dataset
-  id: DS_sensor30
+  id: DS_sensor_cdip_30
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 30
   associations:
-  - FROM,IN_sensor30,hasDataset  
+  - FROM,IN_sensor_cdip_30,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor31
+  id: IN_sensor_cdip_31
   owner: USER_admin
   resource:
     name: CDIP station 157
@@ -784,16 +784,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?157+pm
 
 - action: resource:Dataset
-  id: DS_sensor31
+  id: DS_sensor_cdip_31
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 31
   associations:
-  - FROM,IN_sensor31,hasDataset  
+  - FROM,IN_sensor_cdip_31,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor32
+  id: IN_sensor_cdip_32
   owner: USER_admin
   resource:
     name: CDIP station 158
@@ -812,16 +812,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?158+pm
 
 - action: resource:Dataset
-  id: DS_sensor32
+  id: DS_sensor_cdip_32
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 32
   associations:
-  - FROM,IN_sensor32,hasDataset  
+  - FROM,IN_sensor_cdip_32,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor33
+  id: IN_sensor_cdip_33
   owner: USER_admin
   resource:
     name: CDIP station 160
@@ -840,16 +840,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?160+pm
 
 - action: resource:Dataset
-  id: DS_sensor33
+  id: DS_sensor_cdip_33
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 33
   associations:
-  - FROM,IN_sensor33,hasDataset
+  - FROM,IN_sensor_cdip_33,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor34
+  id: IN_sensor_cdip_34
   owner: USER_admin
   resource:
     name: CDIP station 162
@@ -868,16 +868,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?162+pm
 
 - action: resource:Dataset
-  id: DS_sensor34
+  id: DS_sensor_cdip_34
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 34
   associations:
-  - FROM,IN_sensor34,hasDataset
+  - FROM,IN_sensor_cdip_34,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor35
+  id: IN_sensor_cdip_35
   owner: USER_admin
   resource:
     name: CDIP station 163
@@ -896,16 +896,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?163+pm
 
 - action: resource:Dataset
-  id: DS_sensor35
+  id: DS_sensor_cdip_35
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 35
   associations:
-  - FROM,IN_sensor35,hasDataset
+  - FROM,IN_sensor_cdip_35,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor36
+  id: IN_sensor_cdip_36
   owner: USER_admin
   resource:
     name: CDIP station 165
@@ -924,16 +924,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?165+pm
 
 - action: resource:Dataset
-  id: DS_sensor36
+  id: DS_sensor_cdip_36
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 36
   associations:
-  - FROM,IN_sensor36,hasDataset
+  - FROM,IN_sensor_cdip_36,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor37
+  id: IN_sensor_cdip_37
   owner: USER_admin
   resource:
     name: CDIP station 166
@@ -952,16 +952,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?166+pm
 
 - action: resource:Dataset
-  id: DS_sensor37
+  id: DS_sensor_cdip_37
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 37
   associations:
-  - FROM,IN_sensor37,hasDataset
+  - FROM,IN_sensor_cdip_37,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor38
+  id: IN_sensor_cdip_38
   owner: USER_admin
   resource:
     name: CDIP station 168
@@ -980,16 +980,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?168+pm
 
 - action: resource:Dataset
-  id: DS_sensor38
+  id: DS_sensor_cdip_38
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 38
   associations:
-  - FROM,IN_sensor38,hasDataset
+  - FROM,IN_sensor_cdip_38,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor39
+  id: IN_sensor_cdip_39
   owner: USER_admin
   resource:
     name: CDIP station 179
@@ -1008,16 +1008,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?179+pm
 
 - action: resource:Dataset
-  id: DS_sensor39
+  id: DS_sensor_cdip_39
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 39
   associations:
-  - FROM,IN_sensor39,hasDataset
+  - FROM,IN_sensor_cdip_39,hasDataset
 
 - action: resource:Instrument
-  id: IN_sensor40
+  id: IN_sensor_cdip_40
   owner: USER_admin
   resource:
     name: CDIP station 185
@@ -1036,16 +1036,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?185+pm
 
 - action: resource:Dataset
-  id: DS_sensor40
+  id: DS_sensor_cdip_40
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 40
   associations:
-  - FROM,IN_sensor40,hasDataset  
+  - FROM,IN_sensor_cdip_40,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor41
+  id: IN_sensor_cdip_41
   owner: USER_admin
   resource:
     name: CDIP station 186
@@ -1064,16 +1064,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?186+pm
 
 - action: resource:Dataset
-  id: DS_sensor41
+  id: DS_sensor_cdip_41
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 41
   associations:
-  - FROM,IN_sensor41,hasDataset  
+  - FROM,IN_sensor_cdip_41,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor42
+  id: IN_sensor_cdip_42
   owner: USER_admin
   resource:
     name: CDIP station 187
@@ -1092,16 +1092,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?187+pm
 
 - action: resource:Dataset
-  id: DS_sensor42
+  id: DS_sensor_cdip_42
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 42
   associations:
-  - FROM,IN_sensor42,hasDataset  
+  - FROM,IN_sensor_cdip_42,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor43
+  id: IN_sensor_cdip_43
   owner: USER_admin
   resource:
     name: CDIP station 188
@@ -1120,16 +1120,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?188+pm
 
 - action: resource:Dataset
-  id: DS_sensor43
+  id: DS_sensor_cdip_43
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 43
   associations:
-  - FROM,IN_sensor43,hasDataset  
+  - FROM,IN_sensor_cdip_43,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor44
+  id: IN_sensor_cdip_44
   owner: USER_admin
   resource:
     name: CDIP station 189
@@ -1148,16 +1148,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?189+pm
 
 - action: resource:Dataset
-  id: DS_sensor44
+  id: DS_sensor_cdip_44
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 44
   associations:
-  - FROM,IN_sensor44,hasDataset  
+  - FROM,IN_sensor_cdip_44,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor45
+  id: IN_sensor_cdip_45
   owner: USER_admin
   resource:
     name: CDIP station 191
@@ -1176,16 +1176,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?191+pm
 
 - action: resource:Dataset
-  id: DS_sensor45
+  id: DS_sensor_cdip_45
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 45
   associations:
-  - FROM,IN_sensor45,hasDataset  
+  - FROM,IN_sensor_cdip_45,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor46
+  id: IN_sensor_cdip_46
   owner: USER_admin
   resource:
     name: CDIP station 192
@@ -1204,16 +1204,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?192+pm
 
 - action: resource:Dataset
-  id: DS_sensor46
+  id: DS_sensor_cdip_46
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 46
   associations:
-  - FROM,IN_sensor46,hasDataset  
+  - FROM,IN_sensor_cdip_46,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor47
+  id: IN_sensor_cdip_47
   owner: USER_admin
   resource:
     name: CDIP station 196
@@ -1232,16 +1232,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?196+pm
 
 - action: resource:Dataset
-  id: DS_sensor47
+  id: DS_sensor_cdip_47
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 47
   associations:
-  - FROM,IN_sensor47,hasDataset  
+  - FROM,IN_sensor_cdip_47,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor48
+  id: IN_sensor_cdip_48
   owner: USER_admin
   resource:
     name: CDIP station 197
@@ -1260,16 +1260,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?197+pm
 
 - action: resource:Dataset
-  id: DS_sensor48
+  id: DS_sensor_cdip_48
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 48
   associations:
-  - FROM,IN_sensor48,hasDataset  
+  - FROM,IN_sensor_cdip_48,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor49
+  id: IN_sensor_cdip_49
   owner: USER_admin
   resource:
     name: CDIP station 198
@@ -1288,16 +1288,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?198+pm
 
 - action: resource:Dataset
-  id: DS_sensor49
+  id: DS_sensor_cdip_49
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 49
   associations:
-  - FROM,IN_sensor49,hasDataset  
+  - FROM,IN_sensor_cdip_49,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor50
+  id: IN_sensor_cdip_50
   owner: USER_admin
   resource:
     name: CDIP station 200
@@ -1316,16 +1316,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?200+pm
 
 - action: resource:Dataset
-  id: DS_sensor50
+  id: DS_sensor_cdip_50
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 50
   associations:
-  - FROM,IN_sensor50,hasDataset  
+  - FROM,IN_sensor_cdip_50,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor51
+  id: IN_sensor_cdip_51
   owner: USER_admin
   resource:
     name: CDIP station 201
@@ -1344,16 +1344,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?201+pm
 
 - action: resource:Dataset
-  id: DS_sensor51
+  id: DS_sensor_cdip_51
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 51
   associations:
-  - FROM,IN_sensor51,hasDataset  
+  - FROM,IN_sensor_cdip_51,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor52
+  id: IN_sensor_cdip_52
   owner: USER_admin
   resource:
     name: CDIP station 203
@@ -1372,16 +1372,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?203+pm
 
 - action: resource:Dataset
-  id: DS_sensor52
+  id: DS_sensor_cdip_52
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 52
   associations:
-  - FROM,IN_sensor52,hasDataset  
+  - FROM,IN_sensor_cdip_52,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor53
+  id: IN_sensor_cdip_53
   owner: USER_admin
   resource:
     name: CDIP station 204
@@ -1400,16 +1400,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?204+pm
 
 - action: resource:Dataset
-  id: DS_sensor53
+  id: DS_sensor_cdip_53
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 53
   associations:
-  - FROM,IN_sensor53,hasDataset  
+  - FROM,IN_sensor_cdip_53,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor54
+  id: IN_sensor_cdip_54
   owner: USER_admin
   resource:
     name: CDIP station 205
@@ -1428,16 +1428,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?205+pm
 
 - action: resource:Dataset
-  id: DS_sensor54
+  id: DS_sensor_cdip_54
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 54
   associations:
-  - FROM,IN_sensor54,hasDataset  
+  - FROM,IN_sensor_cdip_54,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor55
+  id: IN_sensor_cdip_55
   owner: USER_admin
   resource:
     name: CDIP station 209
@@ -1456,16 +1456,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?209+pm
 
 - action: resource:Dataset
-  id: DS_sensor55
+  id: DS_sensor_cdip_55
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 55
   associations:
-  - FROM,IN_sensor55,hasDataset  
+  - FROM,IN_sensor_cdip_55,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor56
+  id: IN_sensor_cdip_56
   owner: USER_admin
   resource:
     name: CDIP station 210
@@ -1484,16 +1484,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?210+pm
 
 - action: resource:Dataset
-  id: DS_sensor56
+  id: DS_sensor_cdip_56
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 56
   associations:
-  - FROM,IN_sensor56,hasDataset  
+  - FROM,IN_sensor_cdip_56,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor57
+  id: IN_sensor_cdip_57
   owner: USER_admin
   resource:
     name: CDIP station 213
@@ -1512,16 +1512,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?213+pm
 
 - action: resource:Dataset
-  id: DS_sensor57
+  id: DS_sensor_cdip_57
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 57
   associations:
-  - FROM,IN_sensor57,hasDataset  
+  - FROM,IN_sensor_cdip_57,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor58
+  id: IN_sensor_cdip_58
   owner: USER_admin
   resource:
     name: CDIP station 214
@@ -1540,16 +1540,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?214+pm
 
 - action: resource:Dataset
-  id: DS_sensor58
+  id: DS_sensor_cdip_58
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 58
   associations:
-  - FROM,IN_sensor58,hasDataset  
+  - FROM,IN_sensor_cdip_58,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor59
+  id: IN_sensor_cdip_59
   owner: USER_admin
   resource:
     name: CDIP station 215
@@ -1568,16 +1568,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?215+pm
 
 - action: resource:Dataset
-  id: DS_sensor59
+  id: DS_sensor_cdip_59
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 59
   associations:
-  - FROM,IN_sensor59,hasDataset  
+  - FROM,IN_sensor_cdip_59,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor60
+  id: IN_sensor_cdip_60
   owner: USER_admin
   resource:
     name: CDIP station 216
@@ -1596,16 +1596,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?216+pm
 
 - action: resource:Dataset
-  id: DS_sensor60
+  id: DS_sensor_cdip_60
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 60
   associations:
-  - FROM,IN_sensor60,hasDataset  
+  - FROM,IN_sensor_cdip_60,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor61
+  id: IN_sensor_cdip_61
   owner: USER_admin
   resource:
     name: CDIP station 217
@@ -1624,16 +1624,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?217+pm
 
 - action: resource:Dataset
-  id: DS_sensor61
+  id: DS_sensor_cdip_61
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 61
   associations:
-  - FROM,IN_sensor61,hasDataset  
+  - FROM,IN_sensor_cdip_61,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor62
+  id: IN_sensor_cdip_62
   owner: USER_admin
   resource:
     name: CDIP station 220
@@ -1652,16 +1652,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?220+pm
 
 - action: resource:Dataset
-  id: DS_sensor62
+  id: DS_sensor_cdip_62
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 62
   associations:
-  - FROM,IN_sensor62,hasDataset  
+  - FROM,IN_sensor_cdip_62,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor63
+  id: IN_sensor_cdip_63
   owner: USER_admin
   resource:
     name: CDIP station 221
@@ -1680,16 +1680,16 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?221+pm
 
 - action: resource:Dataset
-  id: DS_sensor63
+  id: DS_sensor_cdip_63
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 63
   associations:
-  - FROM,IN_sensor63,hasDataset  
+  - FROM,IN_sensor_cdip_63,hasDataset  
 
 - action: resource:Instrument
-  id: IN_sensor64
+  id: IN_sensor_cdip_64
   owner: USER_admin
   resource:
     name: CDIP station 222
@@ -1708,10 +1708,10 @@ actions:
         url: http://cdip.ucsd.edu/data_access/justdar.cdip?222+pm
 
 - action: resource:Dataset
-  id: DS_sensor64
+  id: DS_sensor_cdip_64
   owner: USER_admin
   schema_def: ds_cdip01_main
   resource:
     name: Dataset Sensor 64
   associations:
-  - FROM,IN_sensor64,hasDataset
+  - FROM,IN_sensor_cdip_64,hasDataset
