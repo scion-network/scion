@@ -88,18 +88,19 @@ def orb_start(orbname, select=None, reject=None, after=-1, timeout=-1, queuesize
       try:
         pktid, srcname, time, packet = orbth.get()
       except brttpkt.Timeout:
-        print 'Timeout waiting for orb...'
+        #print 'Timeout waiting for orb...'
+        pass
       except brttpkt.NoData:
         print 'No source data in orb...'
       else:
         orbpkt = Pkt.Packet(srcname, time, packet)
-        print pktid, srcname, time, len(packet), str(done)
+        #print pktid, srcname, time, len(packet), str(done)
         pkt_data = parse_packet(orbpkt)
         if not data_dir:
           data_dir = '/tmp/scion-data/%s/' % srcname.replace('/','-')
           os.makedirs(data_dir)
         fpath = '/tmp/scion-data/%s/pkt_%i.json' % (srcname.replace('/','-'), pktid)
-        print 'writing packet %s' % fpath
+        #print 'writing packet %s' % fpath
         f = open(fpath, 'w')
         json.dump(pkt_data, f)
         f.close()
