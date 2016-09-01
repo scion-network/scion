@@ -3,8 +3,10 @@
 __author__ = 'Michael Meisinger'
 
 from nose.plugins.attrib import attr
+import getpass
 import gevent
 import os
+import unittest
 
 from pyon.util.int_test import IonIntegrationTestCase
 from pyon.public import BadRequest, NotFound, IonObject, RT, PRED, OT, CFG, StreamSubscriber, log
@@ -46,6 +48,7 @@ class TestScionOrbAgentData(IonIntegrationTestCase):
     def tearDown(self):
         pass
 
+    @unittest.skipIf(getpass.getuser() == "jenkins", "Disabled on Jenkins")
     def test_scion_agent(self):
         # Create user
         actor_id = self.scion_client.define_user(
