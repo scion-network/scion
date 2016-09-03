@@ -12,6 +12,10 @@ from ion.agent.data_agent import DataAgentPlugin
 
 class SIM01_DataAgentPlugin(DataAgentPlugin):
 
+    def on_start_streaming(self, streaming_args=None):
+        if self.agent_config["dataset_info"]:
+            log.info("Agent RESTART - last sample ts: %s", self.agent_config["dataset_info"]["ts_last"])
+
     def acquire_samples(self, max_samples=0):
         ts = time.time()
         sample = [NTP4Time.utcnow().to_ntp64(),

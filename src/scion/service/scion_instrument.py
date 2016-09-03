@@ -2,7 +2,8 @@
 
 __author__ = 'Michael Meisinger'
 
-from pyon.public import log, CFG, BadRequest, EventPublisher, Conflict, Unauthorized, AssociationQuery, NotFound, PRED, OT, ResourceQuery, RT, get_ion_ts, get_ion_ts_millis
+from pyon.public import log, CFG, BadRequest, EventPublisher, Conflict, Unauthorized, AssociationQuery, NotFound, \
+    PRED, OT, ResourceQuery, RT, get_ion_ts, get_ion_ts_millis, dict_merge
 
 from ion.agent.control import AgentControl, StreamingAgentClient
 from scion.service.scion_base import ScionManagementServiceBase
@@ -60,7 +61,6 @@ class ScionInstrumentOps(ScionManagementServiceBase):
             data_info["info"].update(res_info)
 
         if data_filter1.get("include_data", True):
-            # TODO: Auto bin (if need decimation, then bin, otherwise return raw)
             raw_data = persistence.get_data(data_filter=data_filter1)
             data_info["data"] = raw_data
             data_info["num_rows"] = len(raw_data.values()[0]) if raw_data else 0
@@ -99,11 +99,22 @@ class ScionInstrumentOps(ScionManagementServiceBase):
         if not asset_obj.agent_info:
             raise BadRequest("Cannot find agent information")
 
-        log.info("Start agent for %s", asset_id)
         agent_info = asset_obj.agent_info[0]
+        agent_cfg = agent_info.get("config") or {}
+        if arguments and type(arguments) is dict:
+            dict_merge(agent_cfg, arguments, inplace=True)
+
+        dataset_info = self.get_asset_data(asset_id, data_filter=dict(get_info=True, include_data=False))
+        dataset_id = dataset_info["dataset_id"]
+        agent_cfg["dataset_id"] = dataset_id
+        agent_cfg["dataset_info"] = {}
+        log.info("Start agent for %s with dataset %s", asset_id, dataset_id)
+        if dataset_info and dataset_info["info"]:
+            log.info("Agent RESTART %s. Dataset exists, last sample date: %s", asset_id, dataset_info["info"]["ts_last_str"])
+            agent_cfg["dataset_info"] = dataset_info["info"]
         log.info("Using agent_info: %s", agent_info)
         agent_ctl = AgentControl()
-        agent_pid = agent_ctl.launch_agent(asset_id, agent_info["agent_type"], agent_info.get("config") or {})
+        agent_pid = agent_ctl.launch_agent(asset_id, agent_info["agent_type"], agent_cfg)
 
         asset_obj.agent_state = {}  # We assume only 1 agent per asset
         asset_obj.agent_state[agent_pid] = dict(start_ts=get_ion_ts())
