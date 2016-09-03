@@ -26,6 +26,13 @@ handlers:
     filename: logs/container.log
     maxBytes: 1024000
     backupCount: 3
+  file_warn:
+    class: logging.handlers.RotatingFileHandler
+    formatter: default
+    level: WARNING
+    filename: logs/container_error.log
+    maxBytes: 1024000
+    backupCount: 3
   cluster:
     class: graypy.GELFHandler
     # intentionally used partially qualified hostname, not FQDN,
@@ -44,7 +51,7 @@ handlers:
     backupCount: 20
 
 root:
-  handlers: [console, file]
+  handlers: [console, file, file_warn]
   level: INFO
 
 # specific overrides for packages

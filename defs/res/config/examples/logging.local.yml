@@ -17,6 +17,9 @@ handlers:
       WARNING: 3
       ERROR: 4
       CRITICAL: 5
+  file:
+    maxBytes: 20000000
+    backupCount: 9
 
 loggers:
   requests:
