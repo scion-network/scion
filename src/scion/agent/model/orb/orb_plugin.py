@@ -2,7 +2,7 @@ import os
 import subprocess
 import shutil
 import json
-from pyon.public import log
+from pyon.public import log, get_sys_name, Container
 from ion.agent.data_agent import DataAgentPlugin
 from ion.util.ntp_time import NTP4Time
 
@@ -13,8 +13,10 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
     def on_start_streaming(self, streaming_args):
         log.info('Orb_DataAgentPlugin..on_start_streaming: args %s' % str(streaming_args))
         self.streaming_args = streaming_args
-        cmd_args = ['orb_reap', 'src/scion/agent/model/orb/orbstart.py', streaming_args['orb_name'],
-                    streaming_args['select']]
+        script_path = os.path.dirname(__file__) + "/orbstart.py"   # On production, run from inside an egg
+        data_dir = Container.instance.file_system.get("TEMP/orb_data")
+        cmd_args = ['orb_reap', script_path, streaming_args['orb_name'],
+                    streaming_args['select'], "--datadir", data_dir]
         if 'reject' in streaming_args:
             cmd_args.append('--reject')
             cmd_args.append(streaming_args['reject'])
@@ -28,7 +30,7 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
             cmd_args.append('--qsize')
             cmd_args.append(streaming_args['qsize'])
         log.info('Orb reap args: ' + str(cmd_args))
-        self.data_dir = '/tmp/scion-data/%s/' % (streaming_args['select'].replace('/', '-'))
+        self.data_dir = data_dir + '/%s/' % (streaming_args['select'].replace('/', '-'))
         if os.path.exists(self.data_dir):
             shutil.rmtree(self.data_dir)
         antelope_path = CFG.get_safe("scion.antelope.path", "/opt/antelope/5.6")
@@ -44,7 +46,7 @@ class Orb_DataAgentPlugin(DataAgentPlugin):
         #log.info('Orb reap process terminated, %i' % self.proc.pid)
         #self.proc = None
 
-    def acquire_samples(self):
+    def acquire_samples(self, max_samples=0):
         log.debug('Orb_DataAgentPlugin.acquire_samples')
         if os.path.exists(self.data_dir):
             files = os.listdir(self.data_dir)
