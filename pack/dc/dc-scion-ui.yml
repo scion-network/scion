@@ -56,6 +56,8 @@ services:
             POSTGRES_PASSWORD: 'foo'
             POSTGRES_ION_PASSWORD: 'bar'
             ENTRYPOINT_PREHOOK: '/root/bin/entrypoint.sh'
+            PYCC_ARGS: '-n -r res/deploy/scion.yml'
+            ADMIN_UI_PORT: 9000
 
     ## Scion User Interface
     ###################################################

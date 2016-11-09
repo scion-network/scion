@@ -24,5 +24,6 @@ s/%PG_ADMIN_PASSWORD%/${PG_ADMIN_PASSWORD:-$POSTGRES_PASSWORD}/g;\
 s/%DEPLOY_REGION%/${DEPLOY_REGION:-default}/g;\
 s/%DEPLOY_AZ%/${DEPLOY_AZ:-default}/g;\
 s/%SERVICE_GWY_PORT%/${SERVICE_GWY_PORT:-4000}/g;\
+s/%WEB_UI_URL%/${WEB_UI_URL:-localhost}/g;\
 s/%ADMIN_UI_PORT%/${ADMIN_UI_PORT:-8080}/g" \
 defs/res/config/templates/pyon-docker.local.yml > res/config/pyon.local.yml
