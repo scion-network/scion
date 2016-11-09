@@ -1,0 +1,82 @@
+# -----------------------------------------------------------------------------
+# Application system configuration template
+# for SciON production systems
+# -----------------------------------------------------------------------------
+
+system:
+  load_policy: False
+  name: %SYSNAME%
+  web_ui_url: %WEB_UI_URL%
+
+server:
+  amqp:
+    host: %AMQP_HOST%
+    port: %AMQP_PORT%
+    username: %AMQP_USER%
+    password: %AMQP_PASSWORD%
+  rabbit_manage:
+    host: %AMQP_HOST%
+    port: %AMQP_MPORT%
+    username: %AMQP_MUSER%
+    password: %AMQP_MPASSWORD%
+  postgresql:
+    type: postgresql
+    host: %PG_HOST%
+    port: %PG_PORT%
+    username: %PG_USER%
+    password: %PG_PASSWORD%
+    admin_username: %PG_ADMIN_USER%
+    admin_password: %PG_ADMIN_PASSWORD%
+    default_database: postgres
+    database: ion
+    connection_pool_max: 5
+  smtp:
+    type: smtp
+    host: smtp.myhost.net
+    port: 25
+    sender: alerts@server.org
+    user: myusername
+    password: mypassword
+
+container:
+  messaging:
+    timeout:
+      receive: 30
+  objects:
+    validate:
+      interceptor: True
+      setattr: False
+  execution_engine:
+    name: default
+    deployment:
+      region: %DEPLOY_REGION%
+      availability_zone: %DEPLOY_AZ%
+      sub_zone: default
+    heartbeat:
+      enabled: True
+      publish_interval: 10
+    child_configs:
+      UI:
+        name_pattern: "Container-child-[1]"
+        name: ui
+      App:
+        name_pattern: "Container-child-[245678]"
+        name: app
+      Default:
+        name_pattern: "Container-child-[3]"
+        name: default
+  process:
+    log_exceptions: False
+    max_replicas: 0
+    use_process_dispatcher: False
+  filesystem:
+    root: /tmp
+    scidata: /data/scion/scidata
+
+process:
+  ui_server:
+    server:
+      port: %SERVICE_GWY_PORT%
+  admin_ui:
+    web_server:
+      port: %ADMIN_UI_PORT%
